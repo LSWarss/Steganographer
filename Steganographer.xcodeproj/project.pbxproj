@@ -11,6 +11,7 @@
 		7AD200252662434A00427B96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200242662434A00427B96 /* ContentView.swift */; };
 		7AD200272662434A00427B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200262662434A00427B96 /* Assets.xcassets */; };
 		7AD2002A2662434A00427B96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200292662434A00427B96 /* Preview Assets.xcassets */; };
+		7AD2003C26624FCD00427B96 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2003B26624FCD00427B96 /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		7AD200262662434A00427B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD200292662434A00427B96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AD2002B2662434A00427B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD2003B26624FCD00427B96 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,11 @@
 		7AD200212662434A00427B96 /* Steganographer */ = {
 			isa = PBXGroup;
 			children = (
+				7AD2003A26624CF700427B96 /* ViewModels */,
+				7AD2003926624CF000427B96 /* Models  */,
+				7AD2003826624CEB00427B96 /* Views */,
 				7AD200222662434A00427B96 /* SteganographerApp.swift */,
-				7AD200242662434A00427B96 /* ContentView.swift */,
+				7AD2003B26624FCD00427B96 /* PhotoPicker.swift */,
 				7AD200262662434A00427B96 /* Assets.xcassets */,
 				7AD2002B2662434A00427B96 /* Info.plist */,
 				7AD200282662434A00427B96 /* Preview Content */,
@@ -67,6 +72,28 @@
 				7AD200292662434A00427B96 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7AD2003826624CEB00427B96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AD200242662434A00427B96 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AD2003926624CF000427B96 /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		7AD2003A26624CF700427B96 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +167,7 @@
 			files = (
 				7AD200252662434A00427B96 /* ContentView.swift in Sources */,
 				7AD200232662434A00427B96 /* SteganographerApp.swift in Sources */,
+				7AD2003C26624FCD00427B96 /* PhotoPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
