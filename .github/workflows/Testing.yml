@@ -14,7 +14,7 @@ jobs:
         run: |
           set -eo pipefail
 
-          xcodebuild -workspace Steganographer.xcworkspace \
+          xcodebuild -project Steganographer.xcodeproj \
             -scheme Steganographer \
             -destination platform=iOS\ Simulator,OS=14.4,name=iPhone\ 12 \
             clean test | xcpretty
