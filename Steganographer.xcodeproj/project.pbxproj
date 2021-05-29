@@ -11,7 +11,19 @@
 		7AD200252662434A00427B96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200242662434A00427B96 /* ContentView.swift */; };
 		7AD200272662434A00427B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200262662434A00427B96 /* Assets.xcassets */; };
 		7AD2002A2662434A00427B96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200292662434A00427B96 /* Preview Assets.xcassets */; };
+		7AD2003C26624FCD00427B96 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2003B26624FCD00427B96 /* PhotoPicker.swift */; };
+		7AD200442662549900427B96 /* SteganographerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200432662549900427B96 /* SteganographerUnitTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AD200462662549900427B96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AD200172662434A00427B96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AD2001E2662434A00427B96;
+			remoteInfo = Steganographer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7AD2001F2662434A00427B96 /* Steganographer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steganographer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,10 +32,21 @@
 		7AD200262662434A00427B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD200292662434A00427B96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AD2002B2662434A00427B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD2003B26624FCD00427B96 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		7AD200412662549900427B96 /* SteganographerUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteganographerUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD200432662549900427B96 /* SteganographerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographerUnitTests.swift; sourceTree = "<group>"; };
+		7AD200452662549900427B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7AD2001C2662434A00427B96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD2003E2662549900427B96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD200212662434A00427B96 /* Steganographer */,
+				7AD200422662549900427B96 /* SteganographerUnitTests */,
 				7AD200202662434A00427B96 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD2001F2662434A00427B96 /* Steganographer.app */,
+				7AD200412662549900427B96 /* SteganographerUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,8 +77,11 @@
 		7AD200212662434A00427B96 /* Steganographer */ = {
 			isa = PBXGroup;
 			children = (
+				7AD2003A26624CF700427B96 /* ViewModels */,
+				7AD2003926624CF000427B96 /* Models  */,
+				7AD2003826624CEB00427B96 /* Views */,
 				7AD200222662434A00427B96 /* SteganographerApp.swift */,
-				7AD200242662434A00427B96 /* ContentView.swift */,
+				7AD2003B26624FCD00427B96 /* PhotoPicker.swift */,
 				7AD200262662434A00427B96 /* Assets.xcassets */,
 				7AD2002B2662434A00427B96 /* Info.plist */,
 				7AD200282662434A00427B96 /* Preview Content */,
@@ -67,6 +95,37 @@
 				7AD200292662434A00427B96 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7AD2003826624CEB00427B96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AD200242662434A00427B96 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AD2003926624CF000427B96 /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		7AD2003A26624CF700427B96 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7AD200422662549900427B96 /* SteganographerUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AD200432662549900427B96 /* SteganographerUnitTests.swift */,
+				7AD200452662549900427B96 /* Info.plist */,
+			);
+			path = SteganographerUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +148,24 @@
 			productReference = 7AD2001F2662434A00427B96 /* Steganographer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7AD200402662549900427B96 /* SteganographerUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AD200482662549900427B96 /* Build configuration list for PBXNativeTarget "SteganographerUnitTests" */;
+			buildPhases = (
+				7AD2003D2662549900427B96 /* Sources */,
+				7AD2003E2662549900427B96 /* Frameworks */,
+				7AD2003F2662549900427B96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AD200472662549900427B96 /* PBXTargetDependency */,
+			);
+			name = SteganographerUnitTests;
+			productName = SteganographerUnitTests;
+			productReference = 7AD200412662549900427B96 /* SteganographerUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -100,6 +177,10 @@
 				TargetAttributes = {
 					7AD2001E2662434A00427B96 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					7AD200402662549900427B96 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 7AD2001E2662434A00427B96;
 					};
 				};
 			};
@@ -117,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				7AD2001E2662434A00427B96 /* Steganographer */,
+				7AD200402662549900427B96 /* SteganographerUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +213,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7AD2003F2662549900427B96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,10 +229,27 @@
 			files = (
 				7AD200252662434A00427B96 /* ContentView.swift in Sources */,
 				7AD200232662434A00427B96 /* SteganographerApp.swift in Sources */,
+				7AD2003C26624FCD00427B96 /* PhotoPicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD2003D2662549900427B96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD200442662549900427B96 /* SteganographerUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AD200472662549900427B96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AD2001E2662434A00427B96 /* Steganographer */;
+			targetProxy = 7AD200462662549900427B96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7AD2002C2662434A00427B96 /* Debug */ = {
@@ -197,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -252,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lswarss.Steganographer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +408,47 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lswarss.Steganographer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7AD200492662549900427B96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KN966P9LP;
+				INFOPLIST_FILE = SteganographerUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lswarss.SteganographerUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steganographer.app/Steganographer";
+			};
+			name = Debug;
+		};
+		7AD2004A2662549900427B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KN966P9LP;
+				INFOPLIST_FILE = SteganographerUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lswarss.SteganographerUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Steganographer.app/Steganographer";
 			};
 			name = Release;
 		};
@@ -323,6 +469,15 @@
 			buildConfigurations = (
 				7AD2002F2662434A00427B96 /* Debug */,
 				7AD200302662434A00427B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AD200482662549900427B96 /* Build configuration list for PBXNativeTarget "SteganographerUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD200492662549900427B96 /* Debug */,
+				7AD2004A2662549900427B96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
