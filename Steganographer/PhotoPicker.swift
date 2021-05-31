@@ -45,6 +45,24 @@ struct PhotoPicker : UIViewControllerRepresentable {
                             return
                         }
                         
+                        let string = "test"
+                        print(string.stringToBinary())
+                        
+                        guard let cgImage = uiImage.cgImage, let data = cgImage.dataProvider?.data, let bytes = CFDataGetBytePtr(data) else {
+                            fatalError("Couldn't access image data")
+                        }
+                        assert(cgImage.colorSpace?.model == .rgb)
+                        
+                        let bytesPerPixel = cgImage.bitsPerPixel / cgImage.bitsPerComponent
+                        for y in 0 ..< cgImage.height {
+                            for x in 0 ..< cgImage.width {
+                                let offset = (y * cgImage.bytesPerRow) + (x * bytesPerPixel)
+                                let components = (r: bytes[offset], g: bytes[offset + 1], b: bytes[offset + 2])
+                                print("[x:\(x), y:\(y)] \(components)")
+                            }
+                            print("---")
+                        }
+                        
                         self.parent.selectedImage = Image(uiImage: uiImage)
                     }
                 }
@@ -54,3 +72,6 @@ struct PhotoPicker : UIViewControllerRepresentable {
     }
     
 }
+
+
+
