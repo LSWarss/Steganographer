@@ -40,7 +40,7 @@ struct ImagePicker : UIViewControllerRepresentable {
                 
                 print(try! decode(image: outputImage))
                 
-                parent.image = uiImage
+                parent.image = outputImage.uiImage
             }
         }
         
