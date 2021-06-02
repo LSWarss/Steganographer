@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var showPhotoLibrary = false
-    @State var image : Image?
+    @State private var image: Image?
+    
+    @State private var showingImagePicker = false
+    @State private var inputImage : UIImage?
     
     var body: some View {
         ZStack {
@@ -23,7 +25,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    showPhotoLibrary.toggle()
+                    self.showingImagePicker.toggle()
                 }, label: {
                     HStack {
                         Image(systemName: "photo")
@@ -37,10 +39,15 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .padding()
                 })
-            }.sheet(isPresented: $showPhotoLibrary) {
-                PhotoPicker(isPresented: $showPhotoLibrary, selectedImage: $image)
+            }.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                ImagePicker(image: self.$inputImage)
             }
         }
+    }
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
     }
 }
 
