@@ -7,10 +7,13 @@
 
 import SwiftUI
 import PhotosUI
+import SwiftImage
 
 struct PhotoPicker : UIViewControllerRepresentable {
     @Binding var isPresented : Bool
-    @Binding var selectedImage : Image?
+    @Binding var selectedImage : UIImage?
+    @Binding var message : String
+    @Binding var visibleImage : SwiftUI.Image?
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
@@ -44,8 +47,14 @@ struct PhotoPicker : UIViewControllerRepresentable {
                         guard let self = self, let uiImage = uiImage as? UIImage else {
                             return
                         }
+                            
+                        let image = SwiftImage.Image<RGB<UInt8>>(uiImage: uiImage)
+                        let outputImage = try! encode(image: image, text: self.parent.message)
+                        print(try! decode(image: outputImage))
                         
-                        self.parent.selectedImage = Image(uiImage: uiImage)
+                        self.parent.selectedImage = outputImage.uiImage
+                        self.parent.visibleImage = SwiftUI.Image(uiImage: outputImage.uiImage)
+                        
                     }
                 }
             }
@@ -54,3 +63,15 @@ struct PhotoPicker : UIViewControllerRepresentable {
     }
     
 }
+
+
+class ImageSaver : NSObject {
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+    }
+    
+    @objc func saveError(_ image: UIImage, didFinishSavingWithError error : Error?, contextInfo: UnsafeRawPointer) {
+        print("Save finished!")
+    }
+}
+

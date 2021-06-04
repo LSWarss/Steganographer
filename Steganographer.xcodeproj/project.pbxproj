@@ -3,16 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A3616E32666BF3600FF4E4E /* SwiftImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7A3616E22666BF3600FF4E4E /* SwiftImage */; };
+		7A3616E52666BF4300FF4E4E /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616E42666BF4300FF4E4E /* Encoder.swift */; };
+		7A3616E72666BF5A00FF4E4E /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616E62666BF5A00FF4E4E /* Decoder.swift */; };
+		7A3616E92666BF7900FF4E4E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616E82666BF7900FF4E4E /* Helpers.swift */; };
+		7A3616EC2666C53300FF4E4E /* tali.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3616EB2666C53300FF4E4E /* tali.png */; };
+		7A3616F3266A2AB700FF4E4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616F2266A2AB700FF4E4E /* MainView.swift */; };
+		7A3616F5266A2B8E00FF4E4E /* DecodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616F4266A2B8E00FF4E4E /* DecodingView.swift */; };
+		7A3616F7266A319100FF4E4E /* EncodingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616F6266A319100FF4E4E /* EncodingViewModel.swift */; };
 		7AD200232662434A00427B96 /* SteganographerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200222662434A00427B96 /* SteganographerApp.swift */; };
-		7AD200252662434A00427B96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200242662434A00427B96 /* ContentView.swift */; };
+		7AD200252662434A00427B96 /* EncodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200242662434A00427B96 /* EncodingView.swift */; };
 		7AD200272662434A00427B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200262662434A00427B96 /* Assets.xcassets */; };
 		7AD2002A2662434A00427B96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200292662434A00427B96 /* Preview Assets.xcassets */; };
 		7AD2003C26624FCD00427B96 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD2003B26624FCD00427B96 /* PhotoPicker.swift */; };
-		7AD200442662549900427B96 /* SteganographerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200432662549900427B96 /* SteganographerUnitTests.swift */; };
+		7AD200442662549900427B96 /* SteganographerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200432662549900427B96 /* SteganographerUnitTests.swift */; platformFilter = ios; };
+		E0F334A526657CFE00A7D727 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F334A426657CFE00A7D727 /* StringExtensions.swift */; };
+		E0F334A726657D3200A7D727 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F334A626657D3200A7D727 /* UtilitiesTests.swift */; platformFilter = ios; };
+		E0F334A826657E4500A7D727 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F334A426657CFE00A7D727 /* StringExtensions.swift */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A3616E42666BF4300FF4E4E /* Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		7A3616E62666BF5A00FF4E4E /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		7A3616E82666BF7900FF4E4E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		7A3616EB2666C53300FF4E4E /* tali.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tali.png; sourceTree = "<group>"; };
+		7A3616F2266A2AB700FF4E4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7A3616F4266A2B8E00FF4E4E /* DecodingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingView.swift; sourceTree = "<group>"; };
+		7A3616F6266A319100FF4E4E /* EncodingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingViewModel.swift; sourceTree = "<group>"; };
 		7AD2001F2662434A00427B96 /* Steganographer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steganographer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD200222662434A00427B96 /* SteganographerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographerApp.swift; sourceTree = "<group>"; };
-		7AD200242662434A00427B96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7AD200242662434A00427B96 /* EncodingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingView.swift; sourceTree = "<group>"; };
 		7AD200262662434A00427B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD200292662434A00427B96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AD2002B2662434A00427B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +54,8 @@
 		7AD200412662549900427B96 /* SteganographerUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SteganographerUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD200432662549900427B96 /* SteganographerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographerUnitTests.swift; sourceTree = "<group>"; };
 		7AD200452662549900427B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0F334A426657CFE00A7D727 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		E0F334A626657D3200A7D727 /* UtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3616E32666BF3600FF4E4E /* SwiftImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +77,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A3616DF2666BBD100FF4E4E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E0F334A426657CFE00A7D727 /* StringExtensions.swift */,
+				7A3616E42666BF4300FF4E4E /* Encoder.swift */,
+				7A3616E62666BF5A00FF4E4E /* Decoder.swift */,
+				7A3616E82666BF7900FF4E4E /* Helpers.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7A3616EA2666C50900FF4E4E /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				7A3616EB2666C53300FF4E4E /* tali.png */,
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
 		7AD200162662434A00427B96 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +117,8 @@
 		7AD200212662434A00427B96 /* Steganographer */ = {
 			isa = PBXGroup;
 			children = (
-				7AD2003A26624CF700427B96 /* ViewModels */,
-				7AD2003926624CF000427B96 /* Models  */,
+				7A3616EA2666C50900FF4E4E /* Pictures */,
+				7A3616DF2666BBD100FF4E4E /* Utility */,
 				7AD2003826624CEB00427B96 /* Views */,
 				7AD200222662434A00427B96 /* SteganographerApp.swift */,
 				7AD2003B26624FCD00427B96 /* PhotoPicker.swift */,
@@ -100,29 +140,19 @@
 		7AD2003826624CEB00427B96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7AD200242662434A00427B96 /* ContentView.swift */,
+				7AD200242662434A00427B96 /* EncodingView.swift */,
+				7A3616F2266A2AB700FF4E4E /* MainView.swift */,
+				7A3616F4266A2B8E00FF4E4E /* DecodingView.swift */,
+				7A3616F6266A319100FF4E4E /* EncodingViewModel.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7AD2003926624CF000427B96 /* Models  */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Models ";
-			sourceTree = "<group>";
-		};
-		7AD2003A26624CF700427B96 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		7AD200422662549900427B96 /* SteganographerUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				7AD200432662549900427B96 /* SteganographerUnitTests.swift */,
+				E0F334A626657D3200A7D727 /* UtilitiesTests.swift */,
 				7AD200452662549900427B96 /* Info.plist */,
 			);
 			path = SteganographerUnitTests;
@@ -144,6 +174,9 @@
 			dependencies = (
 			);
 			name = Steganographer;
+			packageProductDependencies = (
+				7A3616E22666BF3600FF4E4E /* SwiftImage */,
+			);
 			productName = Steganographer;
 			productReference = 7AD2001F2662434A00427B96 /* Steganographer.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 7AD200162662434A00427B96;
+			packageReferences = (
+				7A3616E12666BF3600FF4E4E /* XCRemoteSwiftPackageReference "swift-image" */,
+			);
 			productRefGroup = 7AD200202662434A00427B96 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,6 +246,7 @@
 			files = (
 				7AD2002A2662434A00427B96 /* Preview Assets.xcassets in Resources */,
 				7AD200272662434A00427B96 /* Assets.xcassets in Resources */,
+				7A3616EC2666C53300FF4E4E /* tali.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +264,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD200252662434A00427B96 /* ContentView.swift in Sources */,
+				E0F334A526657CFE00A7D727 /* StringExtensions.swift in Sources */,
+				7A3616F3266A2AB700FF4E4E /* MainView.swift in Sources */,
+				7A3616F5266A2B8E00FF4E4E /* DecodingView.swift in Sources */,
+				7A3616F7266A319100FF4E4E /* EncodingViewModel.swift in Sources */,
+				7A3616E92666BF7900FF4E4E /* Helpers.swift in Sources */,
+				7AD200252662434A00427B96 /* EncodingView.swift in Sources */,
+				7A3616E52666BF4300FF4E4E /* Encoder.swift in Sources */,
 				7AD200232662434A00427B96 /* SteganographerApp.swift in Sources */,
+				7A3616E72666BF5A00FF4E4E /* Decoder.swift in Sources */,
 				7AD2003C26624FCD00427B96 /* PhotoPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F334A826657E4500A7D727 /* StringExtensions.swift in Sources */,
+				E0F334A726657D3200A7D727 /* UtilitiesTests.swift in Sources */,
 				7AD200442662549900427B96 /* SteganographerUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +292,7 @@
 /* Begin PBXTargetDependency section */
 		7AD200472662549900427B96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 7AD2001E2662434A00427B96 /* Steganographer */;
 			targetProxy = 7AD200462662549900427B96 /* PBXContainerItemProxy */;
 		};
@@ -483,6 +530,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A3616E12666BF3600FF4E4E /* XCRemoteSwiftPackageReference "swift-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/koher/swift-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A3616E22666BF3600FF4E4E /* SwiftImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A3616E12666BF3600FF4E4E /* XCRemoteSwiftPackageReference "swift-image" */;
+			productName = SwiftImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7AD200172662434A00427B96 /* Project object */;
 }
