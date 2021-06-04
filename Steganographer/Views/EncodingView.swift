@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var image: Image?
-    
     @State private var showingImagePicker = false
-    @State private var inputImage : UIImage?
+    @State private var message : String = "Message"
     
     var body: some View {
         ZStack {
@@ -24,6 +23,18 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
+                ZStack {
+                Rectangle()
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50)
+                    .foregroundColor(.purple)
+                    .cornerRadius(10)
+                    .padding()
+                TextField("Enter message to hide:", text: $message)
+                    .padding(.horizontal, 30.0)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    
+                }
                 Button(action: {
                     self.showingImagePicker.toggle()
                 }, label: {
@@ -39,16 +50,17 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .padding()
                 })
-            }.sheet(isPresented: $showingImagePicker) {
-                PhotoPicker(isPresented: $showingImagePicker, selectedImage: $image)
+            }.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                PhotoPicker(isPresented: $showingImagePicker, selectedImage: $image, message: $message)
             }
+            .padding()
         }
     }
     
     func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
