@@ -12,14 +12,14 @@ struct EncodingView: View {
     @State private var image: Image?
     @State private var inputImage : UIImage?
     @State private var showingImagePicker = false
-    @State private var message : String = "Message"
+    @State private var message : String = ""
     
     var body: some View {
         ZStack {
             // All properties will be used on it only if not nil
             image?
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .edgesIgnoringSafeArea(.all)
             
@@ -90,17 +90,19 @@ struct EncodingView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                     })
+                    .disabled(message == "")
                 }.sheet(isPresented: $showingImagePicker) {
                     PhotoPicker(isPresented: $showingImagePicker, selectedImage: $inputImage, message: $message, visibleImage: $image)
                 }
             .padding()
             }
-        }
+        }.navigationTitle("Encoding")
     }
     
     func cleanData() {
         self.image = nil
         self.inputImage = nil
+        self.message = ""
     }
         
 }
