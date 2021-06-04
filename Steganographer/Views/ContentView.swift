@@ -39,8 +39,8 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .padding()
                 })
-            }.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                ImagePicker(image: self.$inputImage)
+            }.sheet(isPresented: $showingImagePicker) {
+                PhotoPicker(isPresented: $showingImagePicker, selectedImage: $image)
             }
         }
     }

@@ -46,13 +46,12 @@ struct PhotoPicker : UIViewControllerRepresentable {
                             return
                         }
                             
-//                        let textData = "Test string"
-//                        let inputPath = picturesPath.appendingPathComponent("tali.png").path
-//                        let inputImage = SwiftImage.Image<RGB<UInt8>>(contentsOfFile: inputPath)
-//                        let outputImage = try! encode(image: inputImage, text: textData).uiImage
+                        let textData = "Test string"
+                        let image = SwiftImage.Image<RGB<UInt8>>(uiImage: uiImage)
+                        let outputImage = try! encode(image: image, text: textData)
+                        print(try! decode(image: outputImage))
                         
-                        
-                        self.parent.selectedImage = Image(uiImage: uiImage)
+                        self.parent.selectedImage = Image(uiImage: image.uiImage)
                     }
                 }
             }
