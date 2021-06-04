@@ -17,17 +17,11 @@ struct DecodingView: View {
         VStack(spacing: 10) {
             if message != "" {
                 VStack {
-                    ZStack {
-                        Rectangle()
-                            .foregroundColor(.purple)
-                            .cornerRadius(10)
-                            .padding()
                     image?
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(10)
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 280)
-                    }
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 300)
                     ZStack {
                     Rectangle()
                         .foregroundColor(.purple)
