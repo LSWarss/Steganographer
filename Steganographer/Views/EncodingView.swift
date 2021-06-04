@@ -92,14 +92,14 @@ struct EncodingView: View {
                     })
                     .disabled(message == "")
                 }.sheet(isPresented: $showingImagePicker) {
-                    PhotoPicker(isPresented: $showingImagePicker, selectedImage: $inputImage, message: $message, visibleImage: $image)
+                    PhotoPicker(isPresented: $showingImagePicker, selectedImage: $inputImage, message: $message, visibleImage: $image, option: .encoding)
                 }
             .padding()
             }
         }.navigationTitle("Encoding")
     }
     
-    func cleanData() {
+    private func cleanData() {
         self.image = nil
         self.inputImage = nil
         self.message = ""

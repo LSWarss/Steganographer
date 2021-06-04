@@ -14,6 +14,7 @@ struct PhotoPicker : UIViewControllerRepresentable {
     @Binding var selectedImage : UIImage?
     @Binding var message : String
     @Binding var visibleImage : SwiftUI.Image?
+    var option : Options
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
@@ -43,18 +44,36 @@ struct PhotoPicker : UIViewControllerRepresentable {
             parent.isPresented = false
             if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
                 itemProvider.loadObject(ofClass: UIImage.self) { [weak self] uiImage, error in
-                    DispatchQueue.main.async {
-                        guard let self = self, let uiImage = uiImage as? UIImage else {
-                            return
-                        }
+                    
+                    if self!.parent.option == .encoding {
+                        DispatchQueue.main.async {
+                            guard let self = self, let uiImage = uiImage as? UIImage else {
+                                return
+                            }
                             
-                        let image = SwiftImage.Image<RGB<UInt8>>(uiImage: uiImage)
-                        let outputImage = try! encode(image: image, text: self.parent.message)
-                        print(try! decode(image: outputImage))
-                        
-                        self.parent.selectedImage = outputImage.uiImage
-                        self.parent.visibleImage = SwiftUI.Image(uiImage: outputImage.uiImage)
-                        
+                            let image = SwiftImage.Image<RGB<UInt8>>(uiImage: uiImage)
+                            let outputImage = try! encode(image: image, text: self.parent.message)
+                            print(try! decode(image: outputImage))
+                            
+                            self.parent.selectedImage = outputImage.uiImage
+                            self.parent.visibleImage = SwiftUI.Image(uiImage: outputImage.uiImage)
+                            
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            guard let self = self, let uiImage = uiImage as? UIImage else {
+                                return
+                            }
+                            
+                            let image = SwiftImage.Image<RGB<UInt8>>(uiImage: uiImage)
+                            print(try! decode(image: image))
+                            
+                            self.parent.message = try! decode(image: image)
+                            
+                            self.parent.selectedImage = uiImage
+                            self.parent.visibleImage = SwiftUI.Image(uiImage: uiImage)
+                            
+                        }
                     }
                 }
             }

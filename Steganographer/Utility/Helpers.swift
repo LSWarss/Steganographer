@@ -26,3 +26,9 @@ let picturesPath = URL(fileURLWithPath: #file)
     .deletingLastPathComponent()
     .deletingLastPathComponent()
     .appendingPathComponent("Pictures")
+
+
+enum Options {
+    case encoding
+    case decoding
+}

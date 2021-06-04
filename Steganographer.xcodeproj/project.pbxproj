@@ -14,7 +14,6 @@
 		7A3616EC2666C53300FF4E4E /* tali.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A3616EB2666C53300FF4E4E /* tali.png */; };
 		7A3616F3266A2AB700FF4E4E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616F2266A2AB700FF4E4E /* MainView.swift */; };
 		7A3616F5266A2B8E00FF4E4E /* DecodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616F4266A2B8E00FF4E4E /* DecodingView.swift */; };
-		7A3616F7266A319100FF4E4E /* EncodingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3616F6266A319100FF4E4E /* EncodingViewModel.swift */; };
 		7AD200232662434A00427B96 /* SteganographerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200222662434A00427B96 /* SteganographerApp.swift */; };
 		7AD200252662434A00427B96 /* EncodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD200242662434A00427B96 /* EncodingView.swift */; };
 		7AD200272662434A00427B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD200262662434A00427B96 /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 		7A3616EB2666C53300FF4E4E /* tali.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tali.png; sourceTree = "<group>"; };
 		7A3616F2266A2AB700FF4E4E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7A3616F4266A2B8E00FF4E4E /* DecodingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingView.swift; sourceTree = "<group>"; };
-		7A3616F6266A319100FF4E4E /* EncodingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingViewModel.swift; sourceTree = "<group>"; };
 		7AD2001F2662434A00427B96 /* Steganographer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steganographer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD200222662434A00427B96 /* SteganographerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographerApp.swift; sourceTree = "<group>"; };
 		7AD200242662434A00427B96 /* EncodingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingView.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				7AD200242662434A00427B96 /* EncodingView.swift */,
 				7A3616F2266A2AB700FF4E4E /* MainView.swift */,
 				7A3616F4266A2B8E00FF4E4E /* DecodingView.swift */,
-				7A3616F6266A319100FF4E4E /* EncodingViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,7 +264,6 @@
 				E0F334A526657CFE00A7D727 /* StringExtensions.swift in Sources */,
 				7A3616F3266A2AB700FF4E4E /* MainView.swift in Sources */,
 				7A3616F5266A2B8E00FF4E4E /* DecodingView.swift in Sources */,
-				7A3616F7266A319100FF4E4E /* EncodingViewModel.swift in Sources */,
 				7A3616E92666BF7900FF4E4E /* Helpers.swift in Sources */,
 				7AD200252662434A00427B96 /* EncodingView.swift in Sources */,
 				7A3616E52666BF4300FF4E4E /* Encoder.swift in Sources */,
