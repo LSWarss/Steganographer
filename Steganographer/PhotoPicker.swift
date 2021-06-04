@@ -11,8 +11,9 @@ import SwiftImage
 
 struct PhotoPicker : UIViewControllerRepresentable {
     @Binding var isPresented : Bool
-    @Binding var selectedImage : SwiftUI.Image?
+    @Binding var selectedImage : UIImage?
     @Binding var message : String
+    @Binding var visibleImage : SwiftUI.Image?
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var configuration = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
@@ -49,14 +50,10 @@ struct PhotoPicker : UIViewControllerRepresentable {
                             
                         let image = SwiftImage.Image<RGB<UInt8>>(uiImage: uiImage)
                         let outputImage = try! encode(image: image, text: self.parent.message)
-                        let imageSaver = ImageSaver()
-                        
-                        imageSaver.writeToPhotoAlbum(image: outputImage.uiImage)
                         print(try! decode(image: outputImage))
                         
-                        self.parent.selectedImage = Image(uiImage: outputImage.uiImage)
-                        
-                        
+                        self.parent.selectedImage = outputImage.uiImage
+                        self.parent.visibleImage = SwiftUI.Image(uiImage: outputImage.uiImage)
                         
                     }
                 }

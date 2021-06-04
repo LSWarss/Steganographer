@@ -11,7 +11,7 @@ import SwiftUI
 struct SteganographerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EncodingView()
         }
     }
 }
