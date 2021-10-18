@@ -12,7 +12,6 @@ class MainViewController: UIViewController {
     lazy var headerView : UIView = {
         let headerView = UIView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
-//        headerView.backgroundColor = .purple
         return headerView
     }()
     
@@ -31,7 +30,28 @@ class MainViewController: UIViewController {
         button.contentVerticalAlignment = .fill
         button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        //TODO: Add gesture recogniser for navigation to info view in the future
+        return button
+    }()
+    
+    lazy var bodyContainer : UIView = {
+        let bodyView = UIView()
+        bodyView.translatesAutoresizingMaskIntoConstraints = false
+        return bodyView
+    }()
+    
+    lazy var encodeButton : UIButton = {
+        let button = RoundedButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.selectedText = "Encode"
+        button.addTarget(self, action:  #selector(onPress), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var decodeButton : UIButton = {
+        let button = RoundedButton()
+        button.selectedText = "Decode"
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -41,10 +61,15 @@ class MainViewController: UIViewController {
         setupLayout()
     }
     
+    @objc func onPress() {
+        print("Button Pressed from Main")
+    }
     
+    /// Simple function for setting up constraints, anchors etc.
     private func setupLayout() {
+
+        //MARK: Header initalization
         view.addSubview(headerView)
-        
         headerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -54,12 +79,31 @@ class MainViewController: UIViewController {
         headerView.addSubview(infoButton)
         
         infoButton.centerYAnchor.constraint(equalTo: headerTitle.centerYAnchor).isActive = true
-        infoButton.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 16).isActive = true
+        infoButton.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 32).isActive = true
         infoButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
         infoButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
         
-        headerTitle.topAnchor.constraint(equalTo: headerView.topAnchor, constant: view.bounds.height * 0.05).isActive = true
+        headerTitle.centerYAnchor.constraint(equalTo: headerView.centerYAnchor, constant: 16).isActive = true
         headerTitle.leftAnchor.constraint(equalTo: infoButton.rightAnchor, constant: 16).isActive = true
+        
+        //MARK: Main UI initalization
+        view.addSubview(bodyContainer)
+        
+        bodyContainer.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 16).isActive = true
+        bodyContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bodyContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bodyContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7).isActive = true
+        
+        bodyContainer.addSubview(encodeButton)
+        bodyContainer.addSubview(decodeButton)
+        
+        
+        encodeButton.centerXAnchor.constraint(equalTo: bodyContainer.centerXAnchor).isActive = true
+        encodeButton.topAnchor.constraint(equalTo: bodyContainer.topAnchor, constant: 32).isActive = true
+        encodeButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        decodeButton.topAnchor.constraint(equalTo: encodeButton.bottomAnchor, constant: 16).isActive = true
+        decodeButton.centerXAnchor.constraint(equalTo: bodyContainer.centerXAnchor).isActive = true
+        decodeButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
 
