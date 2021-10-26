@@ -9,23 +9,33 @@
 /* Begin PBXBuildFile section */
 		7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3294271DD70000A789FA /* AppDelegate.swift */; };
 		7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3296271DD70000A789FA /* SceneDelegate.swift */; };
-		7A0F3299271DD70000A789FA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3298271DD70000A789FA /* MainViewController.swift */; };
+		7A0F3299271DD70000A789FA /* MainDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */; };
 		7A0F329C271DD70000A789FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329A271DD70000A789FA /* Main.storyboard */; };
 		7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329D271DD70100A789FA /* Assets.xcassets */; };
 		7A0F32A1271DD70100A789FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */; };
 		7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F32A8271DF0A100A789FA /* RoundedButton.swift */; };
+		7AF3043F272806DB005A5F09 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3043E272806DB005A5F09 /* UIView.swift */; };
+		7AF30445272811B5005A5F09 /* EncodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF30444272811B5005A5F09 /* EncodingViewController.swift */; };
+		7AF30447272811BF005A5F09 /* DecodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF30446272811BF005A5F09 /* DecodingViewController.swift */; };
+		7AF3044927281301005A5F09 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3044827281301005A5F09 /* UIImage.swift */; };
+		7AF3044B27281384005A5F09 /* CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3044A27281384005A5F09 /* CGImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A0F3291271DD70000A789FA /* Steganographer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steganographer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0F3294271DD70000A789FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A0F3296271DD70000A789FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7A0F3298271DD70000A789FA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDashboardViewController.swift; sourceTree = "<group>"; };
 		7A0F329B271DD70000A789FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A0F329D271DD70100A789FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0F32A0271DD70100A789FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0F32A2271DD70100A789FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F32A8271DF0A100A789FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		7AF3043E272806DB005A5F09 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		7AF30444272811B5005A5F09 /* EncodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingViewController.swift; sourceTree = "<group>"; };
+		7AF30446272811BF005A5F09 /* DecodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingViewController.swift; sourceTree = "<group>"; };
+		7AF3044827281301005A5F09 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		7AF3044A27281384005A5F09 /* CGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +68,53 @@
 		7A0F3293271DD70000A789FA /* Steganographer */ = {
 			isa = PBXGroup;
 			children = (
-				7A0F32A8271DF0A100A789FA /* RoundedButton.swift */,
+				7AF3044227280ADE005A5F09 /* Components */,
+				7AF3044127280ADB005A5F09 /* Decoding */,
+				7AF3044027280AC9005A5F09 /* Encoding */,
+				7AF3043B272805C5005A5F09 /* Extension */,
 				7A0F3294271DD70000A789FA /* AppDelegate.swift */,
 				7A0F3296271DD70000A789FA /* SceneDelegate.swift */,
-				7A0F3298271DD70000A789FA /* MainViewController.swift */,
+				7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */,
 				7A0F329A271DD70000A789FA /* Main.storyboard */,
 				7A0F329D271DD70100A789FA /* Assets.xcassets */,
 				7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */,
 				7A0F32A2271DD70100A789FA /* Info.plist */,
 			);
 			path = Steganographer;
+			sourceTree = "<group>";
+		};
+		7AF3043B272805C5005A5F09 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7AF3043E272806DB005A5F09 /* UIView.swift */,
+				7AF3044827281301005A5F09 /* UIImage.swift */,
+				7AF3044A27281384005A5F09 /* CGImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7AF3044027280AC9005A5F09 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				7AF30444272811B5005A5F09 /* EncodingViewController.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		7AF3044127280ADB005A5F09 /* Decoding */ = {
+			isa = PBXGroup;
+			children = (
+				7AF30446272811BF005A5F09 /* DecodingViewController.swift */,
+			);
+			path = Decoding;
+			sourceTree = "<group>";
+		};
+		7AF3044227280ADE005A5F09 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7A0F32A8271DF0A100A789FA /* RoundedButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +127,7 @@
 				7A0F328D271DD70000A789FA /* Sources */,
 				7A0F328E271DD70000A789FA /* Frameworks */,
 				7A0F328F271DD70000A789FA /* Resources */,
+				7AF3044327280C97005A5F09 /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -136,15 +184,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AF3044327280C97005A5F09 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7A0F328D271DD70000A789FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0F3299271DD70000A789FA /* MainViewController.swift in Sources */,
+				7AF3043F272806DB005A5F09 /* UIView.swift in Sources */,
+				7AF3044927281301005A5F09 /* UIImage.swift in Sources */,
+				7A0F3299271DD70000A789FA /* MainDashboardViewController.swift in Sources */,
+				7AF3044B27281384005A5F09 /* CGImage.swift in Sources */,
 				7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
 				7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */,
+				7AF30447272811BF005A5F09 /* DecodingViewController.swift in Sources */,
+				7AF30445272811B5005A5F09 /* EncodingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -235,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
