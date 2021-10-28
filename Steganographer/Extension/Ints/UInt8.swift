@@ -78,12 +78,22 @@ extension UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 1)) | (nv.toU8 << 1)
     }
+    /// Set bit 1 and return a new UInt
+    public func setb1(_ bit: UInt8) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 1)) | (nv.toU8 << 1)
+    }
     /// Get bit 2 value
     public var b2: UInt8 {
         return (self & (0x1 << 2)) >> 2
     }
     /// Set bit 2 and return a new UInt
     public func setb2(_ bit: Int) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 2)) | (nv.toU8 << 2)
+    }
+    /// Set bit 2 and return a new UInt
+    public func setb2(_ bit: UInt8) -> UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 2)) | (nv.toU8 << 2)
     }
@@ -96,12 +106,22 @@ extension UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 3)) | (nv.toU8 << 3)
     }
+    /// Set bit 3 and return a new UInt
+    public func setb3(_ bit: UInt8) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 3)) | (nv.toU8 << 3)
+    }
     /// Get bit 4 value
     public var b4: UInt8 {
         return (self & (0x1 << 4)) >> 4
     }
     /// Set bit 4 and return a new UInt
     public func setb4(_ bit: Int) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 4)) | (nv.toU8 << 4)
+    }
+    /// Set bit 4 and return a new UInt
+    public func setb4(_ bit: UInt8) -> UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 4)) | (nv.toU8 << 4)
     }
@@ -114,6 +134,11 @@ extension UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 5)) | (nv.toU8 << 5)
     }
+    /// Set bit 5 and return a new UInt
+    public func setb5(_ bit: UInt8) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 5)) | (nv.toU8 << 5)
+    }
     /// Get bit 6 value
     public var b6: UInt8 {
         return (self & (0x1 << 6)) >> 6
@@ -123,12 +148,22 @@ extension UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 6)) | (nv.toU8 << 6)
     }
+    /// Set bit 6 and return a new UInt
+    public func setb6(_ bit: UInt8) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 6)) | (nv.toU8 << 6)
+    }
     /// Get bit 7 value
     public var b7: UInt8 {
         return (self & (0x1 << 7)) >> 7
     }
     /// Set bit 7 and return a new UInt
     public func setb7(_ bit: Int) -> UInt8 {
+        let nv = bit != 0 ? 1 : 0
+        return (self & ~(0x1 << 7)) | (nv.toU8 << 7)
+    }
+    /// Set bit 7 and return a new UInt
+    public func setb7(_ bit: UInt8) -> UInt8 {
         let nv = bit != 0 ? 1 : 0
         return (self & ~(0x1 << 7)) | (nv.toU8 << 7)
     }

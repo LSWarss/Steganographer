@@ -59,7 +59,7 @@ final class MainDashboardViewController: UIViewController {
         let button = RoundedButton()
         button.selectedText = "Decode"
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(onDecodePress), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.handleDecode(_:)), for: .touchUpInside)
         button.setAccessibiltyWithIdentifier("decodeButton")
         return button
     }()
@@ -278,7 +278,7 @@ extension MainDashboardViewController {
 //          print("\(i) byte before 0 bit change: \(strBef) and after: \(strAft) ")
 //       }
 
-       let encodeText = "ZIOBRO"
+       let encodeText = "ZIOBROEND"
        let pixelRBGValuesBefore = getRGBValuesWithPosionFromImage(image: imageView.image!)
        imageView.image = encodeTextInImage(with: encodeText, image: imageView.image)
        let pixelRBGValuesAfter = getRGBValuesWithPosionFromImage(image: imageView.image!)
@@ -292,5 +292,50 @@ extension MainDashboardViewController {
 //       let newImage = UIImage(data: datos as Data) // Note it's optional. Don't force unwrap!!!
 //       imageView.image = newImage
 
+    }
+
+    @objc func handleDecode(_ sender: UITapGestureRecognizer) {
+        let pixelRBGValues = getRGBValuesWithPosionFromImage(image: imageView.image!)
+        var decodedText = ""
+        var iterator = 0
+        var bytesArray: [UInt8] = []
+        var placeholder: UInt8 = 00000000
+        for pixel in pixelRBGValues {
+            if decodedText.contains("END") {
+                break
+            }
+            if iterator == 7 {
+                bytesArray.append(placeholder)
+                decodedText = String(decoding: bytesArray, as: UTF8.self)
+                iterator = 0
+                placeholder = 00000000
+            }
+            switchByIndex(index: iterator, byte: &placeholder, to: pixel.red.b0)
+            iterator += 1
+        }
+        self.decodeButton.setTitle(decodedText, for: .normal)
+    }
+
+    func switchByIndex(index: Int, byte: inout UInt8, to: UInt8) {
+        switch index {
+        case 0:
+            byte = byte.setb7(to)
+        case 1:
+            byte = byte.setb6(to)
+        case 2:
+            byte = byte.setb5(to)
+        case 3:
+            byte = byte.setb4(to)
+        case 4:
+            byte = byte.setb3(to)
+        case 5:
+            byte = byte.setb2(to)
+        case 6:
+            byte = byte.setb1(to)
+        case 7:
+            byte = byte.setb0(to)
+        default:
+            break
+        }
     }
 }
