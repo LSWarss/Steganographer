@@ -35,6 +35,7 @@
 		7AF3046D272A8023005A5F09 /* Int16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3046C272A8023005A5F09 /* Int16.swift */; };
 		7AF3046F272A806D005A5F09 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF3046E272A806D005A5F09 /* Operators.swift */; };
 		7AF30471272A80B0005A5F09 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF30470272A80B0005A5F09 /* String.swift */; };
+		7AF30473272B1493005A5F09 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF30472272B1493005A5F09 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		7AF3046C272A8023005A5F09 /* Int16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int16.swift; sourceTree = "<group>"; };
 		7AF3046E272A806D005A5F09 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		7AF30470272A80B0005A5F09 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		7AF30472272B1493005A5F09 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				7AF30452272A7467005A5F09 /* Pixel.swift */,
 				7AF30456272A759E005A5F09 /* PixelWithPosition.swift */,
+				7AF30472272B1493005A5F09 /* Colors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				7AF3046F272A806D005A5F09 /* Operators.swift in Sources */,
 				7AF3046B272A7FEA005A5F09 /* UInt64.swift in Sources */,
 				7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */,
+				7AF30473272B1493005A5F09 /* Colors.swift in Sources */,
 				7AF3046D272A8023005A5F09 /* Int16.swift in Sources */,
 				7AF3045D272A7EE4005A5F09 /* Int.swift in Sources */,
 				7AF30447272811BF005A5F09 /* DecodingViewController.swift in Sources */,

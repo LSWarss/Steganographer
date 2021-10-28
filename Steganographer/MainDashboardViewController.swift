@@ -143,54 +143,62 @@ extension MainDashboardViewController {
           return nil
        }
 
-       var pixelRBGValues = getRGBValuesWithPosionFromImage(image: image)
+       var imageRGBPixelValues = getRGBValuesWithPosionFromImage(image: image)
        var iterator = 0
        let encodedTextBitsArray = text.uint8Array()
 //       let encodedBitsLen = text.count * 8
 
        for letter in encodedTextBitsArray {
-          for index in 0..<7 {
+           print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+          for index in 0..<8 {
              switch index {
              case 0:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b7, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b7, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 1:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b6, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b6, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 2:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b5, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b5, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 3:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b4, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b4, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 4:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b3, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b3, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 5:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b2, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b2, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 6:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b1, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b1, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 7:
-                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-                changeLSB(letterBit: letter.b0, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                 print("Change number: \(index)")
+//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b0, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              default:
                 break
              }
           }
-          print("\nIterator: \(iterator)")
        }
 
-       return ImageModifier().applyModifier(.stego, to: image, rgbValues: pixelRBGValues)
+       return ImageModifier().applyModifier(.stego, to: image, rgbValues: imageRGBPixelValues)
     }
 
     func getRGBValuesWithPosionFromImage(image: UIImage) -> [PixelWithPosition] {
@@ -228,9 +236,11 @@ extension MainDashboardViewController {
           pixelsArray[pixelPos] = newPixel
        }
 
-       let strBef = pad(string: String(before, radix: 2), toSize: 8)
-       let strAft = pad(string: String(after, radix: 2), toSize: 8)
-       print("before 0 bit change: \(strBef) and after: \(strAft) ")
+       var strBef = pad(string: String(before, radix: 2), toSize: 8)
+        let lastBef = strBef.last!
+        var strAft = pad(string: String(after, radix: 2), toSize: 8)
+        let lastAft = strAft.last!
+        print("before 0 bit change: \(strBef)➡️\(lastBef)⬅️ and after: \(strAft)➡️\(lastAft)⬅️")
     }
 
     func getArrayOfBytesFromImage(imageData: NSData) -> [UInt8] {
@@ -278,7 +288,7 @@ extension MainDashboardViewController {
 //          print("\(i) byte before 0 bit change: \(strBef) and after: \(strAft) ")
 //       }
 
-       let encodeText = "ZIOBROEND"
+       let encodeText = "END"
        let pixelRBGValuesBefore = getRGBValuesWithPosionFromImage(image: imageView.image!)
        imageView.image = encodeTextInImage(with: encodeText, image: imageView.image)
        let pixelRBGValuesAfter = getRGBValuesWithPosionFromImage(image: imageView.image!)
@@ -301,7 +311,10 @@ extension MainDashboardViewController {
         var bytesArray: [UInt8] = []
         var placeholder: UInt8 = 00000000
         for pixel in pixelRBGValues {
-            if decodedText.contains("END") {
+//            if decodedText.contains("END") {
+//                break
+//            }
+            if pixel.x == 3*8 {
                 break
             }
             if iterator == 7 {
