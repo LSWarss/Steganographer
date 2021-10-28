@@ -40,11 +40,18 @@ final class MainDashboardViewController: UIViewController {
         return bodyView
     }()
 
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "mona")
+        return imageView
+    }()
+
     lazy var encodeButton: UIButton = {
         let button = RoundedButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.selectedText = "Encode"
-        button.addTarget(self, action: #selector(onEncodePress), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.handleTap(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -109,15 +116,181 @@ final class MainDashboardViewController: UIViewController {
         bodyContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         bodyContainer.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7).isActive = true
 
+        bodyContainer.addSubview(imageView)
         bodyContainer.addSubview(encodeButton)
         bodyContainer.addSubview(decodeButton)
 
+        imageView.centerXAnchor.constraint(equalTo: bodyContainer.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: bodyContainer.centerYAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: bodyContainer.heightAnchor, multiplier: 0.5).isActive = true
+        imageView.widthAnchor.constraint(equalTo: bodyContainer.widthAnchor, multiplier: 0.5).isActive = true
+
         encodeButton.centerXAnchor.constraint(equalTo: bodyContainer.centerXAnchor).isActive = true
-        encodeButton.topAnchor.constraint(equalTo: bodyContainer.topAnchor, constant: 32).isActive = true
+        encodeButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 32).isActive = true
         encodeButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
         decodeButton.topAnchor.constraint(equalTo: encodeButton.bottomAnchor, constant: 16).isActive = true
         decodeButton.centerXAnchor.constraint(equalTo: bodyContainer.centerXAnchor).isActive = true
         decodeButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
 
+}
+
+// MARK: Image Encoding
+extension MainDashboardViewController {
+    func encodeTextInImage(with text: String, image: UIImage?) -> UIImage? {
+
+       guard let image = imageView.image else {
+          return nil
+       }
+
+       var pixelRBGValues = getRGBValuesWithPosionFromImage(image: image)
+       var iterator = 0
+       let encodedTextBitsArray = text.uint8Array()
+//       let encodedBitsLen = text.count * 8
+
+       for letter in encodedTextBitsArray {
+          for index in 0..<7 {
+             switch index {
+             case 0:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b7, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 1:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b6, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 2:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b5, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 3:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b4, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 4:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b3, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 5:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b2, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 6:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b1, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             case 7:
+                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+                changeLSB(letterBit: letter.b0, pixelsArray: &pixelRBGValues, positionX: iterator, positionY: 0)
+                iterator += 1
+             default:
+                break
+             }
+          }
+          print("\nIterator: \(iterator)")
+       }
+
+       return ImageModifier().applyModifier(.stego, to: image, rgbValues: pixelRBGValues)
+    }
+
+    func getRGBValuesWithPosionFromImage(image: UIImage) -> [PixelWithPosition] {
+       let heightInPoints = image.size.height
+       let heightInPixels = heightInPoints * image.scale
+
+       let widthInPoints = image.size.width
+       let widthInPixels = widthInPoints * image.scale
+
+       var pixelRBGValues: [PixelWithPosition] = []
+        // swiftlint:disable identifier_name
+       for y in 0..<Int(heightInPixels) {
+           // swiftlint:disable identifier_name
+          for x in 0..<Int(widthInPixels) {
+             if let cgImage = image.cgImage, let
+                    rgbValue = cgImage.rgbValuesForPixel(posY: y, posX: x) {
+                let pixelWithRgb = PixelWithPosition(x: x, y: y, red: rgbValue.r, green: rgbValue.g, blue: rgbValue.b)
+                pixelRBGValues.append(pixelWithRgb)
+             }
+          }
+       }
+
+       return pixelRBGValues
+    }
+
+    func changeLSB(letterBit: UInt8, pixelsArray: inout [PixelWithPosition], positionX: Int, positionY: Int) {
+       var before: UInt8 = 1
+       var after: UInt8 = 1
+
+       if let pixelPos = pixelsArray.firstIndex(where: { $0.x == positionX && $0.y == positionY}) {
+          var newPixel = pixelsArray[pixelPos]
+          before = newPixel.red
+          newPixel.red = pixelsArray[pixelPos].red.setb0(letterBit)
+          after = newPixel.red
+          pixelsArray[pixelPos] = newPixel
+       }
+
+       let strBef = pad(string: String(before, radix: 2), toSize: 8)
+       let strAft = pad(string: String(after, radix: 2), toSize: 8)
+       print("before 0 bit change: \(strBef) and after: \(strAft) ")
+    }
+
+    func getArrayOfBytesFromImage(imageData: NSData) -> [UInt8] {
+
+       // the number of elements:
+       let count = imageData.length / MemoryLayout<Int8>.size
+
+       // create array of appropriate length:
+       var bytes = [UInt8](repeating: 0, count: count)
+
+       // copy bytes into array
+       imageData.getBytes(&bytes, length: count * MemoryLayout<Int8>.size)
+
+       var byteArray: Array = [UInt8]()
+
+       for index in 0 ..< count {
+          byteArray.append(bytes[index])
+       }
+
+       return byteArray
+    }
+
+    func pad(string: String, toSize: Int) -> String {
+       var padded = string
+       for _ in 0..<(toSize - string.count) {
+          padded = "0" + padded
+       }
+       return padded
+    }
+}
+
+// MARK: Gesture recogniser
+extension MainDashboardViewController {
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+//       let data = imageView.image?.pngData()
+//       var bytes = getArrayOfBytesFromImage(imageData: data! as NSData)
+//
+//       for i in 0..<bytes.count {
+//          let before = bytes[i]
+//          bytes[i] = bytes[i].setb0(0)
+//          let after = bytes[i]
+//          let strBef = pad(string: String(before, radix: 2), toSize: 8)
+//          let strAft = pad(string: String(after, radix: 2), toSize: 8)
+//          print("\(i) byte before 0 bit change: \(strBef) and after: \(strAft) ")
+//       }
+
+       let encodeText = "ZIOBRO"
+       let pixelRBGValuesBefore = getRGBValuesWithPosionFromImage(image: imageView.image!)
+       imageView.image = encodeTextInImage(with: encodeText, image: imageView.image)
+       let pixelRBGValuesAfter = getRGBValuesWithPosionFromImage(image: imageView.image!)
+
+       for i in 0..<pixelRBGValuesAfter.count {
+           // swiftlint:disable line_length
+           print("Pixel (\(pixelRBGValuesAfter[i].x),\(pixelRBGValuesAfter[i].y)) RGB value before: (r:\(pad(string: String(pixelRBGValuesBefore[i].red, radix: 2), toSize: 8)), g: \(pad(string: String(pixelRBGValuesBefore[i].green, radix: 2), toSize: 8)), b:\(pad(string: String(pixelRBGValuesBefore[i].blue, radix: 2), toSize: 8))) after: (r:\(pad(string: String(pixelRBGValuesAfter[i].red, radix: 2), toSize: 8)), g: \(pad(string: String(pixelRBGValuesAfter[i].green, radix: 2), toSize: 8)), b:\(pad(string: String(pixelRBGValuesAfter[i].blue, radix: 2), toSize: 8)))")
+       }
+
+//       let datos: NSData = NSData(bytes: bytes, length: bytes.count)
+//       let newImage = UIImage(data: datos as Data) // Note it's optional. Don't force unwrap!!!
+//       imageView.image = newImage
+
+    }
 }

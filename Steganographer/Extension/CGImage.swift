@@ -8,7 +8,8 @@
 import UIKit
 
 extension CGImage {
-    func pixel(posY: Int, posX: Int) -> (r: UInt8, g: UInt8, b: UInt8)? {
+    // swiftlint:disable large_tuple
+    func rgbValuesForPixel(posY: Int, posX: Int) -> (r: UInt8, g: UInt8, b: UInt8)? {
         guard let pixelData = dataProvider?.data,
             let data = CFDataGetBytePtr(pixelData) else { return nil }
 
