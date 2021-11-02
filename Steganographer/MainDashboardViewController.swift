@@ -140,50 +140,91 @@ final class MainDashboardViewController: UIViewController {
 extension MainDashboardViewController {
     func encodeTextInImage(with text: String, image: UIImage?) -> UIImage? {
 
-       guard let image = imageView.image else {
-          return nil
-       }
+        guard let image = imageView.image else {
+            return nil
+        }
 
-       var imageRGBPixelValues = getRGBValuesWithPosionFromImage(image: image)
-       var iterator = 0
-       let encodedTextBitsArray = text.uint8Array()
-//       let encodedBitsLen = text.count * 8
+        var imageRGBPixelValues = getRGBValuesWithPosionFromImage(image: image)
+        var iteratorX = 0
+        var iteratorY = 0
+        let encodedTextBitsArray = text.uint8Array()
+        let maxes = (len: imageRGBPixelValues.last?.x, height: imageRGBPixelValues.last?.y)
 
-       for letter in encodedTextBitsArray {
-           print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-           for index in 0..<letter.bitWidth {
-             switch index {
-             case 0:
-                changeLSB(letterBit: letter.b7, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 1:
-                changeLSB(letterBit: letter.b6, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 2:
-                changeLSB(letterBit: letter.b5, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 3:
-                changeLSB(letterBit: letter.b4, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 4:
-                changeLSB(letterBit: letter.b3, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 5:
-                changeLSB(letterBit: letter.b2, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 6:
-                changeLSB(letterBit: letter.b1, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             case 7:
-                changeLSB(letterBit: letter.b0, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
-                iterator += 1
-             default:
-                break
-             }
-          }
-       }
+        for letter in encodedTextBitsArray {
+            print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
+            for index in 0..<letter.bitWidth {
+                switch index {
+                case 0:
+                    changeLSB(letterBit: letter.b7, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 1:
+                    changeLSB(letterBit: letter.b6, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 2:
+                    changeLSB(letterBit: letter.b5, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 3:
+                    changeLSB(letterBit: letter.b4, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 4:
+                    changeLSB(letterBit: letter.b3, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 5:
+                    changeLSB(letterBit: letter.b2, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 6:
+                    changeLSB(letterBit: letter.b1, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                case 7:
+                    changeLSB(letterBit: letter.b0, pixelsArray: &imageRGBPixelValues, positionX: iteratorX, positionY: iteratorY)
+                    if iteratorX == maxes.len {
+                        iteratorY += 1
+                        iteratorX = 0
+                    } else {
+                        iteratorX += 1
+                    }
+                default:
+                    break
+                }
+            }
+        }
 
-       return ImageModifier().applyModifier(.stego, to: image, rgbValues: imageRGBPixelValues)
+        return ImageModifier().applyModifier(.stego, to: image, rgbValues: imageRGBPixelValues)
     }
 
     func getRGBValuesWithPosionFromImage(image: UIImage) -> [PixelWithPosition] {
@@ -225,7 +266,7 @@ extension MainDashboardViewController {
         let lastBef = strBef.last!
         let strAft = pad(string: String(after, radix: 2), toSize: 8)
         let lastAft = strAft.last!
-        print("before 0 bit change RED value: \(strBef) ➡️\(lastBef)⬅️ and after: \(strAft) ➡️\(lastAft)⬅️")
+//        print("before 0 bit change RED value: \(strBef) ➡️\(lastBef)⬅️ and after: \(strAft) ➡️\(lastAft)⬅️")
     }
 
     func getArrayOfBytesFromImage(imageData: NSData) -> [UInt8] {
@@ -261,15 +302,11 @@ extension MainDashboardViewController {
 extension MainDashboardViewController {
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-       let encodeText = "END"
-       let pixelRBGValuesBefore = getRGBValuesWithPosionFromImage(image: imageView.image!)
+    // swiftlint:disable line_length
+       let encodeText = """
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.|
+"""
        imageView.image = encodeTextInImage(with: encodeText, image: imageView.image)
-       let pixelRBGValuesAfter = getRGBValuesWithPosionFromImage(image: imageView.image!)
-
-       for i in 0..<pixelRBGValuesAfter.count {
-           // swiftlint:disable line_length
-           print("Pixel (\(pixelRBGValuesAfter[i].x),\(pixelRBGValuesAfter[i].y)) RGB value before: (r:\(pad(string: String(pixelRBGValuesBefore[i].red, radix: 2), toSize: 8)), g: \(pad(string: String(pixelRBGValuesBefore[i].green, radix: 2), toSize: 8)), b:\(pad(string: String(pixelRBGValuesBefore[i].blue, radix: 2), toSize: 8))) after: (r:\(pad(string: String(pixelRBGValuesAfter[i].red, radix: 2), toSize: 8)), g: \(pad(string: String(pixelRBGValuesAfter[i].green, radix: 2), toSize: 8)), b:\(pad(string: String(pixelRBGValuesAfter[i].blue, radix: 2), toSize: 8)))")
-       }
     }
 
     @objc func handleDecode(_ sender: UITapGestureRecognizer) {
@@ -277,27 +314,27 @@ extension MainDashboardViewController {
         var decodedText = ""
         var iterator = 0
         var bytesArray: [UInt8] = []
-        var placeholder: UInt8 = 00000000
+        var placeholder: UInt8 = 0b00000000
         for pixel in pixelRBGValues {
-//            if decodedText.contains("END") {
-//                break
-            //            }
-            print(String(pixel.red, radix: 2))
-            if pixel.x == 3*8 {
+            if decodedText.contains("|") {
                 break
             }
+
             if iterator == 7 {
-                print("❌" + String(placeholder, radix: 2))
+                switchByIndex(index: iterator, byte: &placeholder, to: pixel.red.b0)
+                print("➡️" + String(placeholder, radix: 2))
                 bytesArray.append(placeholder)
                 decodedText = String(decoding: bytesArray, as: UTF8.self)
                 iterator = 0
-                placeholder = 0
+                placeholder = 0b00000000
                 print("___")
             } else {
                 switchByIndex(index: iterator, byte: &placeholder, to: pixel.red.b0)
                 iterator += 1
             }
+
         }
+
         self.decodeButton.setTitle(decodedText, for: .normal)
     }
 
