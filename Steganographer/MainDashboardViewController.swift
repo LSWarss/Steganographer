@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DisguisedSwiftly
 
 final class MainDashboardViewController: UIViewController {
 
@@ -60,7 +61,7 @@ final class MainDashboardViewController: UIViewController {
         button.selectedText = "Decode"
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(self.handleDecode(_:)), for: .touchUpInside)
-        button.setAccessibiltyWithIdentifier("decodeButton")
+        button.setAccessibiltyWithIdentifier(with: "decodeButton")
         return button
     }()
 
@@ -150,46 +151,30 @@ extension MainDashboardViewController {
 
        for letter in encodedTextBitsArray {
            print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
-          for index in 0..<8 {
+           for index in 0..<letter.bitWidth {
              switch index {
              case 0:
-                print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b7, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 1:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b6, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 2:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b5, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 3:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b4, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 4:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b3, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 5:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b2, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 6:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b1, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              case 7:
-                 print("Change number: \(index)")
-//                print("letter: \(pad(string: String(letter, radix: 2), toSize: 8))")
                 changeLSB(letterBit: letter.b0, pixelsArray: &imageRGBPixelValues, positionX: iterator, positionY: 0)
                 iterator += 1
              default:
@@ -231,16 +216,16 @@ extension MainDashboardViewController {
        if let pixelPos = pixelsArray.firstIndex(where: { $0.x == positionX && $0.y == positionY}) {
           var newPixel = pixelsArray[pixelPos]
           before = newPixel.red
-          newPixel.red = pixelsArray[pixelPos].red.setb0(letterBit)
+          newPixel.red.setb0(letterBit)
           after = newPixel.red
           pixelsArray[pixelPos] = newPixel
        }
 
-       var strBef = pad(string: String(before, radix: 2), toSize: 8)
+        let strBef = pad(string: String(before, radix: 2), toSize: 8)
         let lastBef = strBef.last!
-        var strAft = pad(string: String(after, radix: 2), toSize: 8)
+        let strAft = pad(string: String(after, radix: 2), toSize: 8)
         let lastAft = strAft.last!
-        print("before 0 bit change: \(strBef)➡️\(lastBef)⬅️ and after: \(strAft)➡️\(lastAft)⬅️")
+        print("before 0 bit change RED value: \(strBef) ➡️\(lastBef)⬅️ and after: \(strAft) ➡️\(lastAft)⬅️")
     }
 
     func getArrayOfBytesFromImage(imageData: NSData) -> [UInt8] {
@@ -276,18 +261,6 @@ extension MainDashboardViewController {
 extension MainDashboardViewController {
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-//       let data = imageView.image?.pngData()
-//       var bytes = getArrayOfBytesFromImage(imageData: data! as NSData)
-//
-//       for i in 0..<bytes.count {
-//          let before = bytes[i]
-//          bytes[i] = bytes[i].setb0(0)
-//          let after = bytes[i]
-//          let strBef = pad(string: String(before, radix: 2), toSize: 8)
-//          let strAft = pad(string: String(after, radix: 2), toSize: 8)
-//          print("\(i) byte before 0 bit change: \(strBef) and after: \(strAft) ")
-//       }
-
        let encodeText = "END"
        let pixelRBGValuesBefore = getRGBValuesWithPosionFromImage(image: imageView.image!)
        imageView.image = encodeTextInImage(with: encodeText, image: imageView.image)
@@ -297,11 +270,6 @@ extension MainDashboardViewController {
            // swiftlint:disable line_length
            print("Pixel (\(pixelRBGValuesAfter[i].x),\(pixelRBGValuesAfter[i].y)) RGB value before: (r:\(pad(string: String(pixelRBGValuesBefore[i].red, radix: 2), toSize: 8)), g: \(pad(string: String(pixelRBGValuesBefore[i].green, radix: 2), toSize: 8)), b:\(pad(string: String(pixelRBGValuesBefore[i].blue, radix: 2), toSize: 8))) after: (r:\(pad(string: String(pixelRBGValuesAfter[i].red, radix: 2), toSize: 8)), g: \(pad(string: String(pixelRBGValuesAfter[i].green, radix: 2), toSize: 8)), b:\(pad(string: String(pixelRBGValuesAfter[i].blue, radix: 2), toSize: 8)))")
        }
-
-//       let datos: NSData = NSData(bytes: bytes, length: bytes.count)
-//       let newImage = UIImage(data: datos as Data) // Note it's optional. Don't force unwrap!!!
-//       imageView.image = newImage
-
     }
 
     @objc func handleDecode(_ sender: UITapGestureRecognizer) {
@@ -313,18 +281,22 @@ extension MainDashboardViewController {
         for pixel in pixelRBGValues {
 //            if decodedText.contains("END") {
 //                break
-//            }
+            //            }
+            print(String(pixel.red, radix: 2))
             if pixel.x == 3*8 {
                 break
             }
             if iterator == 7 {
+                print("❌" + String(placeholder, radix: 2))
                 bytesArray.append(placeholder)
                 decodedText = String(decoding: bytesArray, as: UTF8.self)
                 iterator = 0
-                placeholder = 00000000
+                placeholder = 0
+                print("___")
+            } else {
+                switchByIndex(index: iterator, byte: &placeholder, to: pixel.red.b0)
+                iterator += 1
             }
-            switchByIndex(index: iterator, byte: &placeholder, to: pixel.red.b0)
-            iterator += 1
         }
         self.decodeButton.setTitle(decodedText, for: .normal)
     }
@@ -332,21 +304,21 @@ extension MainDashboardViewController {
     func switchByIndex(index: Int, byte: inout UInt8, to: UInt8) {
         switch index {
         case 0:
-            byte = byte.setb7(to)
+            byte.setb7(to)
         case 1:
-            byte = byte.setb6(to)
+            byte.setb6(to)
         case 2:
-            byte = byte.setb5(to)
+            byte.setb5(to)
         case 3:
-            byte = byte.setb4(to)
+            byte.setb4(to)
         case 4:
-            byte = byte.setb3(to)
+            byte.setb3(to)
         case 5:
-            byte = byte.setb2(to)
+            byte.setb2(to)
         case 6:
-            byte = byte.setb1(to)
+            byte.setb1(to)
         case 7:
-            byte = byte.setb0(to)
+            byte.setb0(to)
         default:
             break
         }

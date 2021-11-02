@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D04C6564-0834-4FF1-B4F0-A089BA6C1023"
+            uuid = "38F6D99E-3205-43E4-ADA1-1A4F6EC12FCB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Steganographer/MainDashboardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "handleDecode(_:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DisguisedSwiftly",
+        "repositoryURL": "https://github.com/LSWarss/DisguisedSwiftly",
+        "state": {
+          "branch": "main",
+          "revision": "395e5a6126c0668018323508e321e64dabecb486",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
