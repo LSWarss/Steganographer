@@ -72,20 +72,6 @@ final class MainDashboardViewController: UIViewController {
         setupLayout()
     }
 
-    @objc func onEncodePress() {
-        print("Encode Button Pressed from Main")
-        let encodingViewController = EncodingViewController()
-
-        self.navigationController?.pushViewController(encodingViewController, animated: true)
-    }
-
-    @objc func onDecodePress() {
-        print("Decode Button Pressed from Main")
-        let decodingViewController = DecodingViewController()
-
-        self.navigationController?.pushViewController(decodingViewController, animated: true)
-    }
-
     @objc func onInfoPress() {
         print("Info Button Pressed from Main")
     }
