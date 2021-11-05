@@ -17,20 +17,24 @@ protocol AnyView {
     func updateText(with text: String)
 }
 
-final class SteganographyViewController : AnyView, UIViewController {
+final class SteganographyViewController: UIViewController, AnyView {
+
     var presenter: AnyPresenter?
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     func updateImage(with image: UIImage) {
-        <#code#>
+
     }
-    
+
     func updateImage(with error: String) {
-        <#code#>
+
     }
-    
+
     func updateText(with text: String) {
-        <#code#>
+
     }
-    
-    
+
 }

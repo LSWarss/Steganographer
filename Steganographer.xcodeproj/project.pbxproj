@@ -10,7 +10,6 @@
 		7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3294271DD70000A789FA /* AppDelegate.swift */; };
 		7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3296271DD70000A789FA /* SceneDelegate.swift */; };
 		7A0F3299271DD70000A789FA /* MainDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */; };
-		7A0F329C271DD70000A789FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329A271DD70000A789FA /* Main.storyboard */; };
 		7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329D271DD70100A789FA /* Assets.xcassets */; };
 		7A0F32A1271DD70100A789FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */; };
 		7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F32A8271DF0A100A789FA /* RoundedButton.swift */; };
@@ -19,7 +18,6 @@
 		7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */; };
 		7A6AF5872734549E0061E3E4 /* SteganographyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */; };
 		7A6AF589273454AC0061E3E4 /* SteganographyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */; };
-		7A6AF58B273454B70061E3E4 /* SteganographyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF58A273454B70061E3E4 /* SteganographyEntity.swift */; };
 		7A6AF58D273454C00061E3E4 /* SteganographyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +26,6 @@
 		7A0F3294271DD70000A789FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A0F3296271DD70000A789FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDashboardViewController.swift; sourceTree = "<group>"; };
-		7A0F329B271DD70000A789FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A0F329D271DD70100A789FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0F32A0271DD70100A789FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0F32A2271DD70100A789FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,7 +34,6 @@
 		7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyViewController.swift; sourceTree = "<group>"; };
 		7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyInteractor.swift; sourceTree = "<group>"; };
 		7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyPresenter.swift; sourceTree = "<group>"; };
-		7A6AF58A273454B70061E3E4 /* SteganographyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyEntity.swift; sourceTree = "<group>"; };
 		7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +74,6 @@
 				7A0F3294271DD70000A789FA /* AppDelegate.swift */,
 				7A0F3296271DD70000A789FA /* SceneDelegate.swift */,
 				7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */,
-				7A0F329A271DD70000A789FA /* Main.storyboard */,
 				7A0F329D271DD70100A789FA /* Assets.xcassets */,
 				7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */,
 				7A0F32A2271DD70100A789FA /* Info.plist */,
@@ -108,7 +103,6 @@
 				7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */,
 				7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */,
 				7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */,
-				7A6AF58A273454B70061E3E4 /* SteganographyEntity.swift */,
 				7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */,
 			);
 			path = Steganography;
@@ -205,7 +199,6 @@
 			files = (
 				7A0F32A1271DD70100A789FA /* LaunchScreen.storyboard in Resources */,
 				7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */,
-				7A0F329C271DD70000A789FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +237,6 @@
 				7A6AF589273454AC0061E3E4 /* SteganographyPresenter.swift in Sources */,
 				7A6AF5872734549E0061E3E4 /* SteganographyInteractor.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,
-				7A6AF58B273454B70061E3E4 /* SteganographyEntity.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
 				7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */,
 			);
@@ -253,14 +245,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7A0F329A271DD70000A789FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7A0F329B271DD70000A789FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -402,7 +386,6 @@
 				INFOPLIST_FILE = Steganographer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -432,7 +415,6 @@
 				INFOPLIST_FILE = Steganographer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

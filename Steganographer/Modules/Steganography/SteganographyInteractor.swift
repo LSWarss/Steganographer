@@ -20,10 +20,9 @@ final class SteganographyInteractor: AnyInteractor {
 
     var presenter: AnyPresenter?
 
-    var stego: Stego?
+    internal var stego: Stego?
 
-    init(presenter: AnyPresenter, stego: Stego) {
-        self.presenter = presenter
+    init(stego: Stego) {
         self.stego = stego
     }
 

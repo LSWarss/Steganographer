@@ -43,6 +43,12 @@ final class SteganographyPresenter: AnyPresenter {
 
     var view: AnyView?
 
+    init(view: AnyView, interactor: AnyInteractor, router: AnyRouter) {
+        self.router = router
+        self.view = view
+        self.interactor = interactor
+    }
+
     func interactorDidFinishEndcoding(with result: Result<UIImage, Error>) {
         switch result {
         case .success(let image):
