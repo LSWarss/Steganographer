@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3294271DD70000A789FA /* AppDelegate.swift */; };
 		7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3296271DD70000A789FA /* SceneDelegate.swift */; };
-		7A0F3299271DD70000A789FA /* MainDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */; };
 		7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329D271DD70100A789FA /* Assets.xcassets */; };
 		7A0F32A1271DD70100A789FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */; };
 		7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F32A8271DF0A100A789FA /* RoundedButton.swift */; };
@@ -19,13 +18,13 @@
 		7A6AF5872734549E0061E3E4 /* SteganographyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */; };
 		7A6AF589273454AC0061E3E4 /* SteganographyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */; };
 		7A6AF58D273454C00061E3E4 /* SteganographyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */; };
+		7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E164E2737CF92004B374D /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A0F3291271DD70000A789FA /* Steganographer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steganographer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0F3294271DD70000A789FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A0F3296271DD70000A789FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDashboardViewController.swift; sourceTree = "<group>"; };
 		7A0F329D271DD70100A789FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0F32A0271DD70100A789FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0F32A2271DD70100A789FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyInteractor.swift; sourceTree = "<group>"; };
 		7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyPresenter.swift; sourceTree = "<group>"; };
 		7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyRouter.swift; sourceTree = "<group>"; };
+		7A6E164E2737CF92004B374D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,6 @@
 				7AF3044227280ADE005A5F09 /* Components */,
 				7A0F3294271DD70000A789FA /* AppDelegate.swift */,
 				7A0F3296271DD70000A789FA /* SceneDelegate.swift */,
-				7A0F3298271DD70000A789FA /* MainDashboardViewController.swift */,
 				7A0F329D271DD70100A789FA /* Assets.xcassets */,
 				7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */,
 				7A0F32A2271DD70100A789FA /* Info.plist */,
@@ -85,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				7A6AF551273118E40061E3E4 /* UIView.swift */,
+				7A6E164E2737CF92004B374D /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,9 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6AF552273118E40061E3E4 /* UIView.swift in Sources */,
-				7A0F3299271DD70000A789FA /* MainDashboardViewController.swift in Sources */,
 				7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */,
 				7A6AF58D273454C00061E3E4 /* SteganographyRouter.swift in Sources */,
+				7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */,
 				7A6AF589273454AC0061E3E4 /* SteganographyPresenter.swift in Sources */,
 				7A6AF5872734549E0061E3E4 /* SteganographyInteractor.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,

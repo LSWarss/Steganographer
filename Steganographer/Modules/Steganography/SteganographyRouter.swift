@@ -17,12 +17,12 @@ protocol AnyRouter {
     static func start() -> AnyRouter
 }
 
-class UserRouter: AnyRouter {
+class StegoRouter: AnyRouter {
     var entry: EntryPoint?
 
     static func start() -> AnyRouter {
 
-        let router = UserRouter()
+        let router = StegoRouter()
         var view: AnyView = SteganographyViewController()
         var interactor: AnyInteractor = SteganographyInteractor(stego: Stego())
         let presenter: AnyPresenter = SteganographyPresenter(view: view, interactor: interactor, router: router)

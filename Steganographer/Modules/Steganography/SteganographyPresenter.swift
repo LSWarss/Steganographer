@@ -68,10 +68,10 @@ final class SteganographyPresenter: AnyPresenter {
     }
 
     func showLoader() {
-
+        view?.showSpinner()
     }
 
     func dismissLoader() {
-
+        view?.dismissSpinner()
     }
 }
