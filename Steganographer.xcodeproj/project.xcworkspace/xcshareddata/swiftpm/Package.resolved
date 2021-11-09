@@ -5,8 +5,8 @@
         "package": "DisguisedSwiftly",
         "repositoryURL": "https://github.com/LSWarss/DisguisedSwiftly",
         "state": {
-          "branch": "main",
-          "revision": "e59f8164a054194df6a5898962ea5e5234589384",
+          "branch": "dev/optimising-rgb-values-getter",
+          "revision": "b7933538d47f61a310ac5beee5b94495a6219a9a",
           "version": null
         }
       }
