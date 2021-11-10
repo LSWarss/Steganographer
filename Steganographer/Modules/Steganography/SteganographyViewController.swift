@@ -65,13 +65,14 @@ final class SteganographyViewController: UIViewController, AnyView {
     lazy var loadingView: UIView = {
         let loadingView = UIView()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         loadingView.isHidden = true
         return loadingView
     }()
 
     lazy var loadingSpinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        spinner.color = UIColor.white
         spinner.translatesAutoresizingMaskIntoConstraints = false
         return spinner
     }()

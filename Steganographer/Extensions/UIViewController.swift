@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit    
+import UIKit
 
 // Alert function in shared class
 extension UIViewController {
