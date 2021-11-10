@@ -28,10 +28,16 @@ final class SteganographyInteractor: AnyInteractor {
 
     func encodeWithText(with text: String, in image: UIImage) {
         presenter?.showLoader()
-
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-            let image = self.stego?.encodeTextInImage(with: text, image: image, finished: { finished in
-                finished ? print("Ended encoding") : print("Didnt finish")
+            let image = self.stego?.encodeTextInImage(with: text, image: image, progress: { [weak self] progress in
+                switch progress {
+                case .ended:
+                    self?.presenter?.dismissLoader()
+                case .working:
+                    print("Encoding")
+                case .failed:
+                    self?.presenter?.dismissLoader()
+                }
 
             })
 
@@ -39,14 +45,20 @@ final class SteganographyInteractor: AnyInteractor {
 
             self.presenter?.interactorDidFinishEndcoding(with: .success(image))
         }
-        presenter?.dismissLoader()
     }
 
     func decodeFromImage(from image: UIImage) {
         presenter?.showLoader()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
-            let decodedText = self.stego?.decodeTextInImage(image: image, finished: { finished in
-                finished ? print("Ended decoding") : print("Didnt finish")
+            let decodedText = self.stego?.decodeTextInImage(image: image, progress: { [weak self] progress in
+                switch progress {
+                case .ended:
+                    self?.presenter?.dismissLoader()
+                case .working:
+                    print("Decoding")
+                case .failed:
+                    self?.presenter?.dismissLoader()
+                }
             })
 
             guard let decodedText = decodedText else { return }
@@ -54,7 +66,6 @@ final class SteganographyInteractor: AnyInteractor {
             self.presenter?.interactorDidFinishDecoding(with: .success(decodedText))
 
         }
-        presenter?.dismissLoader()
     }
 
 }

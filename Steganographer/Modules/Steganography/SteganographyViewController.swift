@@ -177,6 +177,8 @@ final class SteganographyViewController: UIViewController, AnyView {
     func updateImage(with image: UIImage) {
         DispatchQueue.main.async {
             self.imageView.image = image
+            self.imageView.layer.borderColor = UIColor.purple.cgColor
+            self.imageView.layer.borderWidth = 3
         }
     }
 
@@ -263,6 +265,8 @@ extension SteganographyViewController: PHPickerViewControllerDelegate {
 
                 DispatchQueue.main.async {
                     self.imageView.image = image
+                    self.imageView.layer.borderColor = UIColor.green.cgColor
+                    self.imageView.layer.borderWidth = 3
                 }
             }
         }
