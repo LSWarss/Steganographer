@@ -460,7 +460,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LSWarss/DisguisedSwiftly";
 			requirement = {
-				branch = "dev/optimising-rgb-values-getter";
+				branch = main;
 				kind = branch;
 			};
 		};

@@ -35,7 +35,7 @@ protocol AnyPresenter {
     func interactorDidFinishDecoding(with result: Result<String, Error>)
 }
 
-final class SteganographyPresenter: AnyPresenter {
+final class SteganographyPresenter: NSObject, AnyPresenter {
 
     var router: AnyRouter?
 
@@ -52,7 +52,10 @@ final class SteganographyPresenter: AnyPresenter {
     func interactorDidFinishEndcoding(with result: Result<UIImage, Error>) {
         switch result {
         case .success(let image):
-            view?.updateImage(with: image)
+            let url = try? exportImageAsPNG(image, filename: "image_enc_\(Int.random(in: 1..<99999))")
+            guard let url = url else { return }
+
+            view?.updateImage(with: image, and: url)
         case .failure(let error):
             view?.updateImage(with: error.localizedDescription)
         }
@@ -73,5 +76,22 @@ final class SteganographyPresenter: AnyPresenter {
 
     func dismissLoader() {
         view?.dismissSpinner()
+    }
+}
+
+// MARK: Image saving helpers
+extension SteganographyPresenter {
+
+    enum ImageProcessingError: Error {
+        case couldNotCreatePNGData
+    }
+
+    private func exportImageAsPNG(_ image: UIImage, filename: String) throws -> URL {
+        guard let pngData = image.pngData() else { throw ImageProcessingError.couldNotCreatePNGData }
+        let temporaryURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent(filename)
+            .appendingPathExtension("png")
+        try pngData.write(to: temporaryURL, options: [])
+        return temporaryURL
     }
 }

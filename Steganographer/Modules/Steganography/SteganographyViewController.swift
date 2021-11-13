@@ -13,7 +13,7 @@ protocol AnyView {
 
     var presenter: AnyPresenter? { get set }
 
-    func updateImage(with image: UIImage)
+    func updateImage(with image: UIImage, and url: URL)
     func updateImage(with error: String)
     func updateText(with text: String)
     func showSpinner()
@@ -74,6 +74,7 @@ final class SteganographyViewController: UIViewController, AnyView {
         let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         spinner.color = UIColor.white
         spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.color = .white
         return spinner
     }()
 
@@ -175,12 +176,16 @@ final class SteganographyViewController: UIViewController, AnyView {
         loadingSpinner.widthAnchor.constraint(equalToConstant: 32).isActive = true
     }
 
-    func updateImage(with image: UIImage) {
+    func updateImage(with image: UIImage, and url: URL) {
         DispatchQueue.main.async {
             self.imageView.image = image
             self.imageView.layer.borderColor = UIColor.purple.cgColor
             self.imageView.layer.borderWidth = 3
+
+            let activityView = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+            self.present(activityView, animated: true)
         }
+
     }
 
     func updateImage(with error: String) {
