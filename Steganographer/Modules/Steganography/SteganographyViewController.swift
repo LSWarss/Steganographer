@@ -5,14 +5,15 @@
 //  Created by Łukasz Stachnik on 04/11/2021.
 //
 
-import Foundation
 import UIKit
+import Photos
+import PhotosUI
 
 protocol AnyView {
 
     var presenter: AnyPresenter? { get set }
 
-    func updateImage(with image: UIImage)
+    func updateImage(with image: UIImage, and url: URL)
     func updateImage(with error: String)
     func updateText(with text: String)
     func showSpinner()
@@ -35,6 +36,7 @@ final class SteganographyViewController: UIViewController, AnyView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Steganographer"
         titleLabel.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        titleLabel.textColor = .black
         titleLabel.textAlignment = .center
         return titleLabel
     }()
@@ -42,6 +44,7 @@ final class SteganographyViewController: UIViewController, AnyView {
     lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.textColor = .gray
         descriptionLabel.text = "Press below to choose your image 🌃"
         descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         descriptionLabel.textAlignment = .center
@@ -52,20 +55,26 @@ final class SteganographyViewController: UIViewController, AnyView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "mona")
+        imageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage(_:)))
+        imageView.contentMode = .scaleToFill
+        imageView.addGestureRecognizer(tapGesture)
         return imageView
     }()
 
     lazy var loadingView: UIView = {
         let loadingView = UIView()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        loadingView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         loadingView.isHidden = true
         return loadingView
     }()
 
     lazy var loadingSpinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        spinner.color = UIColor.white
         spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.color = .white
         return spinner
     }()
 
@@ -125,9 +134,9 @@ final class SteganographyViewController: UIViewController, AnyView {
         imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -100).isActive = true
         imageView.heightAnchor.constraint(lessThanOrEqualTo: containerView.heightAnchor,
-                                          multiplier: 0.5).isActive = true
+                                          multiplier: 0.4).isActive = true
         imageView.widthAnchor.constraint(lessThanOrEqualTo: containerView.widthAnchor,
-                                         multiplier: 0.5).isActive = true
+                                         multiplier: 0.6).isActive = true
 
         descriptionLabel.bottomAnchor.constraint(equalTo: imageView.topAnchor, constant: -16).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
@@ -167,10 +176,16 @@ final class SteganographyViewController: UIViewController, AnyView {
         loadingSpinner.widthAnchor.constraint(equalToConstant: 32).isActive = true
     }
 
-    func updateImage(with image: UIImage) {
+    func updateImage(with image: UIImage, and url: URL) {
         DispatchQueue.main.async {
             self.imageView.image = image
+            self.imageView.layer.borderColor = UIColor.purple.cgColor
+            self.imageView.layer.borderWidth = 3
+
+            let activityView = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+            self.present(activityView, animated: true)
         }
+
     }
 
     func updateImage(with error: String) {
@@ -178,26 +193,41 @@ final class SteganographyViewController: UIViewController, AnyView {
     }
 
     func updateText(with text: String) {
-        DispatchQueue.main.async {
-            self.messageInput.text = text
-        }
-
         self.showAlert(title: "Decoded message", msg: text)
     }
 
     func showSpinner() {
-        loadingView.isHidden = false
-        loadingSpinner.startAnimating()
+        self.loadingSpinner.startAnimating()
+        self.loadingView.isHidden = false
     }
 
     func dismissSpinner() {
-        loadingView.isHidden = true
-        loadingSpinner.stopAnimating()
+        self.loadingSpinner.stopAnimating()
+        self.loadingView.isHidden = true
     }
 
 }
 
+// MARK: Tap etc. actions
 extension SteganographyViewController {
+
+    @objc func selectImage(_ sender: UITapGestureRecognizer) {
+
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.showPhotoLibrary()
+            }
+        }
+    }
+
+    private func showPhotoLibrary() {
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.selectionLimit = 1
+        config.filter = .images
+        let viewController = PHPickerViewController(configuration: config)
+        viewController.delegate = self
+        present(viewController, animated: true)
+    }
 
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
@@ -220,5 +250,31 @@ extension SteganographyViewController {
         }
 
         presenter?.interactor?.decodeFromImage(from: image)
+    }
+
+}
+
+// MARK: PHPickerDelegate
+extension SteganographyViewController: PHPickerViewControllerDelegate {
+
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true) {
+            print("dismissed")
+        }
+
+        results.forEach { result in
+            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+
+                guard let image = reading as? UIImage, error == nil else {
+                    return
+                }
+
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                    self.imageView.layer.borderColor = UIColor.green.cgColor
+                    self.imageView.layer.borderWidth = 3
+                }
+            }
+        }
     }
 }
