@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let steganographyRouter = StegoRouter.start()
+        let steganographyRouter = SteganographyRouter.start()
 
         let initialVC = steganographyRouter.entry
 

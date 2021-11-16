@@ -12,6 +12,10 @@
 		7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329D271DD70100A789FA /* Assets.xcassets */; };
 		7A0F32A1271DD70100A789FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */; };
 		7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F32A8271DF0A100A789FA /* RoundedButton.swift */; };
+		7A25849B27442B1800B5983E /* SteganographyTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A25849A27442B1800B5983E /* SteganographyTwoViewController.swift */; };
+		7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A227442E0800B5983E /* StegoHeaderCell.swift */; };
+		7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A4274434A800B5983E /* NSMutableAttributedString.swift */; };
+		7A2584A82744356300B5983E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A72744356300B5983E /* UIColor.swift */; };
 		7A6AF54F27304FC20061E3E4 /* DisguisedSwiftly in Frameworks */ = {isa = PBXBuildFile; productRef = 7A6AF54E27304FC20061E3E4 /* DisguisedSwiftly */; };
 		7A6AF552273118E40061E3E4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF551273118E40061E3E4 /* UIView.swift */; };
 		7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */; };
@@ -29,6 +33,10 @@
 		7A0F32A0271DD70100A789FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0F32A2271DD70100A789FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F32A8271DF0A100A789FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		7A25849A27442B1800B5983E /* SteganographyTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyTwoViewController.swift; sourceTree = "<group>"; };
+		7A2584A227442E0800B5983E /* StegoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoHeaderCell.swift; sourceTree = "<group>"; };
+		7A2584A4274434A800B5983E /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		7A2584A72744356300B5983E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7A6AF551273118E40061E3E4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyViewController.swift; sourceTree = "<group>"; };
 		7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyInteractor.swift; sourceTree = "<group>"; };
@@ -80,11 +88,63 @@
 			path = Steganographer;
 			sourceTree = "<group>";
 		};
+		7A25849C27442D9700B5983E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A2584A027442DB700B5983E /* SteganographyDashboardView */,
+				7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A25849D27442DA100B5983E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		7A25849E27442DA700B5983E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7A25849F27442DAE00B5983E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7A2584A027442DB700B5983E /* SteganographyDashboardView */ = {
+			isa = PBXGroup;
+			children = (
+				7A25849A27442B1800B5983E /* SteganographyTwoViewController.swift */,
+				7A2584A127442DD000B5983E /* Table Cells */,
+			);
+			path = SteganographyDashboardView;
+			sourceTree = "<group>";
+		};
+		7A2584A127442DD000B5983E /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7A2584A227442E0800B5983E /* StegoHeaderCell.swift */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
 		7A6AF550273118D00061E3E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				7A6AF551273118E40061E3E4 /* UIView.swift */,
 				7A6E164E2737CF92004B374D /* UIViewController.swift */,
+				7A2584A4274434A800B5983E /* NSMutableAttributedString.swift */,
+				7A2584A72744356300B5983E /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -100,10 +160,10 @@
 		7A6AF5832734544E0061E3E4 /* Steganography */ = {
 			isa = PBXGroup;
 			children = (
-				7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */,
-				7A6AF5862734549E0061E3E4 /* SteganographyInteractor.swift */,
-				7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */,
-				7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */,
+				7A25849F27442DAE00B5983E /* Router */,
+				7A25849E27442DA700B5983E /* Presenter */,
+				7A25849D27442DA100B5983E /* Interactor */,
+				7A25849C27442D9700B5983E /* View */,
 			);
 			path = Steganography;
 			sourceTree = "<group>";
@@ -238,6 +298,10 @@
 				7A6AF5872734549E0061E3E4 /* SteganographyInteractor.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
+				7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */,
+				7A2584A82744356300B5983E /* UIColor.swift in Sources */,
+				7A25849B27442B1800B5983E /* SteganographyTwoViewController.swift in Sources */,
+				7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */,
 				7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

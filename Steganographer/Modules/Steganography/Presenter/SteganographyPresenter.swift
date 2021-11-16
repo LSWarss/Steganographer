@@ -24,10 +24,10 @@ extension StegoError: LocalizedError {
     }
 }
 
-protocol AnyPresenter {
-    var router: AnyRouter? { get set }
-    var interactor: AnyInteractor? { get set }
-    var view: AnyView? { get set }
+protocol StegoPresenter {
+    var router: StegoRouter? { get set }
+    var interactor: StegoInteractor? { get set }
+    var view: SteganographyView? { get set }
 
     func showLoader()
     func dismissLoader()
@@ -35,15 +35,15 @@ protocol AnyPresenter {
     func interactorDidFinishDecoding(with result: Result<String, Error>)
 }
 
-final class SteganographyPresenter: NSObject, AnyPresenter {
+final class SteganographyPresenter: NSObject, StegoPresenter {
 
-    var router: AnyRouter?
+    var router: StegoRouter?
 
-    var interactor: AnyInteractor?
+    var interactor: StegoInteractor?
 
-    var view: AnyView?
+    var view: SteganographyView?
 
-    init(view: AnyView, interactor: AnyInteractor, router: AnyRouter) {
+    init(view: SteganographyView, interactor: StegoInteractor, router: StegoRouter) {
         self.router = router
         self.view = view
         self.interactor = interactor
