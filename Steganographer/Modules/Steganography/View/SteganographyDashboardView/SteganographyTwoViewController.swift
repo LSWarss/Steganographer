@@ -36,6 +36,7 @@ final class SteganographyViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         tableView.register(StegoHeaderCell.self, forCellReuseIdentifier: "header")
+        tableView.register(CardsRowCell.self, forCellReuseIdentifier: "collectionViewCell")
     }
 
     func setupView() {
@@ -53,17 +54,42 @@ final class SteganographyViewController: UIViewController {
 
 extension SteganographyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "header", for: indexPath) as? StegoHeaderCell
 
-        cell?.welcomeMessageLabel.attributedText = NSMutableAttributedString()
-            .mainGreenHighlight("Hello Łukasz,\n")
-            .bold("are there anything we can help you with?")
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "header", for: indexPath) as? StegoHeaderCell
 
-        return cell!
+            cell?.welcomeMessageLabel.attributedText = NSMutableAttributedString()
+                .mainGreenHighlight("Hello Łukasz,\n")
+                .bold("are there anything we can help you with?")
+
+            guard let cell = cell else { return UITableViewCell() }
+
+            return cell
+        } else if indexPath.row == 1 {
+            let collectionViewCell = tableView.dequeueReusableCell(withIdentifier: "collectionViewCell", for: indexPath) as? CardsRowCell
+
+            guard let collectionViewCell = collectionViewCell else { return UITableViewCell() }
+
+            return collectionViewCell
+        }
+
+        let cell = UITableViewCell()
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView,
+               heightForRowAt indexPath: IndexPath) -> CGFloat {
+       // Make the first row larger to accommodate a custom cell.
+      if indexPath.row == 1 {
+          return 150
+       }
+
+       // Use the default size for all other rows.
+       return UITableView.automaticDimension
     }
 
 }

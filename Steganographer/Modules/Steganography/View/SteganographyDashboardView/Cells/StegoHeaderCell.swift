@@ -9,7 +9,7 @@ import UIKit
 
 final class StegoHeaderCell: UITableViewCell {
 
-    let welcomeMessageLabel: UILabel  = {
+    lazy var welcomeMessageLabel: UILabel  = {
        let lbl = UILabel()
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 20)
