@@ -70,8 +70,12 @@ extension SteganographyViewController: UITableViewDelegate, UITableViewDataSourc
 
             return cell
         } else if indexPath.row == 1 {
-            let collectionViewCell = tableView.dequeueReusableCell(withIdentifier: "collectionViewCell", for: indexPath) as? CardsRowCell
-
+            let collectionViewCell = tableView.dequeueReusableCell(withIdentifier: "collectionViewCell",
+                                                                   for: indexPath) as? CardsRowCell
+            collectionViewCell?.cardsTitles = ["Encode", "Decode", "Info", "History"]
+            collectionViewCell?.cardsImages = [UIImage(named: "hide"), UIImage(named: "find"),
+                                               UIImage(named: "info"), UIImage(named: "history")]
+            
             guard let collectionViewCell = collectionViewCell else { return UITableViewCell() }
 
             return collectionViewCell
@@ -81,8 +85,7 @@ extension SteganographyViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
 
-    func tableView(_ tableView: UITableView,
-               heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        // Make the first row larger to accommodate a custom cell.
       if indexPath.row == 1 {
           return 150

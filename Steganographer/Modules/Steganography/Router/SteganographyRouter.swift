@@ -9,15 +9,9 @@ import Foundation
 import UIKit
 import DisguisedSwiftly
 
-typealias EntryPoint = SteganographyView & UIViewController
 
-protocol StegoRouter {
-    var entry: EntryPoint? { get }
 
-    static func start() -> StegoRouter
-}
-
-class SteganographyRouter: StegoRouter {
+class SteganographyRouter: PresenterToRouterSteganographyProtocol {
     var entry: EntryPoint?
 
     static func start() -> StegoRouter {
@@ -33,5 +27,10 @@ class SteganographyRouter: StegoRouter {
 
         return router
     }
+    
+    func showEncoding() {
+            
+    }
+    
 
 }

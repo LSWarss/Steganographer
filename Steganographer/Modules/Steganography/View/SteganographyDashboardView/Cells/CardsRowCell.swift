@@ -9,6 +9,9 @@ import UIKit
 
 class CardsRowCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    var cardsImages: [UIImage?] = []
+    var cardsTitles: [String] = []
+
     let imagesCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
@@ -67,13 +70,23 @@ class CardsRowCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return cardsTitles.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as? CardCell
 
+        myCell?.cardTitle = indexPath.row < cardsTitles.count ? cardsTitles[indexPath.row] : "Placeholder"
+        myCell?.cardImage = indexPath.row < cardsImages.count ? cardsImages[indexPath.row] : UIImage(named: "mona")
+        
+        switch indexPath.row {
+        case 0:
+            
+        }
+        
+        
         guard let cell = myCell else { return UICollectionViewCell() }
 
         return cell
