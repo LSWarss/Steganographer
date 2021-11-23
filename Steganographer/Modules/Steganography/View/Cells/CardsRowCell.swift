@@ -80,13 +80,7 @@ class CardsRowCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
 
         myCell?.cardTitle = indexPath.row < cardsTitles.count ? cardsTitles[indexPath.row] : "Placeholder"
         myCell?.cardImage = indexPath.row < cardsImages.count ? cardsImages[indexPath.row] : UIImage(named: "mona")
-        
-        switch indexPath.row {
-        case 0:
-            
-        }
-        
-        
+
         guard let cell = myCell else { return UICollectionViewCell() }
 
         return cell

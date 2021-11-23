@@ -11,7 +11,7 @@ import PhotosUI
 
 protocol SteganographyView {
 
-    var presenter: StegoPresenter? { get set }
+    var presenter: SteganographyPresenter? { get set }
 
     func updateImage(with image: UIImage, and url: URL)
     func updateImage(with error: String)
@@ -22,7 +22,7 @@ protocol SteganographyView {
 
 final class SteganographyViewController: UIViewController {
 
-    var presenter: StegoPresenter?
+    var presenter: SteganographyPresenter?
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -75,7 +75,7 @@ extension SteganographyViewController: UITableViewDelegate, UITableViewDataSourc
             collectionViewCell?.cardsTitles = ["Encode", "Decode", "Info", "History"]
             collectionViewCell?.cardsImages = [UIImage(named: "hide"), UIImage(named: "find"),
                                                UIImage(named: "info"), UIImage(named: "history")]
-            
+
             guard let collectionViewCell = collectionViewCell else { return UITableViewCell() }
 
             return collectionViewCell

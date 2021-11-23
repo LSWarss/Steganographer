@@ -9,28 +9,66 @@ import Foundation
 import UIKit
 import DisguisedSwiftly
 
+// MARK: Router Input (Presenter -> Router)
+protocol SteganographyRouter: AnyObject {
 
+    static func createModule() -> UINavigationController
+    func pushToEncoding(on view: EncodingView)
+    func pushToDecoding(on view: DecodingView)
+    func pushToInfo(on view: InfoView)
+    func pushToHistory(on view: HistoryView)
+}
 
-class SteganographyRouter: PresenterToRouterSteganographyProtocol {
-    var entry: EntryPoint?
+class SteganographyRouterImpl: SteganographyRouter {
 
-    static func start() -> StegoRouter {
+    static func createModule() -> UINavigationController {
+        let viewController = SteganographyViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
 
-        let router = SteganographyRouter()
-        var view: SteganographyView = SteganographyViewController()
-        var interactor: StegoInteractor = SteganographyInteractor(stego: Stego())
-        let presenter: StegoPresenter = SteganographyPresenter(view: view, interactor: interactor, router: router)
-        view.presenter = presenter
-        interactor.presenter = presenter
+        let presenter: SteganographyPresenter = SteganographyPresenterImpl()
 
-        router.entry = view as? EntryPoint
+        viewController.presenter = presenter
+        viewController.presenter?.router = SteganographyRouterImpl()
+        viewController.presenter?.view = viewController
+        viewController.presenter?.interactor = SteganographyInteractorImpl(stego: Stego())
+        viewController.presenter?.interactor?.presenter = presenter
 
-        return router
+        return navigationController
     }
-    
+
+    func pushToEncoding(on view: EncodingView) {
+
+    }
+
+    func pushToDecoding(on view: DecodingView) {
+
+    }
+
+    func pushToInfo(on view: InfoView) {
+
+    }
+
+    func pushToHistory(on view: HistoryView) {
+
+    }
+
+//
+//    static func start() -> UINavigationController {
+//
+//        let router = SteganographyRouter()
+//        var view: SteganographyView = SteganographyViewController()
+//        var interactor: StanographyInteractor = SteganographyInteractorImpl(stego: Stego())
+//        let presenter: SteganographyPresenter = SteganographyPresenter(view: view, interactor: interactor, router: router)
+//        view.presenter = presenter
+//        interactor.presenter = presenter
+//
+//        router.entry = view
+//
+//        return router
+//    }
+
     func showEncoding() {
-            
+
     }
-    
 
 }

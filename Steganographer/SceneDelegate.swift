@@ -15,14 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let steganographyRouter = SteganographyRouter.start()
-
-        let initialVC = steganographyRouter.entry
-
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = initialVC
-        self.window = window
+        window.backgroundColor = .white
+        window.rootViewController = SteganographyRouterImpl.createModule()
         window.makeKeyAndVisible()
+
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

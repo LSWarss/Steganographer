@@ -6,6 +6,10 @@
 //
 import UIKit
 
-final class SteganographyDecodingViewController : UIViewController {
-    
+protocol DecodingView {
+
+}
+
+final class SteganographyDecodingViewController: UIViewController {
+
 }

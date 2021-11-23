@@ -9,16 +9,16 @@ import Foundation
 import DisguisedSwiftly
 import UIKit
 
-protocol StegoInteractor {
-    var presenter: StegoPresenter? { get set }
+protocol StanographyInteractor {
+    var presenter: SteganographyPresenter? { get set }
     var stego: Stego? { get set }
     func encodeWithText(with text: String, in image: UIImage)
     func decodeFromImage(from image: UIImage)
 }
 
-final class SteganographyInteractor: StegoInteractor {
+final class SteganographyInteractorImpl: StanographyInteractor {
 
-    var presenter: StegoPresenter?
+    var presenter: SteganographyPresenter?
 
     internal var stego: Stego?
 

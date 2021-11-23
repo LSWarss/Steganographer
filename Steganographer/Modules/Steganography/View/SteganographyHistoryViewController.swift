@@ -7,6 +7,10 @@
 
 import UIKit
 
-final class SteganographyHistoryViewController : UIViewController {
-    
+protocol HistoryView {
+
+}
+
+final class SteganographyHistoryViewController: UIViewController {
+
 }

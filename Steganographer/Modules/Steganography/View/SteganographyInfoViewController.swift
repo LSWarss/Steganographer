@@ -7,6 +7,10 @@
 
 import UIKit
 
-final class SteganographyInfoViewController : UIViewController {
-    
+protocol InfoView {
+
+}
+
+final class SteganographyInfoViewController: UIViewController {
+
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
-final class SteganographyEncodingViewController : UIViewController {
-    
+protocol EncodingView {
+
+}
+
+final class SteganographyEncodingViewController: UIViewController {
+
 }
