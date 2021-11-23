@@ -9,20 +9,18 @@ import UIKit
 import Photos
 import PhotosUI
 
-protocol SteganographyView {
+protocol SteganographyDashboardView {
 
-    var presenter: SteganographyPresenter? { get set }
+    var presenter: DashboardPresenter? { get set }
 
     func updateImage(with image: UIImage, and url: URL)
     func updateImage(with error: String)
     func updateText(with text: String)
-    func showSpinner()
-    func dismissSpinner()
 }
 
-final class SteganographyViewController: UIViewController {
+final class DashboardViewController: UIViewController {
 
-    var presenter: SteganographyPresenter?
+    var presenter: DashboardPresenter?
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -52,7 +50,8 @@ final class SteganographyViewController: UIViewController {
 
 }
 
-extension SteganographyViewController: UITableViewDelegate, UITableViewDataSource {
+extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -72,6 +71,8 @@ extension SteganographyViewController: UITableViewDelegate, UITableViewDataSourc
         } else if indexPath.row == 1 {
             let collectionViewCell = tableView.dequeueReusableCell(withIdentifier: "collectionViewCell",
                                                                    for: indexPath) as? CardsRowCell
+
+            collectionViewCell?.presenter = presenter
             collectionViewCell?.cardsTitles = ["Encode", "Decode", "Info", "History"]
             collectionViewCell?.cardsImages = [UIImage(named: "hide"), UIImage(named: "find"),
                                                UIImage(named: "info"), UIImage(named: "history")]
@@ -97,7 +98,7 @@ extension SteganographyViewController: UITableViewDelegate, UITableViewDataSourc
 
 }
 
-extension SteganographyViewController: SteganographyView {
+extension DashboardViewController: SteganographyDashboardView {
 
     func updateImage(with image: UIImage, and url: URL) {
 
@@ -108,14 +109,6 @@ extension SteganographyViewController: SteganographyView {
     }
 
     func updateText(with text: String) {
-
-    }
-
-    func showSpinner() {
-
-    }
-
-    func dismissSpinner() {
 
     }
 

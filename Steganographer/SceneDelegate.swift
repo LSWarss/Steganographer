@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
         window.backgroundColor = .white
-        window.rootViewController = SteganographyRouterImpl.createModule()
+        window.rootViewController = DashboardRouterImpl.createModule()
         window.makeKeyAndVisible()
 
         self.window = window

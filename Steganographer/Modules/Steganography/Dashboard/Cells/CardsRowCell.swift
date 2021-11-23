@@ -9,6 +9,8 @@ import UIKit
 
 class CardsRowCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    var presenter: DashboardPresenter?
+
     var cardsImages: [UIImage?] = []
     var cardsTitles: [String] = []
 
@@ -91,6 +93,15 @@ class CardsRowCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
 extension CardsRowCell {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("User tapped on item \(indexPath.row)")
+        
+        switch indexPath.row {
+        case 0:
+            presenter?.makeEncoding()
+        case 1:
+            presenter?.makeDecoding()
+        default:
+            print("Stego")
+        }
+
     }
 }

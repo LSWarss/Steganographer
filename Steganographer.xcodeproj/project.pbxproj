@@ -18,17 +18,23 @@
 		7A6AF54F27304FC20061E3E4 /* DisguisedSwiftly in Frameworks */ = {isa = PBXBuildFile; productRef = 7A6AF54E27304FC20061E3E4 /* DisguisedSwiftly */; };
 		7A6AF552273118E40061E3E4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF551273118E40061E3E4 /* UIView.swift */; };
 		7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */; };
-		7A6AF589273454AC0061E3E4 /* SteganographyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */; };
-		7A6AF58D273454C00061E3E4 /* SteganographyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */; };
+		7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF588273454AC0061E3E4 /* EncodingPresenter.swift */; };
+		7A6AF58D273454C00061E3E4 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF58C273454C00061E3E4 /* DashboardRouter.swift */; };
 		7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E164E2737CF92004B374D /* UIViewController.swift */; };
 		7AD3627D2746C736008E2F8A /* CardsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3627C2746C736008E2F8A /* CardsRowCell.swift */; };
 		7AD362802746D300008E2F8A /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3627F2746D300008E2F8A /* CardCell.swift */; };
-		7AD362AD274D7BC0008E2F8A /* SteganographyDecodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362AC274D7BC0008E2F8A /* SteganographyDecodingViewController.swift */; };
-		7AD362AF274D7BC5008E2F8A /* SteganographyEncodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362AE274D7BC5008E2F8A /* SteganographyEncodingViewController.swift */; };
+		7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */; };
+		7AD362AF274D7BC5008E2F8A /* EncodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362AE274D7BC5008E2F8A /* EncodingViewController.swift */; };
 		7AD362B1274D7BC9008E2F8A /* SteganographyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362B0274D7BC9008E2F8A /* SteganographyHistoryViewController.swift */; };
 		7AD362B3274D7BCF008E2F8A /* SteganographyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362B2274D7BCF008E2F8A /* SteganographyInfoViewController.swift */; };
-		7AD362B5274D7BF4008E2F8A /* SteganographyTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362B4274D7BF4008E2F8A /* SteganographyTwoViewController.swift */; };
-		7AD362B7274D7BFF008E2F8A /* SteganographyInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362B6274D7BFF008E2F8A /* SteganographyInteractorImpl.swift */; };
+		7AD362B5274D7BF4008E2F8A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362B4274D7BF4008E2F8A /* DashboardViewController.swift */; };
+		7AD362B7274D7BFF008E2F8A /* EncodingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362B6274D7BFF008E2F8A /* EncodingInteractor.swift */; };
+		7AD362C0274D81E9008E2F8A /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362BF274D81E9008E2F8A /* DashboardPresenter.swift */; };
+		7AD362C2274D81F6008E2F8A /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C1274D81F6008E2F8A /* DashboardInteractor.swift */; };
+		7AD362C4274D85D8008E2F8A /* EncodingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C3274D85D8008E2F8A /* EncodingRouter.swift */; };
+		7AD362C6274D89CB008E2F8A /* DecodingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C5274D89CB008E2F8A /* DecodingInteractor.swift */; };
+		7AD362C8274D89D5008E2F8A /* DecodingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C7274D89D5008E2F8A /* DecodingPresenter.swift */; };
+		7AD362CA274D89EC008E2F8A /* DecodingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C9274D89EC008E2F8A /* DecodingRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,17 +50,23 @@
 		7A2584A72744356300B5983E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7A6AF551273118E40061E3E4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyViewController.swift; sourceTree = "<group>"; };
-		7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyPresenter.swift; sourceTree = "<group>"; };
-		7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyRouter.swift; sourceTree = "<group>"; };
+		7A6AF588273454AC0061E3E4 /* EncodingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingPresenter.swift; sourceTree = "<group>"; };
+		7A6AF58C273454C00061E3E4 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		7A6E164E2737CF92004B374D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		7AD3627C2746C736008E2F8A /* CardsRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRowCell.swift; sourceTree = "<group>"; };
 		7AD3627F2746D300008E2F8A /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		7AD362AC274D7BC0008E2F8A /* SteganographyDecodingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteganographyDecodingViewController.swift; sourceTree = "<group>"; };
-		7AD362AE274D7BC5008E2F8A /* SteganographyEncodingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteganographyEncodingViewController.swift; sourceTree = "<group>"; };
+		7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingViewController.swift; sourceTree = "<group>"; };
+		7AD362AE274D7BC5008E2F8A /* EncodingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingViewController.swift; sourceTree = "<group>"; };
 		7AD362B0274D7BC9008E2F8A /* SteganographyHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteganographyHistoryViewController.swift; sourceTree = "<group>"; };
 		7AD362B2274D7BCF008E2F8A /* SteganographyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteganographyInfoViewController.swift; sourceTree = "<group>"; };
-		7AD362B4274D7BF4008E2F8A /* SteganographyTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteganographyTwoViewController.swift; sourceTree = "<group>"; };
-		7AD362B6274D7BFF008E2F8A /* SteganographyInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteganographyInteractorImpl.swift; sourceTree = "<group>"; };
+		7AD362B4274D7BF4008E2F8A /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		7AD362B6274D7BFF008E2F8A /* EncodingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingInteractor.swift; sourceTree = "<group>"; };
+		7AD362BF274D81E9008E2F8A /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		7AD362C1274D81F6008E2F8A /* DashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		7AD362C3274D85D8008E2F8A /* EncodingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingRouter.swift; sourceTree = "<group>"; };
+		7AD362C5274D89CB008E2F8A /* DecodingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingInteractor.swift; sourceTree = "<group>"; };
+		7AD362C7274D89D5008E2F8A /* DecodingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingPresenter.swift; sourceTree = "<group>"; };
+		7AD362C9274D89EC008E2F8A /* DecodingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +117,7 @@
 			children = (
 				7AD362B2274D7BCF008E2F8A /* SteganographyInfoViewController.swift */,
 				7AD362B0274D7BC9008E2F8A /* SteganographyHistoryViewController.swift */,
-				7AD362AE274D7BC5008E2F8A /* SteganographyEncodingViewController.swift */,
-				7AD362AC274D7BC0008E2F8A /* SteganographyDecodingViewController.swift */,
 				7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */,
-				7AD362B4274D7BF4008E2F8A /* SteganographyTwoViewController.swift */,
-				7A2584A127442DD000B5983E /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,25 +125,8 @@
 		7A25849D27442DA100B5983E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				7AD362B6274D7BFF008E2F8A /* SteganographyInteractorImpl.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		7A25849E27442DA700B5983E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				7A6AF588273454AC0061E3E4 /* SteganographyPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		7A25849F27442DAE00B5983E /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				7A6AF58C273454C00061E3E4 /* SteganographyRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		7A2584A127442DD000B5983E /* Cells */ = {
@@ -170,12 +161,47 @@
 		7A6AF5832734544E0061E3E4 /* Steganography */ = {
 			isa = PBXGroup;
 			children = (
-				7A25849F27442DAE00B5983E /* Router */,
-				7A25849E27442DA700B5983E /* Presenter */,
+				7AD362BE274D815B008E2F8A /* Decoding */,
+				7AD362BD274D8156008E2F8A /* Encoding */,
+				7AD362BC274D812E008E2F8A /* Dashboard */,
 				7A25849D27442DA100B5983E /* Interactor */,
 				7A25849C27442D9700B5983E /* View */,
 			);
 			path = Steganography;
+			sourceTree = "<group>";
+		};
+		7AD362BC274D812E008E2F8A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7AD362B4274D7BF4008E2F8A /* DashboardViewController.swift */,
+				7AD362C1274D81F6008E2F8A /* DashboardInteractor.swift */,
+				7AD362BF274D81E9008E2F8A /* DashboardPresenter.swift */,
+				7A6AF58C273454C00061E3E4 /* DashboardRouter.swift */,
+				7A2584A127442DD000B5983E /* Cells */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		7AD362BD274D8156008E2F8A /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				7AD362AE274D7BC5008E2F8A /* EncodingViewController.swift */,
+				7AD362B6274D7BFF008E2F8A /* EncodingInteractor.swift */,
+				7A6AF588273454AC0061E3E4 /* EncodingPresenter.swift */,
+				7AD362C3274D85D8008E2F8A /* EncodingRouter.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		7AD362BE274D815B008E2F8A /* Decoding */ = {
+			isa = PBXGroup;
+			children = (
+				7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */,
+				7AD362C5274D89CB008E2F8A /* DecodingInteractor.swift */,
+				7AD362C7274D89D5008E2F8A /* DecodingPresenter.swift */,
+				7AD362C9274D89EC008E2F8A /* DecodingRouter.swift */,
+			);
+			path = Decoding;
 			sourceTree = "<group>";
 		};
 		7AF3044227280ADE005A5F09 /* Components */ = {
@@ -301,24 +327,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6AF552273118E40061E3E4 /* UIView.swift in Sources */,
+				7AD362C4274D85D8008E2F8A /* EncodingRouter.swift in Sources */,
 				7AD362B1274D7BC9008E2F8A /* SteganographyHistoryViewController.swift in Sources */,
 				7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */,
-				7A6AF58D273454C00061E3E4 /* SteganographyRouter.swift in Sources */,
-				7AD362AF274D7BC5008E2F8A /* SteganographyEncodingViewController.swift in Sources */,
+				7A6AF58D273454C00061E3E4 /* DashboardRouter.swift in Sources */,
+				7AD362AF274D7BC5008E2F8A /* EncodingViewController.swift in Sources */,
 				7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */,
-				7A6AF589273454AC0061E3E4 /* SteganographyPresenter.swift in Sources */,
-				7AD362B5274D7BF4008E2F8A /* SteganographyTwoViewController.swift in Sources */,
+				7AD362C8274D89D5008E2F8A /* DecodingPresenter.swift in Sources */,
+				7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */,
+				7AD362B5274D7BF4008E2F8A /* DashboardViewController.swift in Sources */,
 				7AD362802746D300008E2F8A /* CardCell.swift in Sources */,
-				7AD362AD274D7BC0008E2F8A /* SteganographyDecodingViewController.swift in Sources */,
+				7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,
+				7AD362C0274D81E9008E2F8A /* DashboardPresenter.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
 				7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */,
 				7A2584A82744356300B5983E /* UIColor.swift in Sources */,
 				7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */,
 				7AD3627D2746C736008E2F8A /* CardsRowCell.swift in Sources */,
+				7AD362C2274D81F6008E2F8A /* DashboardInteractor.swift in Sources */,
+				7AD362CA274D89EC008E2F8A /* DecodingRouter.swift in Sources */,
 				7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */,
 				7AD362B3274D7BCF008E2F8A /* SteganographyInfoViewController.swift in Sources */,
-				7AD362B7274D7BFF008E2F8A /* SteganographyInteractorImpl.swift in Sources */,
+				7AD362B7274D7BFF008E2F8A /* EncodingInteractor.swift in Sources */,
+				7AD362C6274D89CB008E2F8A /* DecodingInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

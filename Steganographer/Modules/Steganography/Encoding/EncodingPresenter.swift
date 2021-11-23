@@ -24,25 +24,23 @@ extension StegoError: LocalizedError {
     }
 }
 
-protocol SteganographyPresenter {
+protocol EncodingPresenter {
 
-    var router: SteganographyRouter? { get set }
-    var interactor: StanographyInteractor? { get set }
-    var view: SteganographyView? { get set }
+    var router: EncodingRouter? { get set }
+    var interactor: EncodingInteractor? { get set }
+    var view: SteganographyEncodingView? { get set }
 
-    func showLoader()
-    func dismissLoader()
     func interactorDidFinishEndcoding(with result: Result<UIImage, Error>)
     func interactorDidFinishDecoding(with result: Result<String, Error>)
 }
 
-final class SteganographyPresenterImpl: NSObject, SteganographyPresenter {
+final class EncodingPresenterImpl: EncodingPresenter {
 
-    var router: SteganographyRouter?
+    var router: EncodingRouter?
 
-    var interactor: StanographyInteractor?
+    var interactor: EncodingInteractor?
 
-    var view: SteganographyView?
+    var view: SteganographyEncodingView?
 
     func interactorDidFinishEndcoding(with result: Result<UIImage, Error>) {
         switch result {
@@ -64,18 +62,10 @@ final class SteganographyPresenterImpl: NSObject, SteganographyPresenter {
             view?.updateText(with: error.localizedDescription)
         }
     }
-
-    func showLoader() {
-        view?.showSpinner()
-    }
-
-    func dismissLoader() {
-        view?.dismissSpinner()
-    }
 }
 
 // MARK: Image saving helpers
-extension SteganographyPresenterImpl {
+extension EncodingPresenterImpl {
 
     enum ImageProcessingError: Error {
         case couldNotCreatePNGData

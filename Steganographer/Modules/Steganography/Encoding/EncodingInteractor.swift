@@ -9,34 +9,32 @@ import Foundation
 import DisguisedSwiftly
 import UIKit
 
-protocol StanographyInteractor {
-    var presenter: SteganographyPresenter? { get set }
+protocol EncodingInteractor {
+    var presenter: EncodingPresenter? { get set }
     var stego: Stego? { get set }
     func encodeWithText(with text: String, in image: UIImage)
     func decodeFromImage(from image: UIImage)
 }
 
-final class SteganographyInteractorImpl: StanographyInteractor {
+final class EncodingInteractorImpl: EncodingInteractor {
 
-    var presenter: SteganographyPresenter?
+    var presenter: EncodingPresenter?
 
-    internal var stego: Stego?
-
-    init(stego: Stego) {
-        self.stego = stego
-    }
+    var stego: Stego?
 
     func encodeWithText(with text: String, in image: UIImage) {
-        presenter?.showLoader()
+//        presenter?.showLoader()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
             let image = self.stego?.encodeTextInImage(with: text, image: image, progress: { [weak self] progress in
                 switch progress {
                 case .ended:
-                    self?.presenter?.dismissLoader()
+                    break
+//                    self?.presenter?.dismissLoader()
                 case .working:
                     print("Encoding")
                 case .failed:
-                    self?.presenter?.dismissLoader()
+                    break
+//                    self?.presenter?.dismissLoader()
                 }
 
             })
@@ -48,16 +46,18 @@ final class SteganographyInteractorImpl: StanographyInteractor {
     }
 
     func decodeFromImage(from image: UIImage) {
-        presenter?.showLoader()
+//        presenter?.showLoader()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
             let decodedText = self.stego?.decodeTextInImage(image: image, progress: { [weak self] progress in
                 switch progress {
                 case .ended:
-                    self?.presenter?.dismissLoader()
+                    break
+//                    self?.presenter?.dismissLoader()
                 case .working:
                     print("Decoding")
                 case .failed:
-                    self?.presenter?.dismissLoader()
+                    break
+//                    self?.presenter?.dismissLoader()
                 }
             })
 

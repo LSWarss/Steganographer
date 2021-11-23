@@ -1,5 +1,5 @@
 //
-//  SteganographyViewController.swift
+//  SteganographyDashboardViewController.swift
 //  Steganographer
 //
 //  Created by Łukasz Stachnik on 04/11/2021.
@@ -9,7 +9,7 @@
 // import Photos
 // import PhotosUI
 //
-// protocol SteganographyView {
+// protocol SteganographyDashboardView {
 //
 //    var presenter: StegoPresenter? { get set }
 //
@@ -20,7 +20,7 @@
 //    func dismissSpinner()
 // }
 //
-// final class SteganographyViewController: UIViewController, SteganographyView {
+// final class SteganographyDashboardViewController: UIViewController, SteganographyDashboardView {
 //
 //    lazy var containerView: UIView = {
 //        let container = UIView()
@@ -216,7 +216,7 @@
 // }
 //
 // MARK: Tap etc. actions
-// extension SteganographyViewController {
+// extension SteganographyDashboardViewController {
 //
 //    @objc func selectImage(_ sender: UITapGestureRecognizer) {
 //
@@ -262,7 +262,7 @@
 // }
 //
 // MARK: PHPickerDelegate
-// extension SteganographyViewController: PHPickerViewControllerDelegate {
+// extension SteganographyDashboardViewController: PHPickerViewControllerDelegate {
 //
 //    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
 //        picker.dismiss(animated: true) {
