@@ -16,11 +16,16 @@ protocol SteganographyDashboardView {
     func updateImage(with image: UIImage, and url: URL)
     func updateImage(with error: String)
     func updateText(with text: String)
+
+    func filterCards(with text: String)
 }
 
 final class DashboardViewController: UIViewController {
 
     var presenter: DashboardPresenter?
+
+    var categories = ["Steganography"]
+    var cardsTitles = ["Encode", "Decode", "Info", "History"]
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -35,6 +40,7 @@ final class DashboardViewController: UIViewController {
         setupView()
         tableView.register(StegoHeaderCell.self, forCellReuseIdentifier: "header")
         tableView.register(CardsRowCell.self, forCellReuseIdentifier: "collectionViewCell")
+        tableView.register(SearchBarCell.self, forCellReuseIdentifier: "searchBarCell")
     }
 
     func setupView() {
@@ -53,7 +59,7 @@ final class DashboardViewController: UIViewController {
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,12 +74,20 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = cell else { return UITableViewCell() }
 
             return cell
+
         } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarCell", for: indexPath) as? SearchBarCell
+
+            guard let cell = cell else { return UITableViewCell() }
+
+            return cell
+
+        } else if indexPath.row == 2 {
             let collectionViewCell = tableView.dequeueReusableCell(withIdentifier: "collectionViewCell",
                                                                    for: indexPath) as? CardsRowCell
 
             collectionViewCell?.presenter = presenter
-            collectionViewCell?.cardsTitles = ["Encode", "Decode", "Info", "History"]
+            collectionViewCell?.cardsTitles = cardsTitles
             collectionViewCell?.cardsImages = [UIImage(named: "hide"), UIImage(named: "find"),
                                                UIImage(named: "info"), UIImage(named: "history")]
 
@@ -89,8 +103,10 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        // Make the first row larger to accommodate a custom cell.
       if indexPath.row == 1 {
+          return 50
+      } else if indexPath.row == 2 {
           return 150
-       }
+      }
 
        // Use the default size for all other rows.
        return UITableView.automaticDimension
@@ -99,6 +115,10 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DashboardViewController: SteganographyDashboardView {
+    func filterCards(with text: String) {
+        cardsTitles = self.cardsTitles.filter({$0.contains(text)})
+        self.tableView.reloadData()
+    }
 
     func updateImage(with image: UIImage, and url: URL) {
 

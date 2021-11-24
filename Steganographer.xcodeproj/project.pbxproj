@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229EC023274E535200D5BF4B /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229EC022274E535200D5BF4B /* SearchBarCell.swift */; };
 		7A0F3295271DD70000A789FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3294271DD70000A789FA /* AppDelegate.swift */; };
 		7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F3296271DD70000A789FA /* SceneDelegate.swift */; };
 		7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329D271DD70100A789FA /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		229EC022274E535200D5BF4B /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		7A0F3291271DD70000A789FA /* Steganographer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Steganographer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0F3294271DD70000A789FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A0F3296271DD70000A789FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,19 +124,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7A25849D27442DA100B5983E /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		7A2584A127442DD000B5983E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				7A2584A227442E0800B5983E /* StegoHeaderCell.swift */,
 				7AD3627C2746C736008E2F8A /* CardsRowCell.swift */,
 				7AD3627F2746D300008E2F8A /* CardCell.swift */,
+				229EC022274E535200D5BF4B /* SearchBarCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -164,7 +160,6 @@
 				7AD362BE274D815B008E2F8A /* Decoding */,
 				7AD362BD274D8156008E2F8A /* Encoding */,
 				7AD362BC274D812E008E2F8A /* Dashboard */,
-				7A25849D27442DA100B5983E /* Interactor */,
 				7A25849C27442D9700B5983E /* View */,
 			);
 			path = Steganography;
@@ -339,6 +334,7 @@
 				7AD362802746D300008E2F8A /* CardCell.swift in Sources */,
 				7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,
+				229EC023274E535200D5BF4B /* SearchBarCell.swift in Sources */,
 				7AD362C0274D81E9008E2F8A /* DashboardPresenter.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
 				7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */,

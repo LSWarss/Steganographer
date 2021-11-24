@@ -16,6 +16,8 @@ protocol DashboardPresenter {
     func makeDecoding()
     func showHistory()
     func showInformation()
+
+    func filter(with text: String)
 }
 
 final class DashboardPresenterImpl: DashboardPresenter {
@@ -52,6 +54,11 @@ final class DashboardPresenterImpl: DashboardPresenter {
         guard let view = view else { return }
 
         router?.pushToInfo(on: view)
+    }
+
+    func filter(with text: String) {
+
+        view
     }
 
 }
