@@ -13,10 +13,6 @@ protocol SteganographyDashboardView {
 
     var presenter: DashboardPresenter? { get set }
 
-    func updateImage(with image: UIImage, and url: URL)
-    func updateImage(with error: String)
-    func updateText(with text: String)
-
     func filterCards(with text: String)
 }
 
@@ -37,13 +33,13 @@ final class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        setupLayout()
         tableView.register(StegoHeaderCell.self, forCellReuseIdentifier: "header")
         tableView.register(CardsRowCell.self, forCellReuseIdentifier: "collectionViewCell")
         tableView.register(SearchBarCell.self, forCellReuseIdentifier: "searchBarCell")
     }
 
-    func setupView() {
+    func setupLayout() {
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -68,7 +64,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "header", for: indexPath) as? StegoHeaderCell
 
             cell?.welcomeMessageLabel.attributedText = NSMutableAttributedString()
-                .mainGreenHighlight("Hello Łukasz,\n")
+                .mainGreenHighlightBold("Hello Łukasz,\n")
                 .bold("are there anything we can help you with?")
 
             guard let cell = cell else { return UITableViewCell() }
@@ -115,21 +111,9 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DashboardViewController: SteganographyDashboardView {
+
     func filterCards(with text: String) {
         cardsTitles = self.cardsTitles.filter({$0.contains(text)})
         self.tableView.reloadData()
     }
-
-    func updateImage(with image: UIImage, and url: URL) {
-
-    }
-
-    func updateImage(with error: String) {
-
-    }
-
-    func updateText(with text: String) {
-
-    }
-
 }

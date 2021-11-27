@@ -44,5 +44,4 @@ final class SearchBarCell: UITableViewCell, UISearchBarDelegate {
        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
            presenter?.filter(with: searchText)
        }
-
-}   
+}

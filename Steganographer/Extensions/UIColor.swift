@@ -12,6 +12,7 @@ extension UIColor {
 
     public static var mainGreen = UIColor(named: "mainGreen")
     public static var defaultFontColor = UIColor(named: "defaultFontColor")
+    public static var defaultGreyColor = UIColor(named: "defaultGrey")
 }
 
 extension UIColor {

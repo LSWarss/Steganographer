@@ -12,7 +12,7 @@ extension NSMutableAttributedString {
     var regularFontSize: CGFloat { return 16 }
     var boldFont: UIFont { return UIFont(name: "SFPro-Bold", size: boldFontSize)
         ?? UIFont.boldSystemFont(ofSize: boldFontSize) }
-    var normalFont: UIFont { return UIFont(name: "SFPro-Regular", size: regularFontSize)
+    var regularFont: UIFont { return UIFont(name: "SFPro-Regular", size: regularFontSize)
         ?? UIFont.systemFont(ofSize: regularFontSize)}
 
     func bold(_ value: String) -> NSMutableAttributedString {
@@ -29,8 +29,19 @@ extension NSMutableAttributedString {
     func normal(_ value: String) -> NSMutableAttributedString {
 
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: normalFont,
+            .font: regularFont,
             .foregroundColor: UIColor.defaultFontColor
+        ]
+
+        self.append(NSAttributedString(string: value, attributes: attributes))
+        return self
+    }
+
+    func normalGrey(_ value: String) -> NSMutableAttributedString {
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: regularFont,
+            .foregroundColor: UIColor.defaultGreyColor
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
@@ -40,7 +51,7 @@ extension NSMutableAttributedString {
     func orangeHighlight(_ value: String) -> NSMutableAttributedString {
 
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: normalFont,
+            .font: regularFont,
             .foregroundColor: UIColor.white,
             .backgroundColor: UIColor.orange
         ]
@@ -49,7 +60,7 @@ extension NSMutableAttributedString {
         return self
     }
 
-    func mainGreenHighlight(_ value: String) -> NSMutableAttributedString {
+    func mainGreenHighlightBold(_ value: String) -> NSMutableAttributedString {
 
         let attributes: [NSAttributedString.Key: Any] = [
             .font: boldFont,
@@ -61,10 +72,22 @@ extension NSMutableAttributedString {
         return self
     }
 
+    func mainGreenHighlightRegular(_ value: String) -> NSMutableAttributedString {
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: regularFont,
+            .foregroundColor: UIColor.mainGreen
+
+        ]
+
+        self.append(NSAttributedString(string: value, attributes: attributes))
+        return self
+    }
+
     func blackHighlight(_ value: String) -> NSMutableAttributedString {
 
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: normalFont,
+            .font: regularFont,
             .foregroundColor: UIColor.white,
             .backgroundColor: UIColor.black
 
@@ -77,7 +100,7 @@ extension NSMutableAttributedString {
     func underlined(_ value: String) -> NSMutableAttributedString {
 
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: normalFont,
+            .font: regularFont,
             .underlineStyle: NSUnderlineStyle.single.rawValue
 
         ]
