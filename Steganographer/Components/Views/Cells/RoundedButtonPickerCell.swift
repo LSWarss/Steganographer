@@ -7,16 +7,14 @@
 
 import UIKit
 
-final class RoundedButtonCell: UITableViewCell {
+final class RoundedButtonPickerCell: UITableViewCell {
 
-    private let reuseableCell = "roundedButtonCell"
+    private let reuseableCell = "roundedButtonPickerCell"
 
     lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -26,7 +24,7 @@ final class RoundedButtonCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
-        view.backgroundColor = UIColor.defaultGreyColor
+        view.backgroundColor = .white
         return view
     }()
 
@@ -49,9 +47,9 @@ final class RoundedButtonCell: UITableViewCell {
         self.contentView.addSubview(background)
 
         background.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        background.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
-        background.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        background.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        background.topAnchor.constraint(equalTo: topAnchor, constant: 24).isActive = true
+        background.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
+        background.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
 
         background.addSubview(label)
 

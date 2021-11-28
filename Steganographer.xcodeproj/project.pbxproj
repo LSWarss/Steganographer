@@ -36,7 +36,11 @@
 		7AD362C6274D89CB008E2F8A /* DecodingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C5274D89CB008E2F8A /* DecodingInteractor.swift */; };
 		7AD362C8274D89D5008E2F8A /* DecodingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C7274D89D5008E2F8A /* DecodingPresenter.swift */; };
 		7AD362CA274D89EC008E2F8A /* DecodingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362C9274D89EC008E2F8A /* DecodingRouter.swift */; };
-		7AD362FC27526B2B008E2F8A /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362FB27526B2B008E2F8A /* RoundedButtonCell.swift */; };
+		7AD362FC27526B2B008E2F8A /* RoundedButtonPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362FB27526B2B008E2F8A /* RoundedButtonPickerCell.swift */; };
+		7AD362FE27528489008E2F8A /* MessageTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362FD27528489008E2F8A /* MessageTextFieldCell.swift */; };
+		7AD3630327528B51008E2F8A /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */; };
+		7AD363052753A976008E2F8A /* BottomPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD363042753A976008E2F8A /* BottomPickerViewController.swift */; };
+		7AD363072753B1D4008E2F8A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD363062753B1D4008E2F8A /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,7 +74,11 @@
 		7AD362C5274D89CB008E2F8A /* DecodingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingInteractor.swift; sourceTree = "<group>"; };
 		7AD362C7274D89D5008E2F8A /* DecodingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingPresenter.swift; sourceTree = "<group>"; };
 		7AD362C9274D89EC008E2F8A /* DecodingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingRouter.swift; sourceTree = "<group>"; };
-		7AD362FB27526B2B008E2F8A /* RoundedButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
+		7AD362FB27526B2B008E2F8A /* RoundedButtonPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonPickerCell.swift; sourceTree = "<group>"; };
+		7AD362FD27528489008E2F8A /* MessageTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextFieldCell.swift; sourceTree = "<group>"; };
+		7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
+		7AD363042753A976008E2F8A /* BottomPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPickerViewController.swift; sourceTree = "<group>"; };
+		7AD363062753B1D4008E2F8A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +141,9 @@
 				7AD3627C2746C736008E2F8A /* CardsRowCell.swift */,
 				7AD3627F2746D300008E2F8A /* CardCell.swift */,
 				229EC022274E535200D5BF4B /* SearchBarCell.swift */,
-				7AD362FB27526B2B008E2F8A /* RoundedButtonCell.swift */,
+				7AD362FB27526B2B008E2F8A /* RoundedButtonPickerCell.swift */,
+				7AD362FD27528489008E2F8A /* MessageTextFieldCell.swift */,
+				7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -214,6 +224,8 @@
 			children = (
 				7A2584A127442DD000B5983E /* Cells */,
 				7AF3044F272A743F005A5F09 /* Buttons */,
+				7AD363042753A976008E2F8A /* BottomPickerViewController.swift */,
+				7AD363062753B1D4008E2F8A /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,19 +343,23 @@
 				7A6AF58D273454C00061E3E4 /* DashboardRouter.swift in Sources */,
 				7AD362AF274D7BC5008E2F8A /* EncodingViewController.swift in Sources */,
 				7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */,
+				7AD362FE27528489008E2F8A /* MessageTextFieldCell.swift in Sources */,
 				7AD362C8274D89D5008E2F8A /* DecodingPresenter.swift in Sources */,
+				7AD363072753B1D4008E2F8A /* CardView.swift in Sources */,
 				7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */,
 				7AD362B5274D7BF4008E2F8A /* DashboardViewController.swift in Sources */,
 				7AD362802746D300008E2F8A /* CardCell.swift in Sources */,
 				7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,
 				229EC023274E535200D5BF4B /* SearchBarCell.swift in Sources */,
-				7AD362FC27526B2B008E2F8A /* RoundedButtonCell.swift in Sources */,
+				7AD362FC27526B2B008E2F8A /* RoundedButtonPickerCell.swift in Sources */,
 				7AD362C0274D81E9008E2F8A /* DashboardPresenter.swift in Sources */,
+				7AD3630327528B51008E2F8A /* RoundedButtonCell.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
 				7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */,
 				7A2584A82744356300B5983E /* UIColor.swift in Sources */,
 				7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */,
+				7AD363052753A976008E2F8A /* BottomPickerViewController.swift in Sources */,
 				7AD3627D2746C736008E2F8A /* CardsRowCell.swift in Sources */,
 				7AD362C2274D81F6008E2F8A /* DashboardInteractor.swift in Sources */,
 				7AD362CA274D89EC008E2F8A /* DecodingRouter.swift in Sources */,
@@ -420,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -476,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -491,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KN966P9LP;
@@ -501,7 +518,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,7 +528,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -520,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KN966P9LP;
@@ -530,7 +548,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,7 +558,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -62,7 +62,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "header", for: indexPath) as? StegoHeaderCell
-
+            cell?.selectionStyle = .none
             cell?.welcomeMessageLabel.attributedText = NSMutableAttributedString()
                 .mainGreenHighlightBold("Hello Łukasz,\n")
                 .bold("are there anything we can help you with?")
@@ -73,7 +73,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchBarCell", for: indexPath) as? SearchBarCell
-
+            cell?.selectionStyle = .none
             guard let cell = cell else { return UITableViewCell() }
 
             return cell
@@ -81,7 +81,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 2 {
             let collectionViewCell = tableView.dequeueReusableCell(withIdentifier: "collectionViewCell",
                                                                    for: indexPath) as? CardsRowCell
-
+            collectionViewCell?.selectionStyle = .none
             collectionViewCell?.presenter = presenter
             collectionViewCell?.cardsTitles = cardsTitles
             collectionViewCell?.cardsImages = [UIImage(named: "hide"), UIImage(named: "find"),

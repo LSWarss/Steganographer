@@ -58,7 +58,9 @@ final class DashboardPresenterImpl: DashboardPresenter {
 
     func filter(with text: String) {
 
-        view
+        guard let view = view else { return }
+
+        view.filterCards(with: text)
     }
 
 }
