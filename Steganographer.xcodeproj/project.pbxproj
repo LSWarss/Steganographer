@@ -14,14 +14,15 @@
 		7A0F32A1271DD70100A789FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F329F271DD70100A789FA /* LaunchScreen.storyboard */; };
 		7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F32A8271DF0A100A789FA /* RoundedButton.swift */; };
 		7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A227442E0800B5983E /* StegoHeaderCell.swift */; };
-		7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A4274434A800B5983E /* NSMutableAttributedString.swift */; };
-		7A2584A82744356300B5983E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A72744356300B5983E /* UIColor.swift */; };
 		7A6AF54F27304FC20061E3E4 /* DisguisedSwiftly in Frameworks */ = {isa = PBXBuildFile; productRef = 7A6AF54E27304FC20061E3E4 /* DisguisedSwiftly */; };
 		7A6AF552273118E40061E3E4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF551273118E40061E3E4 /* UIView.swift */; };
 		7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */; };
 		7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF588273454AC0061E3E4 /* EncodingPresenter.swift */; };
 		7A6AF58D273454C00061E3E4 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6AF58C273454C00061E3E4 /* DashboardRouter.swift */; };
 		7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6E164E2737CF92004B374D /* UIViewController.swift */; };
+		7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C3198276290300000BBE7 /* BaseViewController.swift */; };
+		7A9C319E2762926A0000BBE7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C319D2762926A0000BBE7 /* UIColor.swift */; };
+		7A9C31A02762926F0000BBE7 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */; };
 		7AD3627D2746C736008E2F8A /* CardsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3627C2746C736008E2F8A /* CardsRowCell.swift */; };
 		7AD362802746D300008E2F8A /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3627F2746D300008E2F8A /* CardCell.swift */; };
 		7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */; };
@@ -41,6 +42,10 @@
 		7AD3630327528B51008E2F8A /* RoundedButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */; };
 		7AD363052753A976008E2F8A /* BottomPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD363042753A976008E2F8A /* BottomPickerViewController.swift */; };
 		7AD363072753B1D4008E2F8A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD363062753B1D4008E2F8A /* CardView.swift */; };
+		7AD3630A27627896008E2F8A /* IteoLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7AD3630927627896008E2F8A /* IteoLogger */; };
+		7AD3632F27628074008E2F8A /* BasePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3632E27628074008E2F8A /* BasePresentable.swift */; };
+		7AD36331276280FC008E2F8A /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD36330276280FC008E2F8A /* BasePresenter.swift */; };
+		7AD3634827628C13008E2F8A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3634727628C13008E2F8A /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,13 +58,14 @@
 		7A0F32A2271DD70100A789FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F32A8271DF0A100A789FA /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7A2584A227442E0800B5983E /* StegoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoHeaderCell.swift; sourceTree = "<group>"; };
-		7A2584A4274434A800B5983E /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
-		7A2584A72744356300B5983E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7A6AF551273118E40061E3E4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		7A6AF5842734548E0061E3E4 /* SteganographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteganographyViewController.swift; sourceTree = "<group>"; };
 		7A6AF588273454AC0061E3E4 /* EncodingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingPresenter.swift; sourceTree = "<group>"; };
 		7A6AF58C273454C00061E3E4 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		7A6E164E2737CF92004B374D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		7A9C3198276290300000BBE7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7A9C319D2762926A0000BBE7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		7AD3627C2746C736008E2F8A /* CardsRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRowCell.swift; sourceTree = "<group>"; };
 		7AD3627F2746D300008E2F8A /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 		7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonCell.swift; sourceTree = "<group>"; };
 		7AD363042753A976008E2F8A /* BottomPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPickerViewController.swift; sourceTree = "<group>"; };
 		7AD363062753B1D4008E2F8A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7AD3632E27628074008E2F8A /* BasePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentable.swift; sourceTree = "<group>"; };
+		7AD36330276280FC008E2F8A /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		7AD3634727628C13008E2F8A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6AF54F27304FC20061E3E4 /* DisguisedSwiftly in Frameworks */,
+				7AD3630A27627896008E2F8A /* IteoLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,8 +122,8 @@
 		7A0F3293271DD70000A789FA /* Steganographer */ = {
 			isa = PBXGroup;
 			children = (
+				7AD3634627628BEA008E2F8A /* Helpers */,
 				7A6AF582273454470061E3E4 /* Modules */,
-				7A6AF550273118D00061E3E4 /* Extensions */,
 				7AF3044227280ADE005A5F09 /* Components */,
 				7A0F3294271DD70000A789FA /* AppDelegate.swift */,
 				7A0F3296271DD70000A789FA /* SceneDelegate.swift */,
@@ -146,17 +156,6 @@
 				7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		7A6AF550273118D00061E3E4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7A6AF551273118E40061E3E4 /* UIView.swift */,
-				7A6E164E2737CF92004B374D /* UIViewController.swift */,
-				7A2584A4274434A800B5983E /* NSMutableAttributedString.swift */,
-				7A2584A72744356300B5983E /* UIColor.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7A6AF582273454470061E3E4 /* Modules */ = {
@@ -211,6 +210,21 @@
 			path = Decoding;
 			sourceTree = "<group>";
 		};
+		7AD3634627628BEA008E2F8A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A9C319D2762926A0000BBE7 /* UIColor.swift */,
+				7AD3632E27628074008E2F8A /* BasePresentable.swift */,
+				7AD36330276280FC008E2F8A /* BasePresenter.swift */,
+				7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */,
+				7A6AF551273118E40061E3E4 /* UIView.swift */,
+				7A6E164E2737CF92004B374D /* UIViewController.swift */,
+				7AD3634727628C13008E2F8A /* Logger.swift */,
+				7A9C3198276290300000BBE7 /* BaseViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7AF3044227280ADE005A5F09 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +271,7 @@
 			name = Steganographer;
 			packageProductDependencies = (
 				7A6AF54E27304FC20061E3E4 /* DisguisedSwiftly */,
+				7AD3630927627896008E2F8A /* IteoLogger */,
 			);
 			productName = Steganographer;
 			productReference = 7A0F3291271DD70000A789FA /* Steganographer.app */;
@@ -288,6 +303,7 @@
 			mainGroup = 7A0F3288271DD70000A789FA;
 			packageReferences = (
 				7A6AF54D27304FC20061E3E4 /* XCRemoteSwiftPackageReference "DisguisedSwiftly" */,
+				7AD3630827627896008E2F8A /* XCRemoteSwiftPackageReference "IteoLogger" */,
 			);
 			productRefGroup = 7A0F3292271DD70000A789FA /* Products */;
 			projectDirPath = "";
@@ -336,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD36331276280FC008E2F8A /* BasePresenter.swift in Sources */,
 				7A6AF552273118E40061E3E4 /* UIView.swift in Sources */,
 				7AD362C4274D85D8008E2F8A /* EncodingRouter.swift in Sources */,
 				7AD362B1274D7BC9008E2F8A /* SteganographyHistoryViewController.swift in Sources */,
@@ -343,6 +360,7 @@
 				7A6AF58D273454C00061E3E4 /* DashboardRouter.swift in Sources */,
 				7AD362AF274D7BC5008E2F8A /* EncodingViewController.swift in Sources */,
 				7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */,
+				7A9C31A02762926F0000BBE7 /* NSMutableAttributedString.swift in Sources */,
 				7AD362FE27528489008E2F8A /* MessageTextFieldCell.swift in Sources */,
 				7AD362C8274D89D5008E2F8A /* DecodingPresenter.swift in Sources */,
 				7AD363072753B1D4008E2F8A /* CardView.swift in Sources */,
@@ -350,18 +368,21 @@
 				7AD362B5274D7BF4008E2F8A /* DashboardViewController.swift in Sources */,
 				7AD362802746D300008E2F8A /* CardCell.swift in Sources */,
 				7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */,
+				7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */,
+				7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */,
+				7AD3632F27628074008E2F8A /* BasePresentable.swift in Sources */,
+				7AD3634827628C13008E2F8A /* Logger.swift in Sources */,
 				7A6AF5852734548E0061E3E4 /* SteganographyViewController.swift in Sources */,
 				229EC023274E535200D5BF4B /* SearchBarCell.swift in Sources */,
 				7AD362FC27526B2B008E2F8A /* RoundedButtonPickerCell.swift in Sources */,
 				7AD362C0274D81E9008E2F8A /* DashboardPresenter.swift in Sources */,
 				7AD3630327528B51008E2F8A /* RoundedButtonCell.swift in Sources */,
 				7A0F3297271DD70000A789FA /* SceneDelegate.swift in Sources */,
-				7A2584A5274434A800B5983E /* NSMutableAttributedString.swift in Sources */,
-				7A2584A82744356300B5983E /* UIColor.swift in Sources */,
 				7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */,
 				7AD363052753A976008E2F8A /* BottomPickerViewController.swift in Sources */,
 				7AD3627D2746C736008E2F8A /* CardsRowCell.swift in Sources */,
 				7AD362C2274D81F6008E2F8A /* DashboardInteractor.swift in Sources */,
+				7A9C319E2762926A0000BBE7 /* UIColor.swift in Sources */,
 				7AD362CA274D89EC008E2F8A /* DecodingRouter.swift in Sources */,
 				7A0F32A9271DF0A100A789FA /* RoundedButton.swift in Sources */,
 				7AD362B3274D7BCF008E2F8A /* SteganographyInfoViewController.swift in Sources */,
@@ -594,6 +615,14 @@
 				kind = branch;
 			};
 		};
+		7AD3630827627896008E2F8A /* XCRemoteSwiftPackageReference "IteoLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/psredzinski/IteoLogger";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -601,6 +630,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A6AF54D27304FC20061E3E4 /* XCRemoteSwiftPackageReference "DisguisedSwiftly" */;
 			productName = DisguisedSwiftly;
+		};
+		7AD3630927627896008E2F8A /* IteoLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AD3630827627896008E2F8A /* XCRemoteSwiftPackageReference "IteoLogger" */;
+			productName = IteoLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
