@@ -18,41 +18,29 @@ extension UIView {
 
 extension UIView {
 
-    // swiftlint:disable function_parameter_count line_length
-    func anchor (top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?, paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat?, height: CGFloat, enableInsets: Bool) {
-        var topInset = CGFloat(0)
-        var bottomInset = CGFloat(0)
+    func pinToView(_ view: UIView, offset: CGFloat = 0.0, safeArea: Bool = false) {
+        let edgeInsets = UIEdgeInsets(top: offset, left: offset, bottom: offset, right: offset)
+        pinToView(view: view, edgeInsets: edgeInsets, safeArea: safeArea)
+    }
 
-        if #available(iOS 11, *), enableInsets {
-            let insets = self.safeAreaInsets
-            topInset = insets.top
-            bottomInset = insets.bottom
-
-            print("Top: \(topInset)")
-            print("bottom: \(bottomInset)")
-        }
-
+    func pinToView(view: UIView, edgeInsets: UIEdgeInsets = .zero, safeArea: Bool = false) {
+        let safeArea: UILayoutGuide? = safeArea ? view.safeAreaLayoutGuide : nil
         translatesAutoresizingMaskIntoConstraints = false
-
-        if let top = top {
-            self.topAnchor.constraint(equalTo: top, constant: paddingTop+topInset).isActive = true
+        if let safeArea = safeArea {
+            NSLayoutConstraint.activate([
+                leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: edgeInsets.left),
+                trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -edgeInsets.right),
+                topAnchor.constraint(equalTo: safeArea.topAnchor, constant: edgeInsets.top),
+                bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -edgeInsets.bottom)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: edgeInsets.left),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -edgeInsets.right),
+                topAnchor.constraint(equalTo: view.topAnchor, constant: edgeInsets.top),
+                bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -edgeInsets.bottom)
+            ])
         }
-        if let left = left {
-            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
-        }
-        if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
-        }
-        if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom-bottomInset).isActive = true
-        }
-        if height != 0 {
-            heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
-        if let width = width {
-            widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
-
     }
 
 }

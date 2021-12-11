@@ -1,0 +1,12 @@
+/* 
+  Loc.strings
+  Steganographer
+
+  Created by Łukasz Stachnik on 11/12/2021.
+  
+*/
+
+"CardViewType.Title.Encoding" = "Encoding";
+"CardViewType.Title.Decoding" = "Decoding";
+"CardViewType.Title.Information" = "Information";
+"CardViewType.Title.History" = "History";

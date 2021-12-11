@@ -16,8 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        window.backgroundColor = .white
-        window.rootViewController = DashboardRouterImpl.createModule()
+        let tabViewController = UITabBarController()
+        let profileVC = ProfileControllerCreator().getController()
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 1)
+        let homeVC = HomeControllerCreator().getController()
+        homeVC.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "house"), tag: 2)
+        let settingsVC = SettingsControllerCreator().getController()
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 3)
+        tabViewController.viewControllers = [profileVC, homeVC, settingsVC]
+        tabViewController.selectedIndex = 1
+        window.rootViewController = tabViewController
         window.makeKeyAndVisible()
 
         self.window = window

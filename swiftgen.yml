@@ -1,0 +1,13 @@
+strings:
+  inputs: Steganographer/Localizations/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Steganographer/Generated/Strings.swift
+
+xcassets:
+  inputs: Steganographer/Resources/.
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+      output: Steganographer/Generated/Assets.swift
