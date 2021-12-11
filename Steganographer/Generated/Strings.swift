@@ -23,6 +23,15 @@ internal enum L10n {
       internal static let information = L10n.tr("Loc", "CardViewType.Title.Information")
     }
   }
+
+  internal enum Home {
+    internal enum Row {
+      internal enum Steganography {
+        /// Steganography
+        internal static let title = L10n.tr("Loc", "Home.Row.Steganography.Title")
+      }
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

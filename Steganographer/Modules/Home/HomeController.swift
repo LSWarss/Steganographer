@@ -16,10 +16,12 @@ final class HomeController: BaseViewController {
 
     private let interactor: HomeInteractor
 
-    @IBOutlet private var rowVStackView: UIStackView!
-    @IBOutlet private var rowLabel: UILabel!
-    @IBOutlet private var rowHStackView: UIStackView!
     @IBOutlet private var headerMessageLabel: UILabel!
+    @IBOutlet private var steganographyVStack: UIStackView!
+    @IBOutlet private var steganographyRowLabel: UILabel!
+    @IBOutlet private var rowHStackView: UIStackView!
+
+    private var stegoCards: [CardViewType] = [.encoding, .decoding, .history, .information]
 
     init(interactor: HomeInteractor) {
         self.interactor = interactor
@@ -35,7 +37,6 @@ final class HomeController: BaseViewController {
 
 extension HomeController: HomePresentable {
 
-    // TODO: Fill this with view setup methods
     func displayHome() {
         setupTranslations()
         setupView()
@@ -48,9 +49,33 @@ private extension HomeController {
         headerMessageLabel.attributedText = NSMutableAttributedString()
             .mainGreenHighlightBold("Hello Łukasz,\n")
             .bold("are there anything we can help you with?")
+        steganographyRowLabel.text = L10n.Home.Row.Steganography.title
     }
 
     private func setupView() {
-        // TODO: Setup view here
+        rowHStackView.removeAllSubviews()
+
+        for type in stegoCards {
+            setupCardForType(type)
+        }
+    }
+
+    private func setupCardForType(_ type: CardViewType) {
+        let view = HomeCardViewView()
+        view.setup(with: type)
+        view.tapAction = { [weak self] in
+            self?.setupActionForType(type)
+            log(.info, .unknown, "View with type: \(type.title) tapped")}
+        rowHStackView.addArrangedSubview(view)
+    }
+
+    private func setupActionForType(_ type: CardViewType) {
+        switch type {
+        case .encoding: break
+        case .decoding: break
+        case .history: break
+        case .information: break
+
+        }
     }
 }

@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import IteoLogger
 
 final class HomeCardViewView: XibView {
 
@@ -16,16 +17,33 @@ final class HomeCardViewView: XibView {
     @IBOutlet private var backgroundImage: UIImageView!
     private var type: CardViewType = .encoding
 
+    var tapAction: SimpleAction?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
     }
 
+    func setup(with type: CardViewType) {
+        nameLabel.text = type.title
+        backgroundImage.image = type.image
+        setupView()
+    }
 }
 
 private extension HomeCardViewView {
 
     private func setupView() {
-        // TODO: Implement custom view setup here or remove this method
+        setupTapGesture()
+        backgroundImage.layer.cornerRadius = 15
+    }
+
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func tapGestureAction() {
+        tapAction?()
     }
 }

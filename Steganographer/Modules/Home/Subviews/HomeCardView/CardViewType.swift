@@ -27,4 +27,18 @@ enum CardViewType: Equatable {
         }
     }
 
+    var image: UIImage {
+        switch self {
+        case .encoding:
+            return Asset.Assets.hide.image
+        case .decoding:
+            return Asset.Assets.find.image
+        case .information:
+            return Asset.Assets.info.image
+        case .history:
+            return Asset.Assets.history.image
+        }
+
+    }
+
 }

@@ -53,6 +53,8 @@
 		7A9C32242764D0920000BBE7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C32232764D0920000BBE7 /* Colors.xcassets */; };
 		7A9C322E2764D5A70000BBE7 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C322C2764D5A70000BBE7 /* Assets.swift */; };
 		7A9C322F2764D5A70000BBE7 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C322D2764D5A70000BBE7 /* Strings.swift */; };
+		7A9C3231276513540000BBE7 /* SimpleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C3230276513540000BBE7 /* SimpleAction.swift */; };
+		7AA25D2F276515FE0012CA35 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA25D2E276515FE0012CA35 /* UIStackView.swift */; };
 		7AD3627D2746C736008E2F8A /* CardsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3627C2746C736008E2F8A /* CardsRowCell.swift */; };
 		7AD362802746D300008E2F8A /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD3627F2746D300008E2F8A /* CardCell.swift */; };
 		7AD362AD274D7BC0008E2F8A /* DecodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */; };
@@ -128,6 +130,8 @@
 		7A9C32232764D0920000BBE7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7A9C322C2764D5A70000BBE7 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		7A9C322D2764D5A70000BBE7 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		7A9C3230276513540000BBE7 /* SimpleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAction.swift; sourceTree = "<group>"; };
+		7AA25D2E276515FE0012CA35 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		7AD3627C2746C736008E2F8A /* CardsRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRowCell.swift; sourceTree = "<group>"; };
 		7AD3627F2746D300008E2F8A /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		7AD362AC274D7BC0008E2F8A /* DecodingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 		7A9C31FC2764C4AF0000BBE7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7AF738ED2765216F003C81C3 /* Subviews */,
 				7A9C31FD2764C4BE0000BBE7 /* HomeRouter.swift */,
 				7A9C31FE2764C4BE0000BBE7 /* HomeControllerCreator.swift */,
 				7A9C31FF2764C4BE0000BBE7 /* HomeWorker.swift */,
@@ -376,6 +381,8 @@
 				7A9C3198276290300000BBE7 /* BaseViewController.swift */,
 				7A9C31FA2764C0610000BBE7 /* Completions.swift */,
 				7A9C32112764CA9A0000BBE7 /* XibView.swift */,
+				7A9C3230276513540000BBE7 /* SimpleAction.swift */,
+				7AA25D2E276515FE0012CA35 /* UIStackView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -391,7 +398,6 @@
 		7AF3044E272A7434005A5F09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A9C32132764CB5B0000BBE7 /* HomeCardView */,
 				7A2584A127442DD000B5983E /* Cells */,
 				7AF3044F272A743F005A5F09 /* Buttons */,
 				7AD363042753A976008E2F8A /* BottomPickerViewController.swift */,
@@ -406,6 +412,14 @@
 				7A0F32A8271DF0A100A789FA /* RoundedButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		7AF738ED2765216F003C81C3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7A9C32132764CB5B0000BBE7 /* HomeCardView */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +543,7 @@
 				7A9C31A02762926F0000BBE7 /* NSMutableAttributedString.swift in Sources */,
 				7AD362FE27528489008E2F8A /* MessageTextFieldCell.swift in Sources */,
 				7AD362C8274D89D5008E2F8A /* DecodingPresenter.swift in Sources */,
+				7A9C3231276513540000BBE7 /* SimpleAction.swift in Sources */,
 				7A9C322E2764D5A70000BBE7 /* Assets.swift in Sources */,
 				7AD363072753B1D4008E2F8A /* CardView.swift in Sources */,
 				7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */,
@@ -539,6 +554,7 @@
 				7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */,
 				7A9C322F2764D5A70000BBE7 /* Strings.swift in Sources */,
 				7A9C31F72764BFAD0000BBE7 /* SettingsPresenter.swift in Sources */,
+				7AA25D2F276515FE0012CA35 /* UIStackView.swift in Sources */,
 				7A9C32122764CA9A0000BBE7 /* XibView.swift in Sources */,
 				7A9C32062764C4BE0000BBE7 /* HomeWorker.swift in Sources */,
 				7A9C320A2764C4BE0000BBE7 /* HomeInteractor.swift in Sources */,

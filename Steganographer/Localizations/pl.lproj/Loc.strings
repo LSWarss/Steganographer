@@ -6,7 +6,11 @@
   
 */
 
+//MARK: CardViewType
 "CardViewType.Title.Encoding" = "Enkrypcja";
 "CardViewType.Title.Decoding" = "Dekrypcja";
 "CardViewType.Title.Information" = "Informacja";
 "CardViewType.Title.History" = "Historia";
+
+//MARK: Home
+"Home.Row.Steganography.Title" = "Steganography";
