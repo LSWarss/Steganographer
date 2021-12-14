@@ -41,10 +41,10 @@ class DashboardRouterImpl: DashboardRouter {
     }
 
     func pushToDecoding(on view: SteganographyDashboardView) {
-        let decodingViewController = DecodingRouterImpl.createModule()
+//        let decodingViewController = DecodingRouterImpl.createModule()
 
-        let viewController = view as? DashboardViewController
-        viewController?.navigationController?.pushViewController(decodingViewController, animated: true)
+//        let viewController = view as? DashboardViewController
+//        viewController?.navigationController?.pushViewController(decodingViewController, animated: true)
     }
 
     func pushToInfo(on view: SteganographyDashboardView) {

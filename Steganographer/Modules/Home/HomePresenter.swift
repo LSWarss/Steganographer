@@ -8,7 +8,6 @@
 import UIKit
 
 protocol HomePresenter: BasePresenter {
-    // TODO: Fill this with public interactor methods
     func presentHome()
 }
 
@@ -16,12 +15,9 @@ final class HomePresenterImpl<T: HomePresentable>: BasePresenterImpl<T> { }
 
 extension HomePresenterImpl: HomePresenter {
 
-    // TODO: Fill this with public interactor methods
     func presentHome() {
         controller?.displayHome()
     }
 }
 
-private extension HomePresenterImpl {
-    // TODO: Fill this with private interactor methods
-}
+private extension HomePresenterImpl {}

@@ -14,3 +14,5 @@
 
 //MARK: Home
 "Home.Row.Steganography.Title" = "Steganography";
+"Home.Header.FirstPart" = "Hej ty tam,\n";
+"Home.Header.SecondPart" = "jest coś w czym możemy Ci pomóc?";

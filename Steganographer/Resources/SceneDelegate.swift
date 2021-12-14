@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let window = UIWindow(windowScene: windowScene)
         let tabViewController = UITabBarController()
+        let navigationController = UINavigationController(rootViewController: tabViewController)
         let profileVC = ProfileControllerCreator().getController()
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 1)
         let homeVC = HomeControllerCreator().getController()
@@ -25,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 3)
         tabViewController.viewControllers = [profileVC, homeVC, settingsVC]
         tabViewController.selectedIndex = 1
-        window.rootViewController = tabViewController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
         self.window = window

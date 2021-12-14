@@ -8,8 +8,11 @@
 import Foundation
 
 protocol HomeInteractor {
-    // TODO: Fill this with public interactor methods
     func getHome()
+    func getStegoEncoding()
+    func getStegoDecoding()
+    func getStegoHistory()
+    func getStegoInformation()
 }
 
 final class HomeInteractorImpl {
@@ -29,16 +32,39 @@ final class HomeInteractorImpl {
 
 extension HomeInteractorImpl: HomeInteractor {
 
-    // TODO: Fill this with public interactor methods
     func getHome() {
         worker.fetchHome { [weak self] result in
             guard let self = self else { return }
             switch result {
-                case .success:
-                    self.presenter.presentHome()
-                case .failure(let error):
-                    break
+            case .success:
+                self.presenter.presentHome()
+            case .failure(let error):
+                break
             }
+        }
+    }
+
+    func getStegoEncoding() {
+        router.navigateToEncrypt {
+            log(.info, .layout, "Navigating to Stego Encoding View")
+        }
+    }
+
+    func getStegoDecoding() {
+        router.navigateToDecrypt {
+            log(.info, .layout, "Navigating to Stego Decoding View")
+        }
+    }
+
+    func getStegoInformation() {
+        router.navigateToInformation {
+            log(.info, .layout, "Navigating to Stego Information View")
+        }
+    }
+
+    func getStegoHistory() {
+        router.navigateToHistory {
+            log(.info, .layout, "Navigating to Stego History View")
         }
     }
 }

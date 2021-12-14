@@ -8,7 +8,6 @@
 import UIKit
 
 protocol HomePresentable: BasePresentable {
-    // TODO: Fill this with view setup methods
     func displayHome()
 }
 
@@ -17,7 +16,6 @@ final class HomeController: BaseViewController {
     private let interactor: HomeInteractor
 
     @IBOutlet private var headerMessageLabel: UILabel!
-    @IBOutlet private var steganographyVStack: UIStackView!
     @IBOutlet private var steganographyRowLabel: UILabel!
     @IBOutlet private var rowHStackView: UIStackView!
 
@@ -47,14 +45,13 @@ private extension HomeController {
 
     private func setupTranslations() {
         headerMessageLabel.attributedText = NSMutableAttributedString()
-            .mainGreenHighlightBold("Hello Łukasz,\n")
-            .bold("are there anything we can help you with?")
+            .mainGreenHighlightBold(L10n.Home.Header.firstPart)
+            .bold(L10n.Home.Header.secondPart)
         steganographyRowLabel.text = L10n.Home.Row.Steganography.title
     }
 
     private func setupView() {
         rowHStackView.removeAllSubviews()
-
         for type in stegoCards {
             setupCardForType(type)
         }
@@ -71,11 +68,14 @@ private extension HomeController {
 
     private func setupActionForType(_ type: CardViewType) {
         switch type {
-        case .encoding: break
-        case .decoding: break
-        case .history: break
-        case .information: break
-
+        case .encoding:
+            interactor.getStegoEncoding()
+        case .decoding:
+            interactor.getStegoDecoding()
+        case .history:
+            interactor.getStegoHistory()
+        case .information:
+            interactor.getStegoInformation()
         }
     }
 }

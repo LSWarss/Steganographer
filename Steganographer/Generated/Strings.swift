@@ -25,6 +25,13 @@ internal enum L10n {
   }
 
   internal enum Home {
+    internal enum Header {
+      /// Hello there,
+      /// 
+      internal static let firstPart = L10n.tr("Loc", "Home.Header.FirstPart")
+      /// are there anything we can help you with?
+      internal static let secondPart = L10n.tr("Loc", "Home.Header.SecondPart")
+    }
     internal enum Row {
       internal enum Steganography {
         /// Steganography

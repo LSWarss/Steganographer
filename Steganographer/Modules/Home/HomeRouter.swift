@@ -8,22 +8,38 @@
 import UIKit
 
 protocol HomeRouter {
-    func navigateToHome()
+    func navigateToEncrypt(completion: @escaping SimpleAction)
+    func navigateToDecrypt(completion: @escaping SimpleAction)
+    func navigateToInformation(completion: @escaping SimpleAction)
+    func navigateToHistory(completion: @escaping SimpleAction)
 }
 
 final class HomeRouterImpl {
-
     weak var controller: UIViewController?
-
 }
 
 extension HomeRouterImpl: HomeRouter {
 
-    func navigateToHome() {
-        // TODO: Change destination controller to something else
-        let nextController = HomeControllerCreator().getController()
-        controller?.navigationController?.pushViewController(nextController, animated: true)
+    func navigateToEncrypt(completion: @escaping SimpleAction) {
+        let encodingVC = StegoEncodingControllerCreator().getController()
+        controller?.navigationController?.pushViewController(encodingVC, animated: true)
     }
+
+    func navigateToDecrypt(completion: @escaping SimpleAction) {
+        let decodingVC = StegoDecodingControllerCreator().getController()
+        controller?.navigationController?.pushViewController(decodingVC, animated: true)
+    }
+
+    func navigateToInformation(completion: @escaping SimpleAction) {
+        let informationVC = StegoInformationControllerCreator().getController()
+        controller?.navigationController?.pushViewController(informationVC, animated: true)
+    }
+
+    func navigateToHistory(completion: @escaping SimpleAction) {
+        let historyVC = StegoHistoryControllerCreator().getController()
+        controller?.navigationController?.pushViewController(historyVC, animated: true)
+    }
+
 }
 
 private extension HomeRouterImpl {
