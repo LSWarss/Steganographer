@@ -8,7 +8,6 @@
 import UIKit
 
 protocol StegoEncodingPresenter: BasePresenter {
-    // TODO: Fill this with public interactor methods
     func presentStegoEncoding()
 }
 
@@ -16,12 +15,9 @@ final class StegoEncodingPresenterImpl<T: StegoEncodingPresentable>: BasePresent
 
 extension StegoEncodingPresenterImpl: StegoEncodingPresenter {
 
-    // TODO: Fill this with public interactor methods
     func presentStegoEncoding() {
         controller?.displayStegoEncoding()
     }
 }
 
-private extension StegoEncodingPresenterImpl {
-    // TODO: Fill this with private interactor methods
-}
+private extension StegoEncodingPresenterImpl {}

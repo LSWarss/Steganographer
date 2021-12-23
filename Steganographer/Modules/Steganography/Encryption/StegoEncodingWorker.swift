@@ -11,25 +11,18 @@ protocol StegoEncodingWorker {
     typealias StegoEncodingResult = Result<Void, Error>
     typealias StegoEncodingCompletion = Completion<StegoEncodingResult>
 
-    // TODO: Fill this with public worker methods
     func fetchStegoEncoding(completion: @escaping StegoEncodingCompletion)
 }
 
 final class StegoEncodingWorkerImpl {
-
-    init () {
-
-    }
+    init () {}
 }
 
 extension StegoEncodingWorkerImpl: StegoEncodingWorker {
 
-    // TODO: Fill this with public worker methods
     func fetchStegoEncoding(completion: @escaping StegoEncodingCompletion) {
         completion(.success(()))
     }
 }
 
-private extension StegoEncodingWorkerImpl {
-    // TODO: Fill this with private worker methods
-}
+private extension StegoEncodingWorkerImpl {}

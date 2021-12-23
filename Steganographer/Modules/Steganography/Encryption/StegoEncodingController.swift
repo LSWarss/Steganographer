@@ -8,7 +8,6 @@
 import UIKit
 
 protocol StegoEncodingPresentable: BasePresentable {
-    // TODO: Fill this with view setup methods
     func displayStegoEncoding()
 }
 
@@ -30,7 +29,6 @@ final class StegoEncodingController: BaseViewController {
 
 extension StegoEncodingController: StegoEncodingPresentable {
 
-    // TODO: Fill this with view setup methods
     func displayStegoEncoding() {
         setupTranslations()
         setupView()

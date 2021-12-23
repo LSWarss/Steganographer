@@ -20,6 +20,8 @@
 		7A12414D2769126300C04CF9 /* StegoEncodingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1241462769126300C04CF9 /* StegoEncodingPresenter.swift */; };
 		7A12414E2769126300C04CF9 /* StegoEncodingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1241472769126300C04CF9 /* StegoEncodingController.swift */; };
 		7A12414F2769126300C04CF9 /* StegoEncodingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1241482769126300C04CF9 /* StegoEncodingInteractor.swift */; };
+		7A124153276915CB00C04CF9 /* AppHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A124151276915CB00C04CF9 /* AppHeaderView.xib */; };
+		7A124154276915CB00C04CF9 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A124152276915CB00C04CF9 /* AppHeaderView.swift */; };
 		7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A227442E0800B5983E /* StegoHeaderCell.swift */; };
 		7A5ABB9F276673010005E419 /* StegoDecodingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5ABB98276673010005E419 /* StegoDecodingRouter.swift */; };
 		7A5ABBA0276673010005E419 /* StegoDecodingControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5ABB99276673010005E419 /* StegoDecodingControllerCreator.swift */; };
@@ -120,6 +122,8 @@
 		7A1241462769126300C04CF9 /* StegoEncodingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingPresenter.swift; sourceTree = "<group>"; };
 		7A1241472769126300C04CF9 /* StegoEncodingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingController.swift; sourceTree = "<group>"; };
 		7A1241482769126300C04CF9 /* StegoEncodingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingInteractor.swift; sourceTree = "<group>"; };
+		7A124151276915CB00C04CF9 /* AppHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppHeaderView.xib; sourceTree = "<group>"; };
+		7A124152276915CB00C04CF9 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
 		7A2584A227442E0800B5983E /* StegoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoHeaderCell.swift; sourceTree = "<group>"; };
 		7A5ABB98276673010005E419 /* StegoDecodingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoDecodingRouter.swift; sourceTree = "<group>"; };
 		7A5ABB99276673010005E419 /* StegoDecodingControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoDecodingControllerCreator.swift; sourceTree = "<group>"; };
@@ -259,6 +263,15 @@
 				7A1241482769126300C04CF9 /* StegoEncodingInteractor.swift */,
 			);
 			path = Encryption;
+			sourceTree = "<group>";
+		};
+		7A124150276915BD00C04CF9 /* AppHeader */ = {
+			isa = PBXGroup;
+			children = (
+				7A124151276915CB00C04CF9 /* AppHeaderView.xib */,
+				7A124152276915CB00C04CF9 /* AppHeaderView.swift */,
+			);
+			path = AppHeader;
 			sourceTree = "<group>";
 		};
 		7A25849C27442D9700B5983E /* View */ = {
@@ -486,6 +499,7 @@
 		7AF3044227280ADE005A5F09 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7A124150276915BD00C04CF9 /* AppHeader */,
 				7AF3044E272A7434005A5F09 /* Views */,
 			);
 			path = Components;
@@ -597,6 +611,7 @@
 				7A9C32242764D0920000BBE7 /* Colors.xcassets in Resources */,
 				7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */,
 				7A9C321D2764CE060000BBE7 /* Loc.strings in Resources */,
+				7A124153276915CB00C04CF9 /* AppHeaderView.xib in Resources */,
 				7A5ABBB3276679390005E419 /* StegoInformationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +686,7 @@
 				7A6AF589273454AC0061E3E4 /* EncodingPresenter.swift in Sources */,
 				7A5ABBB6276679390005E419 /* StegoInformationInteractor.swift in Sources */,
 				7A9C31E92764BF380000BBE7 /* ProfilePresenter.swift in Sources */,
+				7A124154276915CB00C04CF9 /* AppHeaderView.swift in Sources */,
 				7A5ABBBE276679470005E419 /* StegoHistoryRouter.swift in Sources */,
 				7AD3632F27628074008E2F8A /* BasePresentable.swift in Sources */,
 				7A5ABBB5276679390005E419 /* StegoInformationController.swift in Sources */,

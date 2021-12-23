@@ -8,24 +8,12 @@
 import UIKit
 
 protocol StegoEncodingRouter {
-    func navigateToStegoEncoding()
 }
 
 final class StegoEncodingRouterImpl {
-
     weak var controller: UIViewController?
-
 }
 
-extension StegoEncodingRouterImpl: StegoEncodingRouter {
+extension StegoEncodingRouterImpl: StegoEncodingRouter {}
 
-    func navigateToStegoEncoding() {
-        // TODO: Change destination controller to something else
-        let nextController = StegoEncodingControllerCreator().getController()
-        controller?.navigationController?.pushViewController(nextController, animated: true)
-    }
-}
-
-private extension StegoEncodingRouterImpl {
-    // TODO: Fill this with private router methods
-}
+private extension StegoEncodingRouterImpl {}

@@ -51,6 +51,7 @@ private extension HomeController {
     }
 
     private func setupView() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         rowHStackView.removeAllSubviews()
         for type in stegoCards {
             setupCardForType(type)
