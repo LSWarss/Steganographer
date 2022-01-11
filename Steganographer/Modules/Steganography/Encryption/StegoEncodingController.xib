@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StegoEncodingController">
             <connections>
+                <outlet property="appHeader" destination="wpR-lc-KXI" id="0b9-8V-lDf"/>
+                <outlet property="appHeaderLabel" destination="sWT-2g-5eC" id="7ku-ky-t5T"/>
+                <outlet property="bottomPickerButton" destination="g9l-WH-nt9" id="Y3E-06-Hre"/>
+                <outlet property="cameraPickerButton" destination="MbU-dq-dXL" id="m29-QS-n15"/>
                 <outlet property="view" destination="iN0-l3-epB" id="T2C-zL-GX5"/>
             </connections>
         </placeholder>
@@ -15,8 +21,49 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWT-2g-5eC" userLabel="TitleLabel">
+                    <rect key="frame" x="32" y="105" width="350" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpR-lc-KXI" customClass="AppHeaderView" customModule="Steganographer" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9l-WH-nt9" customClass="RoundedPickingButtonView" customModule="Steganographer" customModuleProvider="target">
+                    <rect key="frame" x="32" y="168" width="350" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MbU-dq-dXL" customClass="RoundedPickingButtonView" customModule="Steganographer" customModuleProvider="target">
+                    <rect key="frame" x="32" y="384" width="350" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="j3h-Gj-lQh"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="462" y="399"/>
+            <constraints>
+                <constraint firstItem="wpR-lc-KXI" firstAttribute="top" secondItem="j3h-Gj-lQh" secondAttribute="top" id="5dw-3d-856"/>
+                <constraint firstItem="wpR-lc-KXI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="988-Ag-sDU"/>
+                <constraint firstItem="sWT-2g-5eC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="9Pm-cN-tVq"/>
+                <constraint firstItem="MbU-dq-dXL" firstAttribute="leading" secondItem="j3h-Gj-lQh" secondAttribute="leading" constant="32" id="Bmr-dl-mm1"/>
+                <constraint firstItem="MbU-dq-dXL" firstAttribute="top" secondItem="g9l-WH-nt9" secondAttribute="bottom" constant="24" id="HdY-Lb-agJ"/>
+                <constraint firstItem="j3h-Gj-lQh" firstAttribute="trailing" secondItem="MbU-dq-dXL" secondAttribute="trailing" constant="32" id="JKQ-X8-BiU"/>
+                <constraint firstItem="g9l-WH-nt9" firstAttribute="top" secondItem="sWT-2g-5eC" secondAttribute="bottom" constant="64" id="MBb-kN-Xa2"/>
+                <constraint firstAttribute="trailing" secondItem="sWT-2g-5eC" secondAttribute="trailing" constant="32" id="NY1-jt-k3Q"/>
+                <constraint firstItem="wpR-lc-KXI" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.05" id="SBE-As-bnd"/>
+                <constraint firstItem="sWT-2g-5eC" firstAttribute="top" secondItem="wpR-lc-KXI" secondAttribute="bottom" constant="16" id="TRu-Wz-nwb"/>
+                <constraint firstAttribute="trailing" secondItem="g9l-WH-nt9" secondAttribute="trailing" constant="32" id="f8R-BJ-YBW"/>
+                <constraint firstAttribute="trailing" secondItem="wpR-lc-KXI" secondAttribute="trailing" id="lN8-Av-o4W"/>
+                <constraint firstItem="g9l-WH-nt9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="sMY-sR-qdm"/>
+            </constraints>
+            <point key="canvasLocation" x="460.86956521739131" y="398.4375"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

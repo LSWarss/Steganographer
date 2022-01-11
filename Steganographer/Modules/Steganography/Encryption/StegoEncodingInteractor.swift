@@ -8,8 +8,8 @@
 import Foundation
 
 protocol StegoEncodingInteractor {
-    // TODO: Fill this with public interactor methods
     func getStegoEncoding()
+    func goBack()
 }
 
 final class StegoEncodingInteractorImpl {
@@ -29,20 +29,19 @@ final class StegoEncodingInteractorImpl {
 
 extension StegoEncodingInteractorImpl: StegoEncodingInteractor {
 
-    // TODO: Fill this with public interactor methods
     func getStegoEncoding() {
         worker.fetchStegoEncoding { [weak self] result in
             guard let self = self else { return }
             switch result {
-                case .success:
-                    self.presenter.presentStegoEncoding()
-                case .failure(let error):
-                    break
+            case .success:
+                self.presenter.presentStegoEncoding()
+            case .failure(let error):
+                log(.error, .call, error.localizedDescription)
             }
         }
     }
-}
 
-private extension StegoEncodingInteractorImpl {
-    // TODO: Fill this with private interactor methods
+    func goBack() {
+        router.popViewController()
+    }
 }

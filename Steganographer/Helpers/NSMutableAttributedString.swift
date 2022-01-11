@@ -17,9 +17,14 @@ extension NSMutableAttributedString {
 
     func bold(_ value: String) -> NSMutableAttributedString {
 
+        guard let forColor = UIColor.defaultFontColor else {
+            assertionFailure("No such color")
+            return NSMutableAttributedString()
+        }
+
         let attributes: [NSAttributedString.Key: Any] = [
             .font: boldFont,
-            .foregroundColor: UIColor.defaultFontColor
+            .foregroundColor: forColor
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
@@ -28,9 +33,14 @@ extension NSMutableAttributedString {
 
     func normal(_ value: String) -> NSMutableAttributedString {
 
+        guard let forColor = UIColor.defaultFontColor else {
+            assertionFailure("No such color")
+            return NSMutableAttributedString()
+        }
+
         let attributes: [NSAttributedString.Key: Any] = [
             .font: regularFont,
-            .foregroundColor: UIColor.defaultFontColor
+            .foregroundColor: forColor
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
@@ -39,21 +49,14 @@ extension NSMutableAttributedString {
 
     func normalGrey(_ value: String) -> NSMutableAttributedString {
 
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: regularFont,
-            .foregroundColor: UIColor.defaultGreyColor
-        ]
-
-        self.append(NSAttributedString(string: value, attributes: attributes))
-        return self
-    }
-    /* Other styling methods */
-    func orangeHighlight(_ value: String) -> NSMutableAttributedString {
+        guard let forColor = UIColor.defaultGreyColor else {
+            assertionFailure("No such color")
+            return NSMutableAttributedString()
+        }
 
         let attributes: [NSAttributedString.Key: Any] = [
             .font: regularFont,
-            .foregroundColor: UIColor.white,
-            .backgroundColor: UIColor.orange
+            .foregroundColor: forColor
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
@@ -62,9 +65,14 @@ extension NSMutableAttributedString {
 
     func mainGreenHighlightBold(_ value: String) -> NSMutableAttributedString {
 
+        guard let forColor = UIColor.mainGreen else {
+            assertionFailure("No such color")
+            return NSMutableAttributedString()
+        }
+
         let attributes: [NSAttributedString.Key: Any] = [
             .font: boldFont,
-            .foregroundColor: UIColor.mainGreen
+            .foregroundColor: forColor
 
         ]
 
@@ -74,10 +82,14 @@ extension NSMutableAttributedString {
 
     func mainGreenHighlightRegular(_ value: String) -> NSMutableAttributedString {
 
+        guard let forColor = UIColor.mainGreen else {
+            assertionFailure("No such color")
+            return NSMutableAttributedString()
+        }
+
         let attributes: [NSAttributedString.Key: Any] = [
             .font: regularFont,
-            .foregroundColor: UIColor.mainGreen
-
+            .foregroundColor: forColor
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
@@ -90,7 +102,6 @@ extension NSMutableAttributedString {
             .font: regularFont,
             .foregroundColor: UIColor.white,
             .backgroundColor: UIColor.black
-
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))
@@ -102,7 +113,6 @@ extension NSMutableAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: regularFont,
             .underlineStyle: NSUnderlineStyle.single.rawValue
-
         ]
 
         self.append(NSAttributedString(string: value, attributes: attributes))

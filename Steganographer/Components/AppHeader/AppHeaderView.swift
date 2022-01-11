@@ -13,37 +13,35 @@ import IteoLogger
 
 final class AppHeaderView: XibView {
 
-    var backAction = SimpleAction()
+    var backAction: SimpleAction?
 
-    @IBOutlet weak var backButton: UIImageView!
-    @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet private var backButton: UIImageView!
+    @IBOutlet private var headerTitle: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupGestures()
     }
 
-    func setup(title: String, isBack: Bool, action: @escaping SimpleAction) {
-        backButton.isHidden = isBack
-        backAction = action
+    func setup(title: String, isBack: Bool) {
+        backButton.isHidden = !isBack
         headerTitle.text = title
     }
 
-    func setup(title: NSAttributedString, isBack: Bool, action: @escaping SimpleAction) {
-        backButton.isHidden = isBack
-        backAction = action
+    func setup(title: NSAttributedString, isBack: Bool) {
+        backButton.isHidden = !isBack
         headerTitle.attributedText = title
     }
 }
 
 private extension AppHeaderView {
-    
+
     private func setupGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: <#T##Selector?#>)
-        backButton.addGestureRecognizer()
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(backTap))
+        backButton.addGestureRecognizer(tap)
     }
 
     @objc func backTap() {
-        backAction()
+        backAction?()
     }
 }

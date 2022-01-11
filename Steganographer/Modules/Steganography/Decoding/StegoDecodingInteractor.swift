@@ -8,8 +8,8 @@
 import Foundation
 
 protocol StegoDecodingInteractor {
-    // TODO: Fill this with public interactor methods
     func getStegoDecoding()
+    func goBack()
 }
 
 final class StegoDecodingInteractorImpl {
@@ -40,6 +40,10 @@ extension StegoDecodingInteractorImpl: StegoDecodingInteractor {
                     break
             }
         }
+    }
+    
+    func goBack() {
+        router.popViewController()
     }
 }
 

@@ -8,7 +8,6 @@
 import UIKit
 
 protocol StegoDecodingPresentable: BasePresentable {
-    // TODO: Fill this with view setup methods
     func displayStegoDecoding()
 }
 
@@ -16,6 +15,8 @@ final class StegoDecodingController: BaseViewController {
 
     private let interactor: StegoDecodingInteractor
 
+    @IBOutlet weak var appHeader: AppHeaderView!
+    
     init(interactor: StegoDecodingInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -30,7 +31,6 @@ final class StegoDecodingController: BaseViewController {
 
 extension StegoDecodingController: StegoDecodingPresentable {
 
-    // TODO: Fill this with view setup methods
     func displayStegoDecoding() {
         setupTranslations()
         setupView()
@@ -40,10 +40,16 @@ extension StegoDecodingController: StegoDecodingPresentable {
 private extension StegoDecodingController {
 
     private func setupTranslations() {
-        // TODO: Setup translations for labels here
+        appHeader.setup(title: Strings.Steganography.Decoding.title, isBack: true)
     }
 
     private func setupView() {
-        // TODO: Setup view here
+        setupHeader()
+    }
+
+    private func setupHeader() {
+        appHeader.backAction = { [weak self] in
+            self?.interactor.goBack()
+        }
     }
 }

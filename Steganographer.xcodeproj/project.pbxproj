@@ -23,6 +23,8 @@
 		7A124153276915CB00C04CF9 /* AppHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A124151276915CB00C04CF9 /* AppHeaderView.xib */; };
 		7A124154276915CB00C04CF9 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A124152276915CB00C04CF9 /* AppHeaderView.swift */; };
 		7A2584A327442E0800B5983E /* StegoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2584A227442E0800B5983E /* StegoHeaderCell.swift */; };
+		7A37C5FE278E07CA006E99C3 /* RoundedPickingButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A37C5FC278E07CA006E99C3 /* RoundedPickingButtonView.xib */; };
+		7A37C5FF278E07CA006E99C3 /* RoundedPickingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A37C5FD278E07CA006E99C3 /* RoundedPickingButtonView.swift */; };
 		7A5ABB9F276673010005E419 /* StegoDecodingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5ABB98276673010005E419 /* StegoDecodingRouter.swift */; };
 		7A5ABBA0276673010005E419 /* StegoDecodingControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5ABB99276673010005E419 /* StegoDecodingControllerCreator.swift */; };
 		7A5ABBA1276673010005E419 /* StegoDecodingWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5ABB9A276673010005E419 /* StegoDecodingWorker.swift */; };
@@ -125,6 +127,8 @@
 		7A124151276915CB00C04CF9 /* AppHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppHeaderView.xib; sourceTree = "<group>"; };
 		7A124152276915CB00C04CF9 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
 		7A2584A227442E0800B5983E /* StegoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoHeaderCell.swift; sourceTree = "<group>"; };
+		7A37C5FC278E07CA006E99C3 /* RoundedPickingButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedPickingButtonView.xib; sourceTree = "<group>"; };
+		7A37C5FD278E07CA006E99C3 /* RoundedPickingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedPickingButtonView.swift; sourceTree = "<group>"; };
 		7A5ABB98276673010005E419 /* StegoDecodingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoDecodingRouter.swift; sourceTree = "<group>"; };
 		7A5ABB99276673010005E419 /* StegoDecodingControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoDecodingControllerCreator.swift; sourceTree = "<group>"; };
 		7A5ABB9A276673010005E419 /* StegoDecodingWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoDecodingWorker.swift; sourceTree = "<group>"; };
@@ -240,12 +244,12 @@
 		7A0F3293271DD70000A789FA /* Steganographer */ = {
 			isa = PBXGroup;
 			children = (
+				7A9C321A2764CDE00000BBE7 /* Localizations */,
 				7A9C322B2764D5930000BBE7 /* Generated */,
 				7A6AF582273454470061E3E4 /* Modules */,
 				7AD3634627628BEA008E2F8A /* Helpers */,
 				7AF3044227280ADE005A5F09 /* Components */,
 				7A9C32252764D0BE0000BBE7 /* Configuration */,
-				7A9C321A2764CDE00000BBE7 /* Localizations */,
 				7A9C32222764D0600000BBE7 /* Resources */,
 			);
 			path = Steganographer;
@@ -254,6 +258,7 @@
 		7A1241412769124B00C04CF9 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
+				7A37C5FB278E07A2006E99C3 /* Subviews */,
 				7A1241422769126300C04CF9 /* StegoEncodingRouter.swift */,
 				7A1241432769126300C04CF9 /* StegoEncodingControllerCreator.swift */,
 				7A1241442769126300C04CF9 /* StegoEncodingWorker.swift */,
@@ -296,6 +301,15 @@
 				7AD3630227528B51008E2F8A /* RoundedButtonCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7A37C5FB278E07A2006E99C3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7A37C5FC278E07CA006E99C3 /* RoundedPickingButtonView.xib */,
+				7A37C5FD278E07CA006E99C3 /* RoundedPickingButtonView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		7A5ABB93276672D30005E419 /* Decoding */ = {
@@ -543,6 +557,7 @@
 				7A0F328E271DD70000A789FA /* Frameworks */,
 				7A0F328F271DD70000A789FA /* Resources */,
 				7AF3044327280C97005A5F09 /* Run Swiftlint */,
+				7A37C5FA278DFB52006E99C3 /* Run swiftgen */,
 			);
 			buildRules = (
 			);
@@ -608,6 +623,7 @@
 				7A12414C2769126300C04CF9 /* StegoEncodingController.xib in Resources */,
 				7A9C31E82764BF380000BBE7 /* ProfileController.xib in Resources */,
 				7A9C32072764C4BE0000BBE7 /* HomeController.xib in Resources */,
+				7A37C5FE278E07CA006E99C3 /* RoundedPickingButtonView.xib in Resources */,
 				7A9C32242764D0920000BBE7 /* Colors.xcassets in Resources */,
 				7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */,
 				7A9C321D2764CE060000BBE7 /* Loc.strings in Resources */,
@@ -619,6 +635,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7A37C5FA278DFB52006E99C3 /* Run swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftgen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: Swiftgen not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
 		7AF3044327280C97005A5F09 /* Run Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -635,7 +669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -654,6 +688,7 @@
 				7A5ABBC0276679470005E419 /* StegoHistoryWorker.swift in Sources */,
 				7A5ABBA3276673010005E419 /* StegoDecodingPresenter.swift in Sources */,
 				7A6AF58D273454C00061E3E4 /* DashboardRouter.swift in Sources */,
+				7A37C5FF278E07CA006E99C3 /* RoundedPickingButtonView.swift in Sources */,
 				7A9C31F52764BFAD0000BBE7 /* SettingsWorker.swift in Sources */,
 				7A5ABBC3276679470005E419 /* StegoHistoryController.swift in Sources */,
 				7AD362AF274D7BC5008E2F8A /* EncodingViewController.swift in Sources */,

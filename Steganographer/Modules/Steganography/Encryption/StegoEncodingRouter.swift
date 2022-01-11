@@ -8,12 +8,19 @@
 import UIKit
 
 protocol StegoEncodingRouter {
+    func popViewController()
 }
 
 final class StegoEncodingRouterImpl {
     weak var controller: UIViewController?
 }
 
-extension StegoEncodingRouterImpl: StegoEncodingRouter {}
+extension StegoEncodingRouterImpl: StegoEncodingRouter {
+
+    func popViewController() {
+        controller?.navigationController?.popViewController(animated: true)
+    }
+
+}
 
 private extension StegoEncodingRouterImpl {}

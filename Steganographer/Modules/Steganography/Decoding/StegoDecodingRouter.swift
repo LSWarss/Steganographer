@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StegoDecodingRouter {
-    func navigateToStegoDecoding()
+    func popViewController()
 }
 
 final class StegoDecodingRouterImpl {
@@ -18,12 +18,11 @@ final class StegoDecodingRouterImpl {
 }
 
 extension StegoDecodingRouterImpl: StegoDecodingRouter {
-
-    func navigateToStegoDecoding() {
-        // TODO: Change destination controller to something else
-        let nextController = StegoDecodingControllerCreator().getController()
-        controller?.navigationController?.pushViewController(nextController, animated: true)
+    
+    func popViewController() {
+        controller?.navigationController?.popViewController(animated: true)
     }
+    
 }
 
 private extension StegoDecodingRouterImpl {

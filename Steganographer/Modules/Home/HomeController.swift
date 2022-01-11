@@ -45,9 +45,9 @@ private extension HomeController {
 
     private func setupTranslations() {
         headerMessageLabel.attributedText = NSMutableAttributedString()
-            .mainGreenHighlightBold(L10n.Home.Header.firstPart)
-            .bold(L10n.Home.Header.secondPart)
-        steganographyRowLabel.text = L10n.Home.Row.Steganography.title
+            .mainGreenHighlightBold(Strings.Home.Header.firstPart)
+            .bold(Strings.Home.Header.secondPart)
+        steganographyRowLabel.text = Strings.Home.Row.Steganography.title
     }
 
     private func setupView() {

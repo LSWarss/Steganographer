@@ -3,6 +3,8 @@ strings:
   outputs:
     - templateName: structured-swift5
       output: Steganographer/Generated/Strings.swift
+      params: 
+        enumName: Strings
 
 xcassets:
   inputs: Steganographer/Resources/.

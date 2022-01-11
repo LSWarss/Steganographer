@@ -16,3 +16,16 @@
 "Home.Row.Steganography.Title" = "Steganography";
 "Home.Header.FirstPart" = "Hej ty tam,\n";
 "Home.Header.SecondPart" = "jest coś w czym możemy Ci pomóc?";
+
+//MARK: Encoding
+"Steganography.Encoding.Title" = "Enkrypcja";
+"Steganography.Encoding.HeaderText1" = "Na tym ekranie możesz";
+"Steganography.Encoding.HeaderText2" = " ukryć ";
+"Steganography.Encoding.HeaderText3" = "swoją wiadomość w obrazie z galeri czy prosto z kamery :)";
+"Steganography.Encoding.BottomPickerButton1" = "Kliknij tutaj aby wybrać obraz z\n";
+"Steganography.Encoding.BottomPickerButton2" = "Zdjęć";
+"Steganography.Encoding.BottomPickerButton3" = " lub ";
+"Steganography.Encoding.BottomPickerButton4" = "Plików";
+
+//MARK: Decoding
+"Steganography.Decoding.Title" = "Dekrypcja";

@@ -17,13 +17,13 @@ enum CardViewType: Equatable {
     var title: String {
         switch self {
         case .encoding:
-            return L10n.CardViewType.Title.encoding
+            return Strings.CardViewType.Title.encoding
         case .decoding:
-            return L10n.CardViewType.Title.decoding
+            return Strings.CardViewType.Title.decoding
         case .information:
-            return L10n.CardViewType.Title.information
+            return Strings.CardViewType.Title.information
         case .history:
-            return L10n.CardViewType.Title.history
+            return Strings.CardViewType.Title.history
         }
     }
 
