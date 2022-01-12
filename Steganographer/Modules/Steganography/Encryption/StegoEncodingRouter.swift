@@ -9,6 +9,7 @@ import UIKit
 
 protocol StegoEncodingRouter {
     func popViewController()
+    func showEncryptionForChosenImage(_ image: UIImage)
 }
 
 final class StegoEncodingRouterImpl {
@@ -21,6 +22,11 @@ extension StegoEncodingRouterImpl: StegoEncodingRouter {
         controller?.navigationController?.popViewController(animated: true)
     }
 
+    func showEncryptionForChosenImage(_ image: UIImage) {
+        let chosenEncryptionController = StegoEncodingChosenControllerCreator().getController(with: image)
+        controller?.navigationController?.pushViewController(chosenEncryptionController, animated: true)
+    }
+    
 }
 
 private extension StegoEncodingRouterImpl {}

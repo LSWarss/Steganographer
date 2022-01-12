@@ -20,6 +20,9 @@ final class StegoEncodingController: BaseViewController {
     @IBOutlet private var bottomPickerButton: RoundedPickingButtonView!
     @IBOutlet private var cameraPickerButton: RoundedPickingButtonView!
 
+    var imagePicker: ImagePicker?
+    var documentPicker: FilesImagePicker?
+
     init(interactor: StegoEncodingInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -27,6 +30,8 @@ final class StegoEncodingController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        self.documentPicker = FilesImagePicker(presentationController: self, delegate: self)
         displayStegoEncoding()
         interactor.getStegoEncoding()
     }
@@ -64,6 +69,7 @@ private extension StegoEncodingController {
 
     private func setupView() {
         setupHeader()
+        setupPickingButtons()
     }
 
     private func setupHeader() {
@@ -71,10 +77,42 @@ private extension StegoEncodingController {
             self?.interactor.goBack()
         }
     }
-    
+
     private func setupPickingButtons() {
+
         bottomPickerButton.pickAction = { [weak self] in
-            
+            self?.imagePicker?.present(from: (self?.bottomPickerButton)!)
+        }
+
+        cameraPickerButton.pickAction = { [weak self] in
+            self?.documentPicker?.present(from: (self?.cameraPickerButton)!)
+        }
+    }
+}
+
+extension StegoEncodingController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        guard let image = image else {
+            return
+        }
+
+        interactor.goToStegoEncodingWithImage(image)
+    }
+}
+
+extension StegoEncodingController: FilesImagePickerDelegate {
+
+    func didSelect(documentOnURL: URL?) {
+        guard let documentOnURL = documentOnURL else {
+            return
+        }
+        
+        if let data = try? Data(contentsOf: documentOnURL) {
+            guard let image = UIImage(data: data) else {
+                return
+            }
+            interactor.goToStegoEncodingWithImage(image)
         }
     }
 }

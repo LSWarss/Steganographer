@@ -24,10 +24,14 @@ final class RoundedPickingButtonView: XibView {
     }
 
     func setTitleWithAttributed(_ attributedString: NSMutableAttributedString) {
+        setupView()
+        setupGestures()
         buttonLabel.attributedText = attributedString
     }
-    
+
     func setTitleWithNormal(_ string: String) {
+        setupView()
+        setupGestures()
         buttonLabel.text = string
     }
 }
@@ -52,5 +56,6 @@ private extension RoundedPickingButtonView {
 
     @objc func tap() {
         pickAction?()
+        log(.info, .screenView, "tap tap")
     }
 }

@@ -40,6 +40,15 @@ internal enum Strings {
     }
   }
 
+  internal enum ImagePicker {
+    /// Take photo
+    internal static let camera = Strings.tr("Loc", "ImagePicker.Camera")
+    /// Cancel
+    internal static let cancel = Strings.tr("Loc", "ImagePicker.Cancel")
+    /// Photo library
+    internal static let photos = Strings.tr("Loc", "ImagePicker.Photos")
+  }
+
   internal enum Steganography {
     internal enum Decoding {
       /// Decoding
@@ -53,12 +62,12 @@ internal enum Strings {
       internal static let bottomPickerButton2 = Strings.tr("Loc", "Steganography.Encoding.BottomPickerButton2")
       ///  or 
       internal static let bottomPickerButton3 = Strings.tr("Loc", "Steganography.Encoding.BottomPickerButton3")
-      /// Files
+      /// Camera
       internal static let bottomPickerButton4 = Strings.tr("Loc", "Steganography.Encoding.BottomPickerButton4")
-      /// Click here to make a photo with
+      /// Click here to get image from 
       /// 
       internal static let camerPickerButton1 = Strings.tr("Loc", "Steganography.Encoding.CamerPickerButton1")
-      /// Camera
+      /// Files
       internal static let camerPickerButton2 = Strings.tr("Loc", "Steganography.Encoding.CamerPickerButton2")
       /// Here you can
       internal static let headerText1 = Strings.tr("Loc", "Steganography.Encoding.HeaderText1")
@@ -68,6 +77,20 @@ internal enum Strings {
       internal static let headerText3 = Strings.tr("Loc", "Steganography.Encoding.HeaderText3")
       /// Encoding
       internal static let title = Strings.tr("Loc", "Steganography.Encoding.Title")
+      internal enum Chosen {
+        /// Enter text in to the field below and let's
+        internal static let headerText1 = Strings.tr("Loc", "Steganography.Encoding.Chosen.HeaderText1")
+        ///  hide 
+        internal static let headerText2 = Strings.tr("Loc", "Steganography.Encoding.Chosen.HeaderText2")
+        /// your message :)
+        internal static let headerText3 = Strings.tr("Loc", "Steganography.Encoding.Chosen.HeaderText3")
+        internal enum TextView {
+          /// Enter your message here
+          internal static let placeholder = Strings.tr("Loc", "Steganography.Encoding.Chosen.TextView.Placeholder")
+          /// Text to hide
+          internal static let title = Strings.tr("Loc", "Steganography.Encoding.Chosen.TextView.Title")
+        }
+      }
     }
   }
 }

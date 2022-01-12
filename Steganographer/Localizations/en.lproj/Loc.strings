@@ -25,9 +25,21 @@
 "Steganography.Encoding.BottomPickerButton1" = "Click here to pick an image from\n";
 "Steganography.Encoding.BottomPickerButton2" = "Photos";
 "Steganography.Encoding.BottomPickerButton3" = " or ";
-"Steganography.Encoding.BottomPickerButton4" = "Files";
-"Steganography.Encoding.CamerPickerButton1" = "Click here to make a photo with\n";
-"Steganography.Encoding.CamerPickerButton2" = "Camera";
+"Steganography.Encoding.BottomPickerButton4" = "Camera";
+"Steganography.Encoding.CamerPickerButton1" = "Click here to get image from \n";
+"Steganography.Encoding.CamerPickerButton2" = "Files";
+
+//MARK: Encoding Chosen
+"Steganography.Encoding.Chosen.HeaderText1" = "Enter text in to the field below and let's";
+"Steganography.Encoding.Chosen.HeaderText2" = " hide ";
+"Steganography.Encoding.Chosen.HeaderText3" = "your message :)";
+"Steganography.Encoding.Chosen.TextView.Title" = "Text to hide";
+"Steganography.Encoding.Chosen.TextView.Placeholder" = "Enter your message here";
 
 //MARK: Decoding
 "Steganography.Decoding.Title" = "Decoding";
+
+//MARK: ImagePicker
+"ImagePicker.Camera" = "Take photo";
+"ImagePicker.Photos" = "Photo library";
+"ImagePicker.Cancel" = "Cancel";

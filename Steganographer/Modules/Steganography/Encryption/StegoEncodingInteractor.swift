@@ -6,10 +6,12 @@
 //  Copyright (c) 2021. All rights reserved.
 
 import Foundation
+import UIKit
 
 protocol StegoEncodingInteractor {
     func getStegoEncoding()
     func goBack()
+    func goToStegoEncodingWithImage(_ image: UIImage)
 }
 
 final class StegoEncodingInteractorImpl {
@@ -43,5 +45,9 @@ extension StegoEncodingInteractorImpl: StegoEncodingInteractor {
 
     func goBack() {
         router.popViewController()
+    }
+
+    func goToStegoEncodingWithImage(_ image: UIImage) {
+        router.showEncryptionForChosenImage(image)
     }
 }
