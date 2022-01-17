@@ -11,7 +11,7 @@ class BaseViewController: UIViewController, BasePresentable {
 
     // workaround for viewContollers in UIPagedViewController
     // (setViewControllers() is setting 'isMovingFromParent' to 'true')
-    var shouldCheckDeallocating: Bool = true
+    var shouldCheckDeallocating = true
 
     @IBInspectable var keyboardAvoiding: Bool = true
 
@@ -26,10 +26,13 @@ class BaseViewController: UIViewController, BasePresentable {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupKeyboardDismissing()
+        startAvoidingKeyboardIfNeeded()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        stopAvoidingKeyboardIfNeeded()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,5 +47,32 @@ class BaseViewController: UIViewController, BasePresentable {
             }
         }
         #endif
+    }
+}
+
+private extension BaseViewController {
+    
+    func setupKeyboardDismissing() {
+        let dismissTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(dismissTap)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+
+    func startAvoidingKeyboardIfNeeded() {
+        guard keyboardAvoiding else { return }
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onKeyboardFrameWillChangeNotificationReceived(_:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+    }
+
+    func stopAvoidingKeyboardIfNeeded() {
+        guard keyboardAvoiding else { return }
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillChangeFrameNotification,
+                                                  object: nil)
     }
 }

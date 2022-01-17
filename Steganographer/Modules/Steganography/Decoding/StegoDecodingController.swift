@@ -33,23 +33,12 @@ extension StegoDecodingController: StegoDecodingPresentable {
 
     func displayStegoDecoding() {
         setupTranslations()
-        setupView()
     }
 }
 
 private extension StegoDecodingController {
 
     private func setupTranslations() {
-        appHeader.setup(title: Strings.Steganography.Decoding.title, isBack: true)
-    }
-
-    private func setupView() {
-        setupHeader()
-    }
-
-    private func setupHeader() {
-        appHeader.backAction = { [weak self] in
-            self?.interactor.goBack()
-        }
+        appHeader.setup(in: self, title: Strings.Steganography.Decoding.title)
     }
 }

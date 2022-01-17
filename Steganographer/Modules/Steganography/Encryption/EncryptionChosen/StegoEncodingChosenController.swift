@@ -22,7 +22,8 @@ final class StegoEncodingChosenController: BaseViewController {
     @IBOutlet private var encryptionImageView: UIImageView!
     @IBOutlet private var textViewTitleLabel: UILabel!
     @IBOutlet private var encryptionMessageTextView: UITextView!
-
+    @IBOutlet private var submitButton: UIButton!
+    
     init(interactor: StegoEncodingChosenInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -42,10 +43,14 @@ extension StegoEncodingChosenController: StegoEncodingChosenPresentable {
     }
 }
 
+extension StegoEncodingChosenController: UITextViewDelegate {
+    
+}
+
 private extension StegoEncodingChosenController {
 
     private func setupTranslations() {
-        appHeader.setup(title: "", isBack: true)
+        appHeader.setup(in: self, title: "")
         appHeaderLabel.attributedText = NSMutableAttributedString()
             .bold(Page.headerText1)
             .mainGreenHighlightBold(Page.headerText2)
@@ -56,9 +61,9 @@ private extension StegoEncodingChosenController {
 
     private func setupView() {
         setupTranslations()
-        setupHeader()
         setupImageView()
         setupTextView()
+        setupSubmitButton()
     }
     
     private func setupImageView() {
@@ -71,13 +76,15 @@ private extension StegoEncodingChosenController {
     
     private func setupTextView() {
         encryptionMessageTextView.layer.cornerRadius = 15
-        encryptionMessageTextView.layer.borderColor = UIColor.defaultGreyColor?.cgColor
+        encryptionMessageTextView.layer.borderColor = UIColor.black.cgColor
         encryptionMessageTextView.layer.borderWidth = 1
     }
-
-    private func setupHeader() {
-        appHeader.backAction = { [weak self] in
-            self?.interactor.goBack()
-        }
+    
+    private func setupSubmitButton() {
+        submitButton.addTarget(self, action: #selector(submitButtonAction), for: .touchUpInside)
+    }
+    
+    @objc func submitButtonAction() {
+        self.encryptionImageView.image = self.interactor.encodeImage(with: encryptionMessageTextView.text)
     }
 }

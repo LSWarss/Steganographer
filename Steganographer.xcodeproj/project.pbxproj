@@ -61,6 +61,7 @@
 		7A735B77278F4BED004E014B /* StegoEncodingChosenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B70278F4BED004E014B /* StegoEncodingChosenPresenter.swift */; };
 		7A735B78278F4BED004E014B /* StegoEncodingChosenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B71278F4BED004E014B /* StegoEncodingChosenController.swift */; };
 		7A735B79278F4BED004E014B /* StegoEncodingChosenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B72278F4BED004E014B /* StegoEncodingChosenInteractor.swift */; };
+		7A735B7C2795D927004E014B /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B7B2795D927004E014B /* UIViewController+Keyboard.swift */; };
 		7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C3198276290300000BBE7 /* BaseViewController.swift */; };
 		7A9C319E2762926A0000BBE7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C319D2762926A0000BBE7 /* UIColor.swift */; };
 		7A9C31A02762926F0000BBE7 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */; };
@@ -173,6 +174,7 @@
 		7A735B70278F4BED004E014B /* StegoEncodingChosenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingChosenPresenter.swift; sourceTree = "<group>"; };
 		7A735B71278F4BED004E014B /* StegoEncodingChosenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingChosenController.swift; sourceTree = "<group>"; };
 		7A735B72278F4BED004E014B /* StegoEncodingChosenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingChosenInteractor.swift; sourceTree = "<group>"; };
+		7A735B7B2795D927004E014B /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		7A9C3198276290300000BBE7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7A9C319D2762926A0000BBE7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
@@ -422,6 +424,14 @@
 			path = EncryptionChosen;
 			sourceTree = "<group>";
 		};
+		7A735B7A2795D7D2004E014B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A735B7B2795D927004E014B /* UIViewController+Keyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7A9C31DC2764BF150000BBE7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +547,7 @@
 		7AD3634627628BEA008E2F8A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7A735B7A2795D7D2004E014B /* Extensions */,
 				7A9C319D2762926A0000BBE7 /* UIColor.swift */,
 				7AD3632E27628074008E2F8A /* BasePresentable.swift */,
 				7AD36330276280FC008E2F8A /* BasePresenter.swift */,
@@ -756,6 +767,7 @@
 				7AD362802746D300008E2F8A /* CardCell.swift in Sources */,
 				7A5ABBB4276679390005E419 /* StegoInformationPresenter.swift in Sources */,
 				7A9C31F82764BFAD0000BBE7 /* SettingsController.swift in Sources */,
+				7A735B7C2795D927004E014B /* UIViewController+Keyboard.swift in Sources */,
 				7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */,
 				7A9C322F2764D5A70000BBE7 /* Strings.swift in Sources */,
 				7A9C31F72764BFAD0000BBE7 /* SettingsPresenter.swift in Sources */,

@@ -5,12 +5,12 @@
 //  Created by Łukasz Stachnik on 12/01/2022.
 //  Copyright (c) 2022. All rights reserved.
 
-import Foundation
 import UIKit
+import DisguisedSwiftly
 
 protocol StegoEncodingChosenInteractor {
-    func goBack()
     func getStegoEncodingChosen()
+    func encodeImage(with text: String) -> UIImage?
 }
 
 final class StegoEncodingChosenInteractorImpl {
@@ -34,19 +34,22 @@ final class StegoEncodingChosenInteractorImpl {
 extension StegoEncodingChosenInteractorImpl: StegoEncodingChosenInteractor {
 
     func getStegoEncodingChosen() {
-        worker.fetchStegoEncodingChosen { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-                case .success:
-                self.presenter.presentStegoEncodingChosen(with: self.image)
-                case .failure(let error):
-                    break
-            }
-        }
+        self.presenter.presentStegoEncodingChosen(with: self.image)
     }
     
-    func goBack() {
-        router.popViewController()
+    func encodeImage(with text: String) -> UIImage? {
+        let stego = Stego()
+        
+        return stego.encodeTextInImage(with: text, image: self.image) { progress in
+            switch progress {
+            case .ended:
+                print("Ended encoding")
+            case .working:
+                break
+            case .failed:
+                break
+            }
+        }
     }
 }
 

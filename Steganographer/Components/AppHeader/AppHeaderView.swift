@@ -13,35 +13,45 @@ import IteoLogger
 
 final class AppHeaderView: XibView {
 
-    var backAction: SimpleAction?
-
-    @IBOutlet private var backButton: UIImageView!
+    @IBOutlet var backButton: UIButton!
     @IBOutlet private var headerTitle: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupGestures()
-    }
+    private weak var controller: UIViewController?
 
-    func setup(title: String, isBack: Bool) {
-        backButton.isHidden = !isBack
+    func setup(in controller: UIViewController?,
+               title: String,
+               ignoreBackButton: Bool = false) {
+        backButton.isHidden = ignoreBackButton
         headerTitle.text = title
+        configureNavigationBackButton(in: controller)
     }
 
-    func setup(title: NSAttributedString, isBack: Bool) {
-        backButton.isHidden = !isBack
+    func setup(in controller: UIViewController?,
+               title: NSAttributedString,
+               ignoreBackButton: Bool = false) {
+        backButton.isHidden = ignoreBackButton
         headerTitle.attributedText = title
+        configureNavigationBackButton(in: controller)
     }
 }
 
 private extension AppHeaderView {
-
-    private func setupGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(backTap))
-        backButton.addGestureRecognizer(tap)
+    
+    private func configureDefault() {
+        setup(in: nil, title: "View Title")
     }
 
+    private func configureNavigationBackButton(in controller: UIViewController?) {
+        self.controller = controller
+        configureBackButton()
+    }
+
+    private func configureBackButton() {
+        backButton.addTarget(self, action: #selector(backTap), for: .touchUpInside)
+    }
+    
     @objc func backTap() {
-        backAction?()
+        assert(controller?.navigationController != nil, "Back tapped, but not in navigation stack")
+        controller?.navigationController?.popViewController(animated: true)
     }
 }

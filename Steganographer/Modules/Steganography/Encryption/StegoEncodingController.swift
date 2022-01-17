@@ -48,7 +48,8 @@ extension StegoEncodingController: StegoEncodingPresentable {
 private extension StegoEncodingController {
 
     private func setupTranslations() {
-        appHeader.setup(title: Strings.Steganography.Encoding.title, isBack: true)
+        appHeader.setup(in: self, title: Strings.Steganography.Encoding.title)
+
         appHeaderLabel.attributedText = NSMutableAttributedString()
             .bold(Strings.Steganography.Encoding.headerText1)
             .mainGreenHighlightBold(Strings.Steganography.Encoding.headerText2)
@@ -68,14 +69,7 @@ private extension StegoEncodingController {
     }
 
     private func setupView() {
-        setupHeader()
         setupPickingButtons()
-    }
-
-    private func setupHeader() {
-        appHeader.backAction = { [weak self] in
-            self?.interactor.goBack()
-        }
     }
 
     private func setupPickingButtons() {

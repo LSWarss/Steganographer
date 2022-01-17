@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppHeaderView" customModule="Steganographer" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="dz6-Jd-DHf" id="sKP-sE-gv6"/>
+                <outlet property="backButton" destination="Sh7-mP-6Ws" id="JOI-lk-rrj"/>
                 <outlet property="headerTitle" destination="CdE-CK-uzh" id="m17-cF-aMw"/>
             </connections>
         </placeholder>
@@ -22,20 +22,23 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iuk-OH-xXx">
                     <rect key="frame" x="16" y="0.0" width="343" height="100"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dz6-Jd-DHf">
-                            <rect key="frame" x="0.0" y="-0.5" width="22" height="101"/>
-                            <color key="tintColor" name="AccentColor"/>
-                            <imageReference key="image" image="arrowtriangle.backward.fill" catalog="system" symbolScale="large"/>
-                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh7-mP-6Ws">
+                            <rect key="frame" x="0.0" y="0.0" width="67" height="100"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
+                                <imageReference key="image" image="arrowtriangle.backward.fill" catalog="system" symbolScale="default"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="18" scale="default"/>
+                                <color key="baseForegroundColor" name="AccentColor"/>
+                            </buttonConfiguration>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is some text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdE-CK-uzh">
-                            <rect key="frame" x="38" y="0.0" width="158" height="100"/>
+                            <rect key="frame" x="83" y="0.0" width="158" height="100"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-q0-BsE">
-                            <rect key="frame" x="212" y="0.0" width="131" height="100"/>
+                            <rect key="frame" x="257" y="0.0" width="86" height="100"/>
                         </stackView>
                     </subviews>
                 </stackView>
