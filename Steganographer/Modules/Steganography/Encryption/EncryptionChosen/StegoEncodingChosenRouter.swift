@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StegoEncodingChosenRouter {
-    func popViewController()
+    func goBackToDashboard()
 }
 
 final class StegoEncodingChosenRouterImpl {
@@ -17,7 +17,7 @@ final class StegoEncodingChosenRouterImpl {
 
 extension StegoEncodingChosenRouterImpl: StegoEncodingChosenRouter {
     
-    func popViewController() {
-        controller?.navigationController?.popViewController(animated: true)
+    func goBackToDashboard() {
+        controller?.navigationController?.popToRootViewController(animated: true)
     }
 }

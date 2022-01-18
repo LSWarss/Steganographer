@@ -11,6 +11,7 @@ typealias Page = Strings.Steganography.Encoding.Chosen
 
 protocol StegoEncodingChosenPresentable: BasePresentable {
     func displayStegoEncodingChosen(with image: UIImage)
+    func displayImageSaving(for url: URL)
 }
 
 final class StegoEncodingChosenController: BaseViewController {
@@ -40,6 +41,12 @@ extension StegoEncodingChosenController: StegoEncodingChosenPresentable {
 
     func displayStegoEncodingChosen(with image: UIImage) {
         self.encryptionImageView.image = image
+    }
+    
+    func displayImageSaving(for url: URL) {
+        let activityView = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        self.present(activityView, animated: true)
+        self.interactor.goToDashboard()
     }
 }
 
@@ -85,6 +92,6 @@ private extension StegoEncodingChosenController {
     }
     
     @objc func submitButtonAction() {
-        self.encryptionImageView.image = self.interactor.encodeImage(with: encryptionMessageTextView.text)
+        self.interactor.encodeImageWithText(encryptionMessageTextView.text)
     }
 }

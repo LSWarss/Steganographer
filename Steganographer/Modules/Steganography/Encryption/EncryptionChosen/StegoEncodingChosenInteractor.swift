@@ -10,22 +10,23 @@ import DisguisedSwiftly
 
 protocol StegoEncodingChosenInteractor {
     func getStegoEncodingChosen()
-    func encodeImage(with text: String) -> UIImage?
+    func encodeImageWithText(_ text: String)
+    func goToDashboard()
 }
 
 final class StegoEncodingChosenInteractorImpl {
 
+    private let stego: Stego
     private let presenter: StegoEncodingChosenPresenter
-    private let worker: StegoEncodingChosenWorker
     private let router: StegoEncodingChosenRouter
     private let image: UIImage
 
-    init(presenter: StegoEncodingChosenPresenter,
-         worker: StegoEncodingChosenWorker,
+    init(stego: Stego,
+         presenter: StegoEncodingChosenPresenter,
          router: StegoEncodingChosenRouter,
          image: UIImage) {
+        self.stego = stego
         self.presenter = presenter
-        self.worker = worker
         self.router = router
         self.image = image
     }
@@ -37,19 +38,24 @@ extension StegoEncodingChosenInteractorImpl: StegoEncodingChosenInteractor {
         self.presenter.presentStegoEncodingChosen(with: self.image)
     }
     
-    func encodeImage(with text: String) -> UIImage? {
-        let stego = Stego()
-        
-        return stego.encodeTextInImage(with: text, image: self.image) { progress in
-            switch progress {
-            case .ended:
-                print("Ended encoding")
-            case .working:
-                break
-            case .failed:
-                break
+    func encodeImageWithText(_ text: String) {
+        stego.encodeTextInImage(with: text, in: self.image) { [weak self] result in
+            switch result {
+            case .success(let image):
+                guard let image = image else {
+                    assertionFailure("There is no image 🙈")
+                    return
+                }
+                
+                self?.presenter.presentImageSavingForImage(image)
+            case .failure(let error):
+                self?.presenter.presentError(error)
             }
         }
+    }
+    
+    func goToDashboard() {
+        router.goBackToDashboard()
     }
 }
 
