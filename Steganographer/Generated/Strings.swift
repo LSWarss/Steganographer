@@ -78,10 +78,24 @@ internal enum Strings {
       internal static let headerText2 = Strings.tr("Loc", "Steganography.Decoding.HeaderText2")
       /// message from the image, right from your photos library :)
       internal static let headerText3 = Strings.tr("Loc", "Steganography.Decoding.HeaderText3")
-      /// REVEAL
-      internal static let revealButton = Strings.tr("Loc", "Steganography.Decoding.RevealButton")
       /// Decoding
       internal static let title = Strings.tr("Loc", "Steganography.Decoding.Title")
+      internal enum Chosen {
+        /// Here is
+        internal static let headerText1 = Strings.tr("Loc", "Steganography.Decoding.Chosen.HeaderText1")
+        ///  message 
+        internal static let headerText2 = Strings.tr("Loc", "Steganography.Decoding.Chosen.HeaderText2")
+        /// from the image, share, save or go back :)
+        internal static let headerText3 = Strings.tr("Loc", "Steganography.Decoding.Chosen.HeaderText3")
+        internal enum GoBackButton {
+          /// Go back
+          internal static let title = Strings.tr("Loc", "Steganography.Decoding.Chosen.GoBackButton.Title")
+        }
+        internal enum SharButton {
+          /// Share or save
+          internal static let title = Strings.tr("Loc", "Steganography.Decoding.Chosen.SharButton.Title")
+        }
+      }
     }
     internal enum Encoding {
       /// Click here to pick an image from

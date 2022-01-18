@@ -56,6 +56,5 @@ private extension RoundedPickingButtonView {
 
     @objc func tap() {
         pickAction?()
-        log(.info, .screenView, "tap tap")
     }
 }

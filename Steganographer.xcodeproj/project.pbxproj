@@ -53,6 +53,12 @@
 		7A735B78278F4BED004E014B /* StegoEncodingChosenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B71278F4BED004E014B /* StegoEncodingChosenController.swift */; };
 		7A735B79278F4BED004E014B /* StegoEncodingChosenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B72278F4BED004E014B /* StegoEncodingChosenInteractor.swift */; };
 		7A735B7C2795D927004E014B /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B7B2795D927004E014B /* UIViewController+Keyboard.swift */; };
+		7A735B8527975938004E014B /* DecodingChosenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B7E27975938004E014B /* DecodingChosenRouter.swift */; };
+		7A735B8627975938004E014B /* DecodingChosenControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B7F27975938004E014B /* DecodingChosenControllerCreator.swift */; };
+		7A735B8827975938004E014B /* DecodingChosenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A735B8127975938004E014B /* DecodingChosenController.xib */; };
+		7A735B8927975938004E014B /* DecodingChosenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B8227975938004E014B /* DecodingChosenPresenter.swift */; };
+		7A735B8A27975938004E014B /* DecodingChosenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B8327975938004E014B /* DecodingChosenController.swift */; };
+		7A735B8B27975938004E014B /* DecodingChosenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A735B8427975938004E014B /* DecodingChosenInteractor.swift */; };
 		7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C3198276290300000BBE7 /* BaseViewController.swift */; };
 		7A9C319E2762926A0000BBE7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C319D2762926A0000BBE7 /* UIColor.swift */; };
 		7A9C31A02762926F0000BBE7 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */; };
@@ -142,6 +148,12 @@
 		7A735B71278F4BED004E014B /* StegoEncodingChosenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingChosenController.swift; sourceTree = "<group>"; };
 		7A735B72278F4BED004E014B /* StegoEncodingChosenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StegoEncodingChosenInteractor.swift; sourceTree = "<group>"; };
 		7A735B7B2795D927004E014B /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		7A735B7E27975938004E014B /* DecodingChosenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingChosenRouter.swift; sourceTree = "<group>"; };
+		7A735B7F27975938004E014B /* DecodingChosenControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingChosenControllerCreator.swift; sourceTree = "<group>"; };
+		7A735B8127975938004E014B /* DecodingChosenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DecodingChosenController.xib; sourceTree = "<group>"; };
+		7A735B8227975938004E014B /* DecodingChosenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingChosenPresenter.swift; sourceTree = "<group>"; };
+		7A735B8327975938004E014B /* DecodingChosenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingChosenController.swift; sourceTree = "<group>"; };
+		7A735B8427975938004E014B /* DecodingChosenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingChosenInteractor.swift; sourceTree = "<group>"; };
 		7A9C3198276290300000BBE7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7A9C319D2762926A0000BBE7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7A9C319F2762926F0000BBE7 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
@@ -272,6 +284,7 @@
 		7A5ABB93276672D30005E419 /* Decoding */ = {
 			isa = PBXGroup;
 			children = (
+				7A735B7D27975926004E014B /* DecodingChosen */,
 				7A5ABB98276673010005E419 /* StegoDecodingRouter.swift */,
 				7A5ABB99276673010005E419 /* StegoDecodingControllerCreator.swift */,
 				7A5ABB9B276673010005E419 /* StegoDecodingController.xib */,
@@ -352,6 +365,19 @@
 				7A735B7B2795D927004E014B /* UIViewController+Keyboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A735B7D27975926004E014B /* DecodingChosen */ = {
+			isa = PBXGroup;
+			children = (
+				7A735B7E27975938004E014B /* DecodingChosenRouter.swift */,
+				7A735B7F27975938004E014B /* DecodingChosenControllerCreator.swift */,
+				7A735B8127975938004E014B /* DecodingChosenController.xib */,
+				7A735B8227975938004E014B /* DecodingChosenPresenter.swift */,
+				7A735B8327975938004E014B /* DecodingChosenController.swift */,
+				7A735B8427975938004E014B /* DecodingChosenInteractor.swift */,
+			);
+			path = DecodingChosen;
 			sourceTree = "<group>";
 		};
 		7A9C31DC2764BF150000BBE7 /* Profile */ = {
@@ -563,6 +589,7 @@
 				7A0F329E271DD70100A789FA /* Assets.xcassets in Resources */,
 				7A9C321D2764CE060000BBE7 /* Loc.strings in Resources */,
 				7A124153276915CB00C04CF9 /* AppHeaderView.xib in Resources */,
+				7A735B8827975938004E014B /* DecodingChosenController.xib in Resources */,
 				7A5ABBB3276679390005E419 /* StegoInformationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +653,7 @@
 				7A37C604278F35F8006E99C3 /* FilesImagePicker.swift in Sources */,
 				7A6E164F2737CF92004B374D /* UIViewController.swift in Sources */,
 				7A5ABBC4276679470005E419 /* StegoHistoryInteractor.swift in Sources */,
+				7A735B8927975938004E014B /* DecodingChosenPresenter.swift in Sources */,
 				7A5ABBA0276673010005E419 /* StegoDecodingControllerCreator.swift in Sources */,
 				7A12414A2769126300C04CF9 /* StegoEncodingControllerCreator.swift in Sources */,
 				7A9C32052764C4BE0000BBE7 /* HomeControllerCreator.swift in Sources */,
@@ -636,6 +664,7 @@
 				7A12414D2769126300C04CF9 /* StegoEncodingPresenter.swift in Sources */,
 				7A12414F2769126300C04CF9 /* StegoEncodingInteractor.swift in Sources */,
 				7A5ABBB4276679390005E419 /* StegoInformationPresenter.swift in Sources */,
+				7A735B8A27975938004E014B /* DecodingChosenController.swift in Sources */,
 				7A9C31F82764BFAD0000BBE7 /* SettingsController.swift in Sources */,
 				7A735B7C2795D927004E014B /* UIViewController+Keyboard.swift in Sources */,
 				7A9C319A276290300000BBE7 /* BaseViewController.swift in Sources */,
@@ -660,6 +689,7 @@
 				7A1241492769126300C04CF9 /* StegoEncodingRouter.swift in Sources */,
 				7A9C31F32764BFAD0000BBE7 /* SettingsRouter.swift in Sources */,
 				7A9C31E52764BF380000BBE7 /* ProfileRouter.swift in Sources */,
+				7A735B8527975938004E014B /* DecodingChosenRouter.swift in Sources */,
 				7A9C31E62764BF380000BBE7 /* ProfileControllerCreator.swift in Sources */,
 				7A5ABBA4276673010005E419 /* StegoDecodingController.swift in Sources */,
 				7A5ABBBF276679470005E419 /* StegoHistoryControllerCreator.swift in Sources */,
@@ -671,12 +701,14 @@
 				7A5ABBA5276673010005E419 /* StegoDecodingInteractor.swift in Sources */,
 				7A5ABBB2276679390005E419 /* StegoInformationWorker.swift in Sources */,
 				7A735B77278F4BED004E014B /* StegoEncodingChosenPresenter.swift in Sources */,
+				7A735B8627975938004E014B /* DecodingChosenControllerCreator.swift in Sources */,
 				7A735B79278F4BED004E014B /* StegoEncodingChosenInteractor.swift in Sources */,
 				7A5ABBC2276679470005E419 /* StegoHistoryPresenter.swift in Sources */,
 				7A9C32042764C4BE0000BBE7 /* HomeRouter.swift in Sources */,
 				7A9C31FB2764C0610000BBE7 /* Completions.swift in Sources */,
 				7A9C31EB2764BF380000BBE7 /* ProfileInteractor.swift in Sources */,
 				7A9C319E2762926A0000BBE7 /* UIColor.swift in Sources */,
+				7A735B8B27975938004E014B /* DecodingChosenInteractor.swift in Sources */,
 				7A9C31E72764BF380000BBE7 /* ProfileWorker.swift in Sources */,
 				7A5ABBB1276679390005E419 /* StegoInformationControllerCreator.swift in Sources */,
 				7A9C32092764C4BE0000BBE7 /* HomeController.swift in Sources */,

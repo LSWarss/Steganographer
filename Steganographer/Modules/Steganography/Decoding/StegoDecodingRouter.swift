@@ -12,14 +12,13 @@ protocol StegoDecodingRouter {
 }
 
 final class StegoDecodingRouterImpl {
-
     weak var controller: UIViewController?
-
 }
 
 extension StegoDecodingRouterImpl: StegoDecodingRouter {
     
     func showDecodingForChosenImage(_ image: UIImage) {
-        
+        let stegoDecodingChosenController = DecodingChosenControllerCreator().getController(with: image)
+        controller?.navigationController?.pushViewController(stegoDecodingChosenController, animated: true)
     }
 }

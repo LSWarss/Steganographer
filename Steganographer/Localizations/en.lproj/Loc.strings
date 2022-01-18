@@ -46,12 +46,18 @@
 "Steganography.Decoding.HeaderText1" = "Here you can";
 "Steganography.Decoding.HeaderText2" = " reveal ";
 "Steganography.Decoding.HeaderText3" = "message from the image, right from your photos library :)";
-"Steganography.Decoding.RevealButton" = "REVEAL";
 
 "Steganography.Decoding.BottomPickerButton1" = "Click here to pick an image from\n";
 "Steganography.Decoding.BottomPickerButton2" = "Photos";
 "Steganography.Decoding.FilesPickerButton1" = "Click here to get image from \n";
 "Steganography.Decoding.FilesPickerButton2" = "Files";
+
+//MARK: Decoding Chosen
+"Steganography.Decoding.Chosen.HeaderText1" = "Here is";
+"Steganography.Decoding.Chosen.HeaderText2" = " message ";
+"Steganography.Decoding.Chosen.HeaderText3" = "from the image, share, save or go back :)";
+"Steganography.Decoding.Chosen.SharButton.Title" = "Share or save";
+"Steganography.Decoding.Chosen.GoBackButton.Title" = "Go back";
 
 //MARK: ImagePicker
 "ImagePicker.Camera" = "Take photo";

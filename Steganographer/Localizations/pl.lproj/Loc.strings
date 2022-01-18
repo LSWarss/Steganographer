@@ -46,12 +46,18 @@
 "Steganography.Decoding.HeaderText1" = "Na tym ekranie możesz";
 "Steganography.Decoding.HeaderText2" = " odkryć ";
 "Steganography.Decoding.HeaderText3" = "wiadomość z obrazu w galerii lub plikach :)";
-"Steganography.Decoding.RevealButton" = "ODKRYJ";
 
 "Steganography.Decoding.BottomPickerButton1" = "Kliknij tutaj aby wybrać obraz z\n";
 "Steganography.Decoding.BottomPickerButton2" = "Zdjęć";
 "Steganography.Decoding.FilesPickerButton1" = "Kliknij tutaj aby wybraż obraz z\n";
 "Steganography.Decoding.FilesPickerButton2" = "Plików";
+
+//MARK: Decoding Chosen
+"Steganography.Decoding.Chosen.HeaderText1" = "Tutaj widzisz";
+"Steganography.Decoding.Chosen.HeaderText2" = " wiadomość ";
+"Steganography.Decoding.Chosen.HeaderText3" = "z wybranego zdjęcia, udostępnij, zapisz albo wracaj :)";
+"Steganography.Decoding.Chosen.SharButton.Title" = "Udostępnij lub zapisz";
+"Steganography.Decoding.Chosen.GoBackButton.Title" = "Powrót";
 
 //MARK: ImagePicker
 "ImagePicker.Camera" = "Zrób zdjęcie";
