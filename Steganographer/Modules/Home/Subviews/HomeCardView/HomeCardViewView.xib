@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeCardViewView" customModule="Steganographer" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImage" destination="gab-D8-GYv" id="29g-c0-gWf"/>
+                <outlet property="nameLabel" destination="O8G-VC-LBg" id="RWq-OI-pLe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gab-D8-GYv">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="Oda-OQ-JD0"/>
+                        <constraint firstAttribute="width" constant="90" id="yEq-3H-huN"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8G-VC-LBg">
+                    <rect key="frame" x="6" y="64.5" width="42.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gab-D8-GYv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5lS-aX-Ve8"/>
+                <constraint firstAttribute="trailing" secondItem="gab-D8-GYv" secondAttribute="trailing" id="CD9-oZ-dfS"/>
+                <constraint firstAttribute="bottom" secondItem="gab-D8-GYv" secondAttribute="bottom" id="Ejc-GD-Nlm"/>
+                <constraint firstAttribute="bottom" secondItem="O8G-VC-LBg" secondAttribute="bottom" constant="6" id="NZe-6r-ZHv"/>
+                <constraint firstItem="O8G-VC-LBg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="jNY-cp-Cix"/>
+                <constraint firstItem="gab-D8-GYv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x3B-qP-L8G"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-35.200000000000003" y="245.57721139430288"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,66 @@
+/* 
+  Loc.strings
+  Steganographer
+
+  Created by Łukasz Stachnik on 11/12/2021.
+  
+*/
+
+//MARK: Dashboard
+"Dashboard.TabBar.Dashboard" = "Dashboard";
+"Dashboard.TabBar.Profile" = "Profile";
+"Dashboard.TabBar.Settings" = "Settings";
+
+//MARK: CardViewType
+"CardViewType.Title.Encoding" = "Encoding";
+"CardViewType.Title.Decoding" = "Decoding";
+"CardViewType.Title.Information" = "Information";
+"CardViewType.Title.History" = "History";
+
+//MARK: Home
+"Home.Row.Steganography.Title" = "Steganography";
+"Home.Header.FirstPart" = "Hello there,\n";
+"Home.Header.SecondPart" = "are there anything we can help you with?";
+
+//MARK: Encoding
+"Steganography.Encoding.Title" = "Encoding";
+"Steganography.Encoding.HeaderText1" = "Here you can";
+"Steganography.Encoding.HeaderText2" = " hide ";
+"Steganography.Encoding.HeaderText3" = "your message in the image, right from your photos library or camera :)";
+"Steganography.Encoding.BottomPickerButton1" = "Click here to pick an image from\n";
+"Steganography.Encoding.BottomPickerButton2" = "Photos";
+"Steganography.Encoding.BottomPickerButton3" = " or ";
+"Steganography.Encoding.BottomPickerButton4" = "Camera";
+"Steganography.Encoding.CamerPickerButton1" = "Click here to get image from \n";
+"Steganography.Encoding.CamerPickerButton2" = "Files";
+
+//MARK: Encoding Chosen
+"Steganography.Encoding.Chosen.HeaderText1" = "Enter text in to the field below and let's";
+"Steganography.Encoding.Chosen.HeaderText2" = " hide ";
+"Steganography.Encoding.Chosen.HeaderText3" = "your message :)";
+"Steganography.Encoding.Chosen.TextView.Title" = "Text to hide";
+"Steganography.Encoding.Chosen.TextView.Placeholder" = "Enter your message here";
+
+//MARK: Decoding
+"Steganography.Decoding.Title" = "Decoding";
+"Steganography.Decoding.HeaderText1" = "Here you can";
+"Steganography.Decoding.HeaderText2" = " reveal ";
+"Steganography.Decoding.HeaderText3" = "message from the image, right from your photos library :)";
+
+"Steganography.Decoding.BottomPickerButton1" = "Click here to pick an image from\n";
+"Steganography.Decoding.BottomPickerButton2" = "Photos";
+"Steganography.Decoding.FilesPickerButton1" = "Click here to get image from \n";
+"Steganography.Decoding.FilesPickerButton2" = "Files";
+
+//MARK: Decoding Chosen
+"Steganography.Decoding.Chosen.HeaderText1" = "Here is";
+"Steganography.Decoding.Chosen.HeaderText2" = " message ";
+"Steganography.Decoding.Chosen.HeaderText3" = "from the image, share, save or go back :)";
+"Steganography.Decoding.Chosen.SharButton.Title" = "Share or save";
+"Steganography.Decoding.Chosen.GoBackButton.Title" = "Go back";
+
+//MARK: ImagePicker
+"ImagePicker.Camera" = "Take photo";
+"ImagePicker.Photos" = "Photo library";
+"ImagePicker.Cancel" = "Cancel";
+
