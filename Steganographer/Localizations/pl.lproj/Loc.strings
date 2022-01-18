@@ -26,7 +26,7 @@
 "Steganography.Encoding.Title" = "Enkrypcja";
 "Steganography.Encoding.HeaderText1" = "Na tym ekranie możesz";
 "Steganography.Encoding.HeaderText2" = " ukryć ";
-"Steganography.Encoding.HeaderText3" = "swoją wiadomość w obrazie z galeri czy prosto z kamery :)";
+"Steganography.Encoding.HeaderText3" = "swoją wiadomość w obrazie z galerii lub prosto z kamery :)";
 "Steganography.Encoding.BottomPickerButton1" = "Kliknij tutaj aby wybrać obraz z\n";
 "Steganography.Encoding.BottomPickerButton2" = "Zdjęć";
 "Steganography.Encoding.BottomPickerButton3" = " lub ";
@@ -43,6 +43,15 @@
 
 //MARK: Decoding
 "Steganography.Decoding.Title" = "Dekrypcja";
+"Steganography.Decoding.HeaderText1" = "Na tym ekranie możesz";
+"Steganography.Decoding.HeaderText2" = " odkryć ";
+"Steganography.Decoding.HeaderText3" = "wiadomość z obrazu w galerii lub plikach :)";
+"Steganography.Decoding.RevealButton" = "ODKRYJ";
+
+"Steganography.Decoding.BottomPickerButton1" = "Kliknij tutaj aby wybrać obraz z\n";
+"Steganography.Decoding.BottomPickerButton2" = "Zdjęć";
+"Steganography.Decoding.FilesPickerButton1" = "Kliknij tutaj aby wybraż obraz z\n";
+"Steganography.Decoding.FilesPickerButton2" = "Plików";
 
 //MARK: ImagePicker
 "ImagePicker.Camera" = "Zrób zdjęcie";

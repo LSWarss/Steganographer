@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StegoDecodingRouter {
-    func popViewController()
+    func showDecodingForChosenImage(_ image: UIImage)
 }
 
 final class StegoDecodingRouterImpl {
@@ -19,12 +19,7 @@ final class StegoDecodingRouterImpl {
 
 extension StegoDecodingRouterImpl: StegoDecodingRouter {
     
-    func popViewController() {
-        controller?.navigationController?.popViewController(animated: true)
+    func showDecodingForChosenImage(_ image: UIImage) {
+        
     }
-    
-}
-
-private extension StegoDecodingRouterImpl {
-    // TODO: Fill this with private router methods
 }

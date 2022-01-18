@@ -13,7 +13,7 @@ import IteoLogger
 
 final class AppHeaderView: XibView {
 
-    @IBOutlet var backButton: UIButton!
+    @IBOutlet private var backButton: UIButton!
     @IBOutlet private var headerTitle: UILabel!
 
     private weak var controller: UIViewController?

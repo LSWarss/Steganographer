@@ -29,20 +29,15 @@ final class StegoHistoryInteractorImpl {
 
 extension StegoHistoryInteractorImpl: StegoHistoryInteractor {
 
-    // TODO: Fill this with public interactor methods
     func getStegoHistory() {
         worker.fetchStegoHistory { [weak self] result in
             guard let self = self else { return }
             switch result {
-                case .success:
-                    self.presenter.presentStegoHistory()
-                case .failure(let error):
-                    break
+            case .success:
+                self.presenter.presentStegoHistory()
+            case .failure(let error):
+                self.presenter.presentError(error)
             }
         }
     }
-}
-
-private extension StegoHistoryInteractorImpl {
-    // TODO: Fill this with private interactor methods
 }

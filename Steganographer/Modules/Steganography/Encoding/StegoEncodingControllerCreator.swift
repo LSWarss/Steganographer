@@ -11,10 +11,10 @@ struct StegoEncodingControllerCreator {
 
     func getController() -> StegoEncodingController {
 
-        let worker = StegoEncodingWorkerImpl()
         let router = StegoEncodingRouterImpl()
         let presenter = StegoEncodingPresenterImpl<StegoEncodingController>()
-        let interactor = StegoEncodingInteractorImpl(presenter: presenter, worker: worker, router: router)
+        let interactor = StegoEncodingInteractorImpl(presenter: presenter,
+                                                     router: router)
         let controller = StegoEncodingController(interactor: interactor)
 
         presenter.controller = controller

@@ -16,10 +16,6 @@ final class StegoDecodingPresenterImpl<T: StegoDecodingPresentable>: BasePresent
 extension StegoDecodingPresenterImpl: StegoDecodingPresenter {
 
     func presentStegoDecoding() {
-        controller?.displayStegoDecoding()
-    }
-}
 
-private extension StegoDecodingPresenterImpl {
-    // TODO: Fill this with private interactor methods
+    }
 }

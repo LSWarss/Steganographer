@@ -6,45 +6,28 @@
 //  Copyright (c) 2021. All rights reserved.
 
 import Foundation
+import UIKit
 
 protocol StegoDecodingInteractor {
-    func getStegoDecoding()
-    func goBack()
+    func goToStegoDecodingWithImage(_ image: UIImage)
 }
 
 final class StegoDecodingInteractorImpl {
 
     private let presenter: StegoDecodingPresenter
-    private let worker: StegoDecodingWorker
     private let router: StegoDecodingRouter
 
     init(presenter: StegoDecodingPresenter,
-         worker: StegoDecodingWorker,
          router: StegoDecodingRouter) {
         self.presenter = presenter
-        self.worker = worker
         self.router = router
     }
 }
 
 extension StegoDecodingInteractorImpl: StegoDecodingInteractor {
 
-    func getStegoDecoding() {
-        worker.fetchStegoDecoding { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-                case .success:
-                    self.presenter.presentStegoDecoding()
-                case .failure(let error):
-                    self.presenter.presentError(error)
-            }
-        }
+    func goToStegoDecodingWithImage(_ image: UIImage) {
+        router.showDecodingForChosenImage(image)
     }
-    
-    func goBack() {
-        router.popViewController()
-    }
-}
 
-private extension StegoDecodingInteractorImpl {
 }

@@ -43,8 +43,18 @@
 
 //MARK: Decoding
 "Steganography.Decoding.Title" = "Decoding";
+"Steganography.Decoding.HeaderText1" = "Here you can";
+"Steganography.Decoding.HeaderText2" = " reveal ";
+"Steganography.Decoding.HeaderText3" = "message from the image, right from your photos library :)";
+"Steganography.Decoding.RevealButton" = "REVEAL";
+
+"Steganography.Decoding.BottomPickerButton1" = "Click here to pick an image from\n";
+"Steganography.Decoding.BottomPickerButton2" = "Photos";
+"Steganography.Decoding.FilesPickerButton1" = "Click here to get image from \n";
+"Steganography.Decoding.FilesPickerButton2" = "Files";
 
 //MARK: ImagePicker
 "ImagePicker.Camera" = "Take photo";
 "ImagePicker.Photos" = "Photo library";
 "ImagePicker.Cancel" = "Cancel";
+

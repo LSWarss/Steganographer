@@ -62,6 +62,24 @@ internal enum Strings {
 
   internal enum Steganography {
     internal enum Decoding {
+      /// Click here to pick an image from
+      /// 
+      internal static let bottomPickerButton1 = Strings.tr("Loc", "Steganography.Decoding.BottomPickerButton1")
+      /// Photos
+      internal static let bottomPickerButton2 = Strings.tr("Loc", "Steganography.Decoding.BottomPickerButton2")
+      /// Click here to get image from 
+      /// 
+      internal static let filesPickerButton1 = Strings.tr("Loc", "Steganography.Decoding.FilesPickerButton1")
+      /// Files
+      internal static let filesPickerButton2 = Strings.tr("Loc", "Steganography.Decoding.FilesPickerButton2")
+      /// Here you can
+      internal static let headerText1 = Strings.tr("Loc", "Steganography.Decoding.HeaderText1")
+      ///  reveal 
+      internal static let headerText2 = Strings.tr("Loc", "Steganography.Decoding.HeaderText2")
+      /// message from the image, right from your photos library :)
+      internal static let headerText3 = Strings.tr("Loc", "Steganography.Decoding.HeaderText3")
+      /// REVEAL
+      internal static let revealButton = Strings.tr("Loc", "Steganography.Decoding.RevealButton")
       /// Decoding
       internal static let title = Strings.tr("Loc", "Steganography.Decoding.Title")
     }

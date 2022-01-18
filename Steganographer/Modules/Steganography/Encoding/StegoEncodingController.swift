@@ -8,7 +8,6 @@
 import UIKit
 
 protocol StegoEncodingPresentable: BasePresentable {
-    func displayStegoEncoding()
 }
 
 final class StegoEncodingController: BaseViewController {
@@ -30,16 +29,16 @@ final class StegoEncodingController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-        self.documentPicker = FilesImagePicker(presentationController: self, delegate: self)
         displayStegoEncoding()
-        interactor.getStegoEncoding()
     }
 }
 
 extension StegoEncodingController: StegoEncodingPresentable {
 
     func displayStegoEncoding() {
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        self.documentPicker = FilesImagePicker(presentationController: self, delegate: self)
+        
         setupTranslations()
         setupView()
     }
