@@ -29,7 +29,6 @@ final class StegoDecodingInteractorImpl {
 
 extension StegoDecodingInteractorImpl: StegoDecodingInteractor {
 
-    // TODO: Fill this with public interactor methods
     func getStegoDecoding() {
         worker.fetchStegoDecoding { [weak self] result in
             guard let self = self else { return }
@@ -37,7 +36,7 @@ extension StegoDecodingInteractorImpl: StegoDecodingInteractor {
                 case .success:
                     self.presenter.presentStegoDecoding()
                 case .failure(let error):
-                    break
+                    self.presenter.presentError(error)
             }
         }
     }
@@ -48,5 +47,4 @@ extension StegoDecodingInteractorImpl: StegoDecodingInteractor {
 }
 
 private extension StegoDecodingInteractorImpl {
-    // TODO: Fill this with private interactor methods
 }

@@ -39,7 +39,7 @@ extension HomeInteractorImpl: HomeInteractor {
             case .success:
                 self.presenter.presentHome()
             case .failure(let error):
-                break
+                self.presenter.presentError(error)
             }
         }
     }

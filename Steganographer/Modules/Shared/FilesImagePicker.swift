@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UniformTypeIdentifiers
 
 public protocol FilesImagePickerDelegate: AnyObject {
     func didSelect(documentOnURL: URL?)
@@ -18,7 +19,7 @@ open class FilesImagePicker: NSObject, UIDocumentPickerDelegate {
     private weak var delegate: FilesImagePickerDelegate?
 
     public init(presentationController: UIViewController, delegate: FilesImagePickerDelegate) {
-        self.pickerController = UIDocumentPickerViewController(forOpeningContentTypes: [.image])
+        self.pickerController = UIDocumentPickerViewController(documentTypes: [UTType.image.identifier], in: .import)
 
         super.init()
 

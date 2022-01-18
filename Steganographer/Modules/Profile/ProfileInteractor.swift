@@ -37,7 +37,7 @@ extension ProfileInteractorImpl: ProfileInteractor {
                 case .success:
                     self.presenter.presentProfile()
                 case .failure(let error):
-                    break
+                    self.presenter.presentError(error)
             }
         }
     }

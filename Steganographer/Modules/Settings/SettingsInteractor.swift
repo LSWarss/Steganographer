@@ -37,7 +37,7 @@ extension SettingsInteractorImpl: SettingsInteractor {
                 case .success:
                     self.presenter.presentSettings()
                 case .failure(let error):
-                    break
+                    self.presenter.presentError(error)
             }
         }
     }

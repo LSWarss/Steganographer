@@ -24,6 +24,17 @@ internal enum Strings {
     }
   }
 
+  internal enum Dashboard {
+    internal enum TabBar {
+      /// Dashboard
+      internal static let dashboard = Strings.tr("Loc", "Dashboard.TabBar.Dashboard")
+      /// Profile
+      internal static let profile = Strings.tr("Loc", "Dashboard.TabBar.Profile")
+      /// Settings
+      internal static let settings = Strings.tr("Loc", "Dashboard.TabBar.Settings")
+    }
+  }
+
   internal enum Home {
     internal enum Header {
       /// Hello there,

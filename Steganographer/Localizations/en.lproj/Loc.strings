@@ -6,6 +6,11 @@
   
 */
 
+//MARK: Dashboard
+"Dashboard.TabBar.Dashboard" = "Dashboard";
+"Dashboard.TabBar.Profile" = "Profile";
+"Dashboard.TabBar.Settings" = "Settings";
+
 //MARK: CardViewType
 "CardViewType.Title.Encoding" = "Encoding";
 "CardViewType.Title.Decoding" = "Decoding";

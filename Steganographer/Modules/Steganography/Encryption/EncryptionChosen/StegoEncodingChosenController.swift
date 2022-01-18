@@ -7,7 +7,7 @@
 
 import UIKit
 
-typealias Page = Strings.Steganography.Encoding.Chosen
+private typealias Page = Strings.Steganography.Encoding.Chosen
 
 protocol StegoEncodingChosenPresentable: BasePresentable {
     func displayStegoEncodingChosen(with image: UIImage)

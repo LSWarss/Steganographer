@@ -7,6 +7,8 @@
 
 import UIKit
 
+private typealias Page = Strings.Dashboard.TabBar
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -20,11 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabViewController = UITabBarController()
         let navigationController = UINavigationController(rootViewController: tabViewController)
         let profileVC = ProfileControllerCreator().getController()
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 1)
+        profileVC.tabBarItem = UITabBarItem(title: Page.profile, image: UIImage(systemName: "person.crop.circle"), tag: 1)
         let homeVC = HomeControllerCreator().getController()
-        homeVC.tabBarItem = UITabBarItem(title: "Dashboard", image: UIImage(systemName: "house"), tag: 2)
+        homeVC.tabBarItem = UITabBarItem(title: Page.dashboard, image: UIImage(systemName: "house"), tag: 2)
         let settingsVC = SettingsControllerCreator().getController()
-        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 3)
+        settingsVC.tabBarItem = UITabBarItem(title: Page.settings, image: UIImage(systemName: "gear"), tag: 3)
         tabViewController.viewControllers = [profileVC, homeVC, settingsVC]
         tabViewController.selectedIndex = 1
         window.rootViewController = navigationController
